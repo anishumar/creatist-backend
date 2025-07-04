@@ -188,5 +188,15 @@ async def get_artist_showcases(request: Request, artist_id: str, token: Token = 
     showcases = await user_handler.get_artist_showcases(artist_id=artist_id)
     return JSONResponse({"message": "success", "showcases": showcases})
 
+@router.get("/browse/genre/{genre_name}")
+async def get_users_by_genre(genre_name: str, token: Token = Depends(get_user_token)):
+    users = await user_handler.get_users_by_genre(genre_name)
+    return JSONResponse({"message": "success", "users": [user.model_dump() for user in users]})
+
+@router.get("/users")
+async def get_users_by_genre(request: Request, genre: str, token: Token = Depends(get_user_token)):
+    users = await user_handler.get_users_by_genre(genre)
+    print([user.model_dump(mode="json") for user in users])
+    return [user.model_dump(mode="json") for user in users]
+
 app.include_router(router)
-# updateing model

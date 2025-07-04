@@ -3,7 +3,7 @@ import datetime
 
 from pydantic import BaseModel, Field
 import uuid
-from typing import Optional
+from typing import Optional, List
 from src.models import UserGenre, WorkMode, PaymentMode
 
 class UserModel(BaseModel):
@@ -15,7 +15,7 @@ class UserModel(BaseModel):
 
     profile_image_url: Optional[str] = None
     age: Optional[int] = None
-    genres: Optional[UserGenre] = None
+    genres: Optional[List[UserGenre]] = None
     payment_mode: Optional[PaymentMode] = None
     work_mode: Optional[WorkMode] = None
     

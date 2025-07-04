@@ -156,3 +156,2316 @@ Traceback (most recent call last):
 jwt.exceptions.ExpiredSignatureError: Signature has expired
 2025-07-03 12:39:33,867 - app - DEBUG - debug - Creating access token for user: e12d03ef-c5c6-4fc1-bd96-57e07364b6f4
 2025-07-03 12:39:33,869 - app - INFO - info - Access token created for user: e12d03ef-c5c6-4fc1-bd96-57e07364b6f4
+2025-07-03 12:46:27,384 - app - DEBUG - debug - Decoding token
+2025-07-03 12:46:27,389 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-03 12:46:27,415 - app - DEBUG - debug - Decoding token
+2025-07-03 12:46:27,415 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-03 12:46:28,282 - app - DEBUG - debug - Creating access token for user: 6fa5c57b-cb53-4e4c-8729-5e7e932725b5
+2025-07-03 12:46:28,282 - app - INFO - info - Access token created for user: 6fa5c57b-cb53-4e4c-8729-5e7e932725b5
+2025-07-03 12:48:37,618 - app - DEBUG - debug - Decoding token
+2025-07-03 12:48:37,625 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-03 12:48:37,659 - app - DEBUG - debug - Decoding token
+2025-07-03 12:48:37,660 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-03 12:48:38,433 - app - DEBUG - debug - Creating access token for user: e69aac3d-2006-40f8-89ee-9180541dd6aa
+2025-07-03 12:48:38,433 - app - INFO - info - Access token created for user: e69aac3d-2006-40f8-89ee-9180541dd6aa
+2025-07-03 12:53:55,021 - app - DEBUG - debug - Decoding token
+2025-07-03 12:53:55,031 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-03 12:53:55,094 - app - DEBUG - debug - Decoding token
+2025-07-03 12:53:55,094 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-03 13:03:27,327 - app - DEBUG - debug - Decoding token
+2025-07-03 13:03:27,334 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-03 13:03:27,393 - app - DEBUG - debug - Decoding token
+2025-07-03 13:03:27,393 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-03 13:03:28,189 - app - DEBUG - debug - Creating access token for user: a2479e3b-ee35-4c36-8a3a-6fbf5f79acfd
+2025-07-03 13:03:28,189 - app - INFO - info - Access token created for user: a2479e3b-ee35-4c36-8a3a-6fbf5f79acfd
+2025-07-04 15:59:51,465 - app - DEBUG - debug - Decoding token
+2025-07-04 15:59:51,465 - app - DEBUG - debug - Decoding token
+2025-07-04 15:59:51,466 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 15:59:51,466 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 15:59:51,716 - app - DEBUG - debug - Decoding token
+2025-07-04 15:59:51,716 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 15:59:55,071 - app - DEBUG - debug - Decoding token
+2025-07-04 15:59:55,073 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 16:00:21,958 - app - DEBUG - debug - Decoding token
+2025-07-04 16:00:21,966 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/.venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 16:00:22,828 - app - DEBUG - debug - Creating access token for user: a2479e3b-ee35-4c36-8a3a-6fbf5f79acfd
+2025-07-04 16:00:22,834 - app - INFO - info - Access token created for user: a2479e3b-ee35-4c36-8a3a-6fbf5f79acfd
+2025-07-04 16:00:22,866 - app - DEBUG - debug - Decoding token
+2025-07-04 16:00:22,866 - app - INFO - info - Token successfully decoded
+2025-07-04 16:26:49,541 - app - DEBUG - debug - Creating access token for user: a2479e3b-ee35-4c36-8a3a-6fbf5f79acfd
+2025-07-04 16:26:49,545 - app - INFO - info - Access token created for user: a2479e3b-ee35-4c36-8a3a-6fbf5f79acfd
+2025-07-04 16:26:49,579 - app - DEBUG - debug - Decoding token
+2025-07-04 16:26:49,579 - app - INFO - info - Token successfully decoded
+2025-07-04 16:26:53,707 - app - DEBUG - debug - Decoding token
+2025-07-04 16:26:53,709 - app - INFO - info - Token successfully decoded
+2025-07-04 16:26:55,630 - app - DEBUG - debug - Creating access token for user: a2479e3b-ee35-4c36-8a3a-6fbf5f79acfd
+2025-07-04 16:26:55,631 - app - INFO - info - Access token created for user: a2479e3b-ee35-4c36-8a3a-6fbf5f79acfd
+2025-07-04 16:26:56,055 - app - DEBUG - debug - Decoding token
+2025-07-04 16:26:56,116 - app - INFO - info - Token successfully decoded
+2025-07-04 16:46:06,910 - app - DEBUG - debug - Creating access token for user: 8000219b-e5a8-4780-81dc-1c54f16e9005
+2025-07-04 16:46:06,918 - app - INFO - info - Access token created for user: 8000219b-e5a8-4780-81dc-1c54f16e9005
+2025-07-04 16:46:06,953 - app - DEBUG - debug - Decoding token
+2025-07-04 16:46:06,953 - app - INFO - info - Token successfully decoded
+2025-07-04 18:10:43,624 - app - DEBUG - debug - Decoding token
+2025-07-04 18:10:43,641 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 18:11:11,007 - app - DEBUG - debug - Decoding token
+2025-07-04 18:11:11,013 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 18:11:11,562 - app - DEBUG - debug - Creating access token for user: 612475a5-5af1-4284-9720-f487c9270fd4
+2025-07-04 18:11:11,564 - app - INFO - info - Access token created for user: 612475a5-5af1-4284-9720-f487c9270fd4
+2025-07-04 18:11:11,778 - app - DEBUG - debug - Decoding token
+2025-07-04 18:11:11,779 - app - INFO - info - Token successfully decoded
+2025-07-04 18:11:15,579 - app - DEBUG - debug - Decoding token
+2025-07-04 18:11:15,580 - app - INFO - info - Token successfully decoded
+2025-07-04 18:11:15,832 - app - DEBUG - debug - Creating access token for user: 612475a5-5af1-4284-9720-f487c9270fd4
+2025-07-04 18:11:15,833 - app - INFO - info - Access token created for user: 612475a5-5af1-4284-9720-f487c9270fd4
+2025-07-04 18:11:15,857 - app - DEBUG - debug - Decoding token
+2025-07-04 18:11:15,857 - app - INFO - info - Token successfully decoded
+2025-07-04 18:41:43,407 - app - DEBUG - debug - Decoding token
+2025-07-04 18:41:43,430 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 18:41:50,631 - app - DEBUG - debug - Decoding token
+2025-07-04 18:41:50,636 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 18:41:51,505 - app - DEBUG - debug - Creating access token for user: 716795a8-c13c-46cd-82b0-a44e785a42d0
+2025-07-04 18:41:51,507 - app - INFO - info - Access token created for user: 716795a8-c13c-46cd-82b0-a44e785a42d0
+2025-07-04 18:41:51,627 - app - DEBUG - debug - Decoding token
+2025-07-04 18:41:51,627 - app - INFO - info - Token successfully decoded
+2025-07-04 19:06:14,491 - app - DEBUG - debug - Decoding token
+2025-07-04 19:06:14,501 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 19:06:29,374 - app - DEBUG - debug - Decoding token
+2025-07-04 19:06:29,379 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 19:06:31,704 - app - DEBUG - debug - Decoding token
+2025-07-04 19:06:31,704 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 19:51:17,742 - app - DEBUG - debug - Decoding token
+2025-07-04 19:51:17,758 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 19:51:24,449 - app - DEBUG - debug - Decoding token
+2025-07-04 19:51:24,450 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 19:51:25,456 - app - DEBUG - debug - Decoding token
+2025-07-04 19:51:25,457 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 19:53:29,840 - app - DEBUG - debug - Decoding token
+2025-07-04 19:53:29,846 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 19:53:31,188 - app - DEBUG - debug - Creating access token for user: 1f484ff3-b3d3-4a79-8942-5f5c73312b52
+2025-07-04 19:53:31,192 - app - INFO - info - Access token created for user: 1f484ff3-b3d3-4a79-8942-5f5c73312b52
+2025-07-04 19:53:31,417 - app - DEBUG - debug - Decoding token
+2025-07-04 19:53:31,417 - app - INFO - info - Token successfully decoded
+2025-07-04 20:01:43,414 - app - DEBUG - debug - Decoding token
+2025-07-04 20:01:43,422 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 20:01:44,501 - app - DEBUG - debug - Decoding token
+2025-07-04 20:01:44,501 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 20:33:29,960 - app - DEBUG - debug - Decoding token
+2025-07-04 20:33:29,972 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 20:34:13,289 - app - DEBUG - debug - Decoding token
+2025-07-04 20:34:13,302 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 20:34:14,442 - app - DEBUG - debug - Decoding token
+2025-07-04 20:34:14,442 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 20:34:53,409 - app - DEBUG - debug - Decoding token
+2025-07-04 20:34:53,417 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 20:34:54,559 - app - DEBUG - debug - Creating access token for user: 1c72a196-f684-4c35-9e6d-cbce70cb537b
+2025-07-04 20:34:54,560 - app - INFO - info - Access token created for user: 1c72a196-f684-4c35-9e6d-cbce70cb537b
+2025-07-04 20:34:54,603 - app - DEBUG - debug - Decoding token
+2025-07-04 20:34:54,603 - app - INFO - info - Token successfully decoded
+2025-07-04 20:37:32,733 - app - DEBUG - debug - Decoding token
+2025-07-04 20:37:32,741 - app - INFO - info - Token successfully decoded
+2025-07-04 20:37:33,659 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 20:37:33,660 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 20:37:33,698 - app - DEBUG - debug - Decoding token
+2025-07-04 20:37:33,698 - app - INFO - info - Token successfully decoded
+2025-07-04 21:02:39,753 - app - DEBUG - debug - Decoding token
+2025-07-04 21:02:39,760 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:05:09,640 - app - DEBUG - debug - Decoding token
+2025-07-04 21:05:09,645 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:05:23,266 - app - DEBUG - debug - Decoding token
+2025-07-04 21:05:23,267 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:06:06,716 - app - DEBUG - debug - Decoding token
+2025-07-04 21:06:06,722 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:06:08,686 - app - DEBUG - debug - Decoding token
+2025-07-04 21:06:08,686 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:19:25,289 - app - DEBUG - debug - Decoding token
+2025-07-04 21:19:25,302 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:19:26,375 - app - DEBUG - debug - Decoding token
+2025-07-04 21:19:26,379 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:19:27,337 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 21:19:27,339 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 21:19:37,153 - app - DEBUG - debug - Decoding token
+2025-07-04 21:19:37,159 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:19:39,390 - app - DEBUG - debug - Decoding token
+2025-07-04 21:19:39,392 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:19:50,301 - app - DEBUG - debug - Decoding token
+2025-07-04 21:19:50,307 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:27:47,989 - app - DEBUG - debug - Decoding token
+2025-07-04 21:27:47,999 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:31:16,888 - app - DEBUG - debug - Decoding token
+2025-07-04 21:31:16,895 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 73, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:31:16,921 - app - DEBUG - debug - Decoding token
+2025-07-04 21:31:16,921 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 73, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:32:55,465 - app - DEBUG - debug - Decoding token
+2025-07-04 21:32:55,493 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 73, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:32:55,654 - app - DEBUG - debug - Decoding token
+2025-07-04 21:32:55,654 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 73, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:32:56,806 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 21:32:56,806 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 21:33:03,336 - app - DEBUG - debug - Decoding token
+2025-07-04 21:33:03,343 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 73, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:33:03,355 - app - DEBUG - debug - Decoding token
+2025-07-04 21:33:03,355 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 73, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:34:25,152 - app - DEBUG - debug - Decoding token
+2025-07-04 21:34:25,167 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 73, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:34:25,248 - app - DEBUG - debug - Decoding token
+2025-07-04 21:34:25,249 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 73, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:34:26,069 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 21:34:26,073 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 21:36:54,703 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 21:36:54,705 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 21:36:54,730 - app - DEBUG - debug - Decoding token
+2025-07-04 21:36:54,730 - app - INFO - info - Token successfully decoded
+2025-07-04 21:37:01,171 - app - DEBUG - debug - Decoding token
+2025-07-04 21:37:01,185 - app - INFO - info - Token successfully decoded
+2025-07-04 21:37:06,444 - app - DEBUG - debug - Decoding token
+2025-07-04 21:37:06,445 - app - INFO - info - Token successfully decoded
+2025-07-04 21:37:08,497 - app - DEBUG - debug - Decoding token
+2025-07-04 21:37:08,497 - app - INFO - info - Token successfully decoded
+2025-07-04 21:48:00,432 - app - DEBUG - debug - Decoding token
+2025-07-04 21:48:00,524 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 82, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 21:48:00,737 - app - DEBUG - debug - Decoding token
+2025-07-04 21:48:00,738 - app - ERROR - error - Token decoding failed: Token expired
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 82, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 22:12:31,253 - app - DEBUG - debug - Creating access token for user: 96230ea0-3dd9-45b3-a1b0-ad18c43d3012
+2025-07-04 22:12:31,255 - app - INFO - info - Access token created for user: 96230ea0-3dd9-45b3-a1b0-ad18c43d3012
+2025-07-04 22:12:31,461 - app - DEBUG - debug - Decoding token
+2025-07-04 22:12:31,461 - app - INFO - info - Token successfully decoded
+2025-07-04 22:12:34,563 - app - DEBUG - debug - Decoding token
+2025-07-04 22:12:34,565 - app - INFO - info - Token successfully decoded
+2025-07-04 22:12:37,803 - app - DEBUG - debug - Decoding token
+2025-07-04 22:12:37,803 - app - INFO - info - Token successfully decoded
+2025-07-04 22:12:39,483 - app - DEBUG - debug - Decoding token
+2025-07-04 22:12:39,483 - app - INFO - info - Token successfully decoded
+2025-07-04 22:12:49,808 - app - DEBUG - debug - Decoding token
+2025-07-04 22:12:49,813 - app - INFO - info - Token successfully decoded
+2025-07-04 22:12:52,961 - app - DEBUG - debug - Decoding token
+2025-07-04 22:12:52,962 - app - INFO - info - Token successfully decoded
+2025-07-04 22:13:00,881 - app - DEBUG - debug - Decoding token
+2025-07-04 22:13:00,886 - app - INFO - info - Token successfully decoded
+2025-07-04 22:20:16,643 - app - DEBUG - debug - Decoding token
+2025-07-04 22:20:16,653 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 22:20:18,460 - app - DEBUG - debug - Decoding token
+2025-07-04 22:20:18,461 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 22:20:22,139 - app - DEBUG - debug - Decoding token
+2025-07-04 22:20:22,141 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 22:20:23,699 - app - DEBUG - debug - Decoding token
+2025-07-04 22:20:23,700 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 22:20:25,420 - app - DEBUG - debug - Decoding token
+2025-07-04 22:20:25,422 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 22:20:28,418 - app - DEBUG - debug - Decoding token
+2025-07-04 22:20:28,419 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:10:54,040 - app - DEBUG - debug - Decoding token
+2025-07-04 23:10:54,057 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:10:55,384 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:10:55,387 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:10:55,505 - app - DEBUG - debug - Decoding token
+2025-07-04 23:10:55,505 - app - INFO - info - Token successfully decoded
+2025-07-04 23:11:03,169 - app - DEBUG - debug - Decoding token
+2025-07-04 23:11:03,204 - app - INFO - info - Token successfully decoded
+2025-07-04 23:11:26,659 - app - DEBUG - debug - Decoding token
+2025-07-04 23:11:26,666 - app - INFO - info - Token successfully decoded
+2025-07-04 23:13:27,636 - app - DEBUG - debug - Decoding token
+2025-07-04 23:13:27,640 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:13:32,628 - app - DEBUG - debug - Decoding token
+2025-07-04 23:13:32,632 - app - INFO - info - Token successfully decoded
+2025-07-04 23:13:35,654 - app - DEBUG - debug - Decoding token
+2025-07-04 23:13:35,654 - app - INFO - info - Token successfully decoded
+2025-07-04 23:13:37,868 - app - DEBUG - debug - Decoding token
+2025-07-04 23:13:37,869 - app - INFO - info - Token successfully decoded
+2025-07-04 23:14:59,591 - app - DEBUG - debug - Decoding token
+2025-07-04 23:14:59,604 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:16:07,521 - app - DEBUG - debug - Decoding token
+2025-07-04 23:16:07,527 - app - INFO - info - Token successfully decoded
+2025-07-04 23:16:08,647 - app - DEBUG - debug - Decoding token
+2025-07-04 23:16:08,648 - app - INFO - info - Token successfully decoded
+2025-07-04 23:16:08,967 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:16:08,969 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:16:12,869 - app - DEBUG - debug - Decoding token
+2025-07-04 23:16:12,870 - app - INFO - info - Token successfully decoded
+2025-07-04 23:18:26,944 - app - DEBUG - debug - Decoding token
+2025-07-04 23:18:26,952 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:18:26,991 - app - DEBUG - debug - Decoding token
+2025-07-04 23:18:26,991 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:18:27,834 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:18:27,837 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:19:01,519 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:19:01,522 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:19:01,557 - app - DEBUG - debug - Decoding token
+2025-07-04 23:19:01,557 - app - INFO - info - Token successfully decoded
+2025-07-04 23:19:05,025 - app - DEBUG - debug - Decoding token
+2025-07-04 23:19:05,025 - app - INFO - info - Token successfully decoded
+2025-07-04 23:19:07,385 - app - DEBUG - debug - Decoding token
+2025-07-04 23:19:07,385 - app - INFO - info - Token successfully decoded
+2025-07-04 23:19:10,228 - app - DEBUG - debug - Decoding token
+2025-07-04 23:19:10,228 - app - INFO - info - Token successfully decoded
+2025-07-04 23:21:04,075 - app - DEBUG - debug - Decoding token
+2025-07-04 23:21:04,079 - app - INFO - info - Token successfully decoded
+2025-07-04 23:21:06,823 - app - DEBUG - debug - Decoding token
+2025-07-04 23:21:06,823 - app - INFO - info - Token successfully decoded
+2025-07-04 23:21:25,354 - app - DEBUG - debug - Decoding token
+2025-07-04 23:21:25,358 - app - INFO - info - Token successfully decoded
+2025-07-04 23:21:27,003 - app - DEBUG - debug - Decoding token
+2025-07-04 23:21:27,004 - app - INFO - info - Token successfully decoded
+2025-07-04 23:22:16,031 - app - DEBUG - debug - Decoding token
+2025-07-04 23:22:16,035 - app - INFO - info - Token successfully decoded
+2025-07-04 23:22:29,874 - app - DEBUG - debug - Decoding token
+2025-07-04 23:22:29,880 - app - INFO - info - Token successfully decoded
+2025-07-04 23:23:35,442 - app - DEBUG - debug - Decoding token
+2025-07-04 23:23:35,444 - app - INFO - info - Token successfully decoded
+2025-07-04 23:26:40,718 - app - DEBUG - debug - Decoding token
+2025-07-04 23:26:40,727 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:26:43,157 - app - DEBUG - debug - Decoding token
+2025-07-04 23:26:43,158 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:27:05,883 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:27:05,884 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:27:05,903 - app - DEBUG - debug - Decoding token
+2025-07-04 23:27:05,903 - app - INFO - info - Token successfully decoded
+2025-07-04 23:27:08,386 - app - DEBUG - debug - Decoding token
+2025-07-04 23:27:08,386 - app - INFO - info - Token successfully decoded
+2025-07-04 23:27:10,386 - app - DEBUG - debug - Decoding token
+2025-07-04 23:27:10,386 - app - INFO - info - Token successfully decoded
+2025-07-04 23:29:34,408 - app - DEBUG - debug - Decoding token
+2025-07-04 23:29:34,416 - app - INFO - info - Token successfully decoded
+2025-07-04 23:29:37,135 - app - DEBUG - debug - Decoding token
+2025-07-04 23:29:37,138 - app - INFO - info - Token successfully decoded
+2025-07-04 23:29:39,035 - app - DEBUG - debug - Decoding token
+2025-07-04 23:29:39,037 - app - INFO - info - Token successfully decoded
+2025-07-04 23:29:41,002 - app - DEBUG - debug - Decoding token
+2025-07-04 23:29:41,003 - app - INFO - info - Token successfully decoded
+2025-07-04 23:30:43,782 - app - DEBUG - debug - Decoding token
+2025-07-04 23:30:43,789 - app - INFO - info - Token successfully decoded
+2025-07-04 23:30:47,669 - app - DEBUG - debug - Decoding token
+2025-07-04 23:30:47,669 - app - INFO - info - Token successfully decoded
+2025-07-04 23:31:21,781 - app - DEBUG - debug - Decoding token
+2025-07-04 23:31:21,788 - app - INFO - info - Token successfully decoded
+2025-07-04 23:32:09,177 - app - DEBUG - debug - Decoding token
+2025-07-04 23:32:09,198 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:32:12,093 - app - DEBUG - debug - Decoding token
+2025-07-04 23:32:12,096 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:34:03,773 - app - DEBUG - debug - Decoding token
+2025-07-04 23:34:03,785 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:34:05,792 - app - DEBUG - debug - Decoding token
+2025-07-04 23:34:05,793 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:34:09,487 - app - DEBUG - debug - Decoding token
+2025-07-04 23:34:09,524 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:34:44,792 - app - DEBUG - debug - Decoding token
+2025-07-04 23:34:44,808 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:34:44,839 - app - DEBUG - debug - Decoding token
+2025-07-04 23:34:44,839 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:34:45,729 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:34:45,731 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:35:24,389 - app - DEBUG - debug - Decoding token
+2025-07-04 23:35:24,395 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:38:24,019 - app - DEBUG - debug - Decoding token
+2025-07-04 23:38:24,020 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:38:24,952 - app - DEBUG - debug - Decoding token
+2025-07-04 23:38:24,952 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:38:36,262 - app - DEBUG - debug - Decoding token
+2025-07-04 23:38:36,267 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:38:37,118 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:38:37,118 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:38:37,159 - app - DEBUG - debug - Decoding token
+2025-07-04 23:38:37,159 - app - INFO - info - Token successfully decoded
+2025-07-04 23:38:44,081 - app - DEBUG - debug - Decoding token
+2025-07-04 23:38:44,153 - app - INFO - info - Token successfully decoded
+2025-07-04 23:44:56,536 - app - DEBUG - debug - Decoding token
+2025-07-04 23:44:56,549 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:45:05,972 - app - DEBUG - debug - Decoding token
+2025-07-04 23:45:05,980 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:45:08,547 - app - DEBUG - debug - Decoding token
+2025-07-04 23:45:08,547 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:45:20,099 - app - DEBUG - debug - Decoding token
+2025-07-04 23:45:20,103 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 72, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-04 23:47:00,881 - app - DEBUG - debug - Creating access token for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:47:00,882 - app - INFO - info - Access token created for user: 722fe4ac-e3f1-48f7-aa79-357ac6241d8d
+2025-07-04 23:47:00,919 - app - DEBUG - debug - Decoding token
+2025-07-04 23:47:00,920 - app - INFO - info - Token successfully decoded
+2025-07-04 23:47:03,857 - app - DEBUG - debug - Decoding token
+2025-07-04 23:47:03,858 - app - INFO - info - Token successfully decoded
+2025-07-04 23:49:35,242 - app - DEBUG - debug - Decoding token
+2025-07-04 23:49:35,247 - app - INFO - info - Token successfully decoded
+2025-07-04 23:49:49,262 - app - DEBUG - debug - Decoding token
+2025-07-04 23:49:49,265 - app - INFO - info - Token successfully decoded
+2025-07-04 23:49:51,307 - app - DEBUG - debug - Decoding token
+2025-07-04 23:49:51,307 - app - INFO - info - Token successfully decoded
+2025-07-04 23:50:41,112 - app - DEBUG - debug - Decoding token
+2025-07-04 23:50:41,119 - app - INFO - info - Token successfully decoded
+2025-07-04 23:50:43,807 - app - DEBUG - debug - Decoding token
+2025-07-04 23:50:43,819 - app - INFO - info - Token successfully decoded
+2025-07-04 23:50:45,617 - app - DEBUG - debug - Decoding token
+2025-07-04 23:50:45,618 - app - INFO - info - Token successfully decoded

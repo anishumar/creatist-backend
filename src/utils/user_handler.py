@@ -323,3 +323,12 @@ class UserHandler:
             return None
         assert len(response) == count
         return model(**response[0])
+
+    async def get_users_by_genre(self, genre_name: str) -> list[UserModel]:
+        response = await (
+            self.supabase.table("users")
+            .select("*")
+            .contains("genres", f'["{genre_name}"]')
+            .execute()
+        )
+        return [UserModel(**user) for user in response.data]
