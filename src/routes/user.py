@@ -10,8 +10,8 @@ from geopy.geocoders import Nominatim
 from src.app import app, user_handler
 from src.utils import Token, TokenHandler
 from src.models.user import (
-    UserModel, UserUpdateModel, ShowcaseModel, CommentModel, VisionBoardModel,
-    VisionBoardTaskModel, LocationModel
+    User, UserUpdate, Showcase, Comment, VisionBoard,
+    VisionBoardTask, Location
 )
 
 router = APIRouter(prefix="/v1", tags=["Users"])
@@ -26,7 +26,7 @@ def get_user_token(credentials: HTTPAuthorizationCredentials = Depends(security)
 
 # User Management APIs
 @router.post("/create")
-async def create_user(request: Request, user: UserModel):
+async def create_user(request: Request, user: User):
     await user_handler.create_user(user=user)
     return JSONResponse({"message": "success"})
 
@@ -39,13 +39,13 @@ async def login_user(request: Request, email: str, password: str):
     return JSONResponse({"message": "success", "token": token})
 
 @router.put("/update")
-async def update_user(request: Request, user: UserModel, token: Token = Depends(get_user_token)):
+async def update_user(request: Request, user: User, token: Token = Depends(get_user_token)):
     updated_user = await user_handler.update_user(user_id=token.sub, update_payload=user)
     return JSONResponse({"message": "success", "user": updated_user})
 
 @router.patch("/users")
 async def update_user_partial(
-    user_update: UserUpdateModel,
+    user_update: UserUpdate,
     token: Token = Depends(get_user_token)
 ):
     updated = await user_handler.update_user_partial(user_id=token.sub, user_update=user_update)
@@ -55,7 +55,7 @@ async def update_user_partial(
 
 @router.patch("/users/location")
 async def update_user_location(
-    location: LocationModel,
+    location: Location,
     token: Token = Depends(get_user_token)
 ):
     # Reverse geocode to get city and country
@@ -68,7 +68,7 @@ async def update_user_location(
         country = address.get('country', '')
 
     # Build the update model
-    user_update = UserUpdateModel(
+    user_update = UserUpdate(
         location=location,
         city=city,
         country=country
@@ -122,7 +122,7 @@ async def get_showcases(request: Request, token: Token = Depends(get_user_token)
     return JSONResponse({"message": "success", "showcases": showcases})
 
 @router.post("/showcase/create")
-async def create_showcase(request: Request, showcase: ShowcaseModel, token: Token = Depends(get_user_token)):
+async def create_showcase(request: Request, showcase: Showcase, token: Token = Depends(get_user_token)):
     await user_handler.create_showcase(showcase=showcase, user_id=token.sub)
     return JSONResponse({"message": "success"})
 
@@ -132,7 +132,7 @@ async def get_showcase(request: Request, showcase_id: str, token: Token = Depend
     return JSONResponse({"message": "success", "showcase": showcase})
 
 @router.put("/showcase/{showcase_id}/update")
-async def update_showcase(request: Request, showcase_id: str, showcase: ShowcaseModel, token: Token = Depends(get_user_token)):
+async def update_showcase(request: Request, showcase_id: str, showcase: Showcase, token: Token = Depends(get_user_token)):
     await user_handler.update_showcase(showcase_id=showcase_id, showcase=showcase, user_id=token.sub)
     return JSONResponse({"message": "success"})
 
@@ -153,7 +153,7 @@ async def unlike_showcase(request: Request, showcase_id: str, token: Token = Dep
     return JSONResponse({"message": "success"})
 
 @router.post("/showcase/{showcase_id}/comment")
-async def create_comment(request: Request, showcase_id: str, comment: CommentModel, token: Token = Depends(get_user_token)):
+async def create_comment(request: Request, showcase_id: str, comment: Comment, token: Token = Depends(get_user_token)):
     await user_handler.create_comment(showcase_id=showcase_id, comment=comment, user_id=token.sub)
     return JSONResponse({"message": "success"})
 
@@ -184,12 +184,12 @@ async def get_visionboards(request: Request, token: Token = Depends(get_user_tok
     return JSONResponse({"message": "success", "visionboards": visionboards})
 
 @router.post("/visionboard/create")
-async def create_visionboard(request: Request, visionboard: VisionBoardModel, token: Token = Depends(get_user_token)):
+async def create_visionboard(request: Request, visionboard: VisionBoard, token: Token = Depends(get_user_token)):
     await user_handler.create_visionboard(visionboard=visionboard, user_id=token.sub)
     return JSONResponse({"message": "success"})
 
 @router.put("/visionboard/{visionboard_id}/update")
-async def update_visionboard(request: Request, visionboard_id: str, visionboard: VisionBoardModel, token: Token = Depends(get_user_token)):
+async def update_visionboard(request: Request, visionboard_id: str, visionboard: VisionBoard, token: Token = Depends(get_user_token)):
     await user_handler.update_visionboard(visionboard_id=visionboard_id, visionboard=visionboard, user_id=token.sub)
     return JSONResponse({"message": "success"})
 
@@ -199,7 +199,7 @@ async def delete_visionboard(request: Request, visionboard_id: str, token: Token
     return JSONResponse({"message": "success"})
 
 @router.patch("/visionboard/{visionboard_id}/assign-task/{user_id}")
-async def assign_visionboard_task(request: Request, visionboard_id: str, user_id: str, task: VisionBoardTaskModel, token: Token = Depends(get_user_token)):
+async def assign_visionboard_task(request: Request, visionboard_id: str, user_id: str, task: VisionBoardTask, token: Token = Depends(get_user_token)):
     await user_handler.assign_visionboard_task(visionboard_id=visionboard_id, user_id=user_id, task=task, assigner_id=token.sub)
     return JSONResponse({"message": "success"})
 

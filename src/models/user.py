@@ -6,11 +6,11 @@ import uuid
 from typing import Optional, List
 from src.models import UserGenre, WorkMode, PaymentMode
 
-class LocationModel(BaseModel):
+class Location(BaseModel):
     latitude: float
     longitude: float
 
-class UserModel(BaseModel):
+class User(BaseModel):
     id: uuid.UUID = Field(default_factory=lambda: uuid.uuid4())
 
     name: str
@@ -22,14 +22,14 @@ class UserModel(BaseModel):
     genres: Optional[List[UserGenre]] = None
     payment_mode: Optional[PaymentMode] = None
     work_mode: Optional[WorkMode] = None
-    location: Optional[LocationModel] = None
+    location: Optional[Location] = None
     rating: Optional[float] = None
     city: Optional[str] = None
     country: Optional[str] = None
     distance: Optional[float] = None
 
 
-class UserUpdateModel(BaseModel):
+class UserUpdate(BaseModel):
     name: Optional[str] = None
     email: Optional[str] = None
     password: Optional[str] = None
@@ -38,7 +38,7 @@ class UserUpdateModel(BaseModel):
     genres: Optional[List[UserGenre]] = None
     payment_mode: Optional[PaymentMode] = None
     work_mode: Optional[WorkMode] = None
-    location: Optional[LocationModel] = None
+    location: Optional[Location] = None
     rating: Optional[float] = None
     city: Optional[str] = None
     country: Optional[str] = None
@@ -46,7 +46,7 @@ class UserUpdateModel(BaseModel):
     
 
 
-class ShowcaseModel(BaseModel):
+class Showcase(BaseModel):
     id: uuid.UUID = Field(default_factory=lambda: uuid.uuid4())
     owner_id: uuid.UUID
     visionboard: Optional[uuid.UUID]
@@ -55,17 +55,17 @@ class ShowcaseModel(BaseModel):
     media_type: Optional[str] = None
 
 
-class ShowCaseLikeModel(BaseModel):
+class ShowCaseLike(BaseModel):
     user_id: uuid.UUID
     showcase_id: uuid.UUID
 
 
-class ShowCaseBookmarkModel(BaseModel):
+class ShowCaseBookmark(BaseModel):
     user_id: uuid.UUID
     showcase_id: uuid.UUID
 
 
-class CommentModel(BaseModel):
+class Comment(BaseModel):
     id: uuid.UUID
     showcase_id: uuid.UUID
     text: str
@@ -73,11 +73,11 @@ class CommentModel(BaseModel):
     timestamp: datetime.datetime
 
 
-class CommentUpvoteModel(BaseModel):
+class CommentUpvote(BaseModel):
     user_id: uuid.UUID
     comment_id: uuid.UUID
 
-class VisionBoardModel(BaseModel):
+class VisionBoard(BaseModel):
     id: uuid.UUID
     owner_id: uuid.UUID
     name: str
@@ -86,13 +86,13 @@ class VisionBoardModel(BaseModel):
     end_date: datetime.datetime
 
 
-class VisionBoardRoleModel(BaseModel):
+class VisionBoardRole(BaseModel):
     visionboard_id: uuid.UUID
     role: UserGenre
     user_id: uuid.UUID
 
 
-class VisionBoardTaskModel(BaseModel):
+class VisionBoardTask(BaseModel):
     user_id: uuid.UUID
     visionboard_id: uuid.UUID
     title: str
@@ -100,6 +100,6 @@ class VisionBoardTaskModel(BaseModel):
     end_date: datetime.datetime
 
 
-class FollowerModel(BaseModel):
+class Follower(BaseModel):
     user_id: uuid.UUID
     following_id: uuid.UUID

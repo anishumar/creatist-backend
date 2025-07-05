@@ -18,7 +18,7 @@ def root(request: Request) -> JSONResponse:
 @app.route("/ping")
 async def root(request: Request) -> JSONResponse:
     ini = perf_counter()
-    _ = await user_handler.supabase.table("users").select("*").execute()
+    _ = await user_handler.supabase.table("User").select("*").execute()
     fin = perf_counter() - ini
 
     return JSONResponse({"message": "success", "response_time": fin})

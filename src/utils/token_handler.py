@@ -8,7 +8,7 @@ import jwt
 from pydantic import BaseModel, Field
 from pytz import timezone
 
-from src.models import UserModel
+from src.models import User
 from src.utils.log import log
 
 if TYPE_CHECKING:
@@ -35,7 +35,7 @@ class TokenHandler:
         self.secret = secret
         self.algorithm = algorithm
 
-    def create_access_token(self, user: UserModel, expire_in: int = 360) -> str:
+    def create_access_token(self, user: User, expire_in: int = 360) -> str:
         log.debug("Creating access token for user: %s", user.id)
         payload = Token(
             sub=user.id,
