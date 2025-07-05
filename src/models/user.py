@@ -27,7 +27,7 @@ class User(BaseModel):
     city: Optional[str] = None
     country: Optional[str] = None
     distance: Optional[float] = None
-    is_following: Optional[bool] = None
+    is_following: Optional[bool] = None  # This is computed, not stored in DB
 
 
 class UserUpdate(BaseModel):

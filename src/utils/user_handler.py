@@ -40,14 +40,14 @@ class UserHandler:
             return await self._fetch_user_by_email(email, password)
 
     async def create_user(self, *, user: User):
-        payload = user.model_dump(mode="json")
+        payload = user.model_dump(mode="json", exclude={"is_following"})
         response = await self.supabase.table("users").insert(payload).execute()
         return self._parse(response.data)
 
     async def update_user(
         self, *, user_id: Union[UUID, str], update_payload: User
     ) -> Optional[User]:
-        payload = update_payload.model_dump(mode="json")
+        payload = update_payload.model_dump(mode="json", exclude={"is_following"})
         _id = payload.pop("id", user_id)
         assert _id == user_id
         response = await (
@@ -399,7 +399,6 @@ class UserHandler:
 
     async def user_exists(self, user_id: str) -> bool:
         user_id = str(user_id).lower()
-        print(f"DEBUG: Checking existence for user_id: '{user_id}'")
         try:
             result = await (
                 self.supabase.table("users")
@@ -407,7 +406,6 @@ class UserHandler:
                 .eq("id", user_id)
                 .execute()
             )
-            print(f"DEBUG: Query result: {result.data}")
             return len(result.data) > 0
         except Exception as e:
             print(f"Error in user_exists: {str(e)}")
@@ -416,7 +414,6 @@ class UserHandler:
     async def get_following_relationships(self, user_id: str, target_ids: List[str]) -> List[str]:
         if not target_ids:
             return []
-        print(f"DEBUG: Checking follow relationships for user {user_id} with targets: {target_ids}")
         response = await (
             self.supabase.table("followers")
             .select("following_id")
@@ -424,7 +421,4 @@ class UserHandler:
             .in_("following_id", target_ids)
             .execute()
         )
-        print(f"DEBUG: Follow relationships query result: {response.data}")
-        result = [record["following_id"] for record in response.data]
-        print(f"DEBUG: Returning follow relationships: {result}")
-        return result
+        return [record["following_id"] for record in response.data]

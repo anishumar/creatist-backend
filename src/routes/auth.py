@@ -20,6 +20,10 @@ class Credential(BaseModel):
     password: str
 
 
+class RefreshRequest(BaseModel):
+    refresh_token: str
+
+
 token_handler = TokenHandler(os.environ["JWT_SECRET"])
 security = HTTPBearer()
 
@@ -33,9 +37,18 @@ async def signin_route(request: Request, credential: Credential) -> JSONResponse
     user = await user_handler.fetch_user(
         email=credential.email, password=credential.password
     )
-    token = token_handler.create_access_token(user)
+    if not user:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    
+    access_token, refresh_token = token_handler.create_token_pair(user)
 
-    return JSONResponse({"message": "success", "token": token})
+    return JSONResponse({
+        "message": "success", 
+        "access_token": access_token,
+        "refresh_token": refresh_token,
+        "token_type": "bearer",
+        "expires_in": 900  # 15 minutes
+    })
 
 
 @router.post("/signup")
@@ -56,11 +69,30 @@ async def fetch_user_route(token: Token = Depends(get_user_token)) -> User:
 
 
 @router.post("/refresh")
-async def refresh_route(token: Token = Depends(get_user_token)) -> User:
-    user = await user_handler.fetch_user(user_id=token.sub)
-    token = token_handler.create_access_token(user)
+async def refresh_route(request: Request, refresh_request: RefreshRequest) -> JSONResponse:
+    """Refresh access token using refresh token"""
+    new_access_token = token_handler.refresh_access_token(refresh_request.refresh_token)
+    
+    if not new_access_token:
+        raise HTTPException(status_code=401, detail="Invalid or expired refresh token")
+    
+    return JSONResponse({
+        "message": "success", 
+        "access_token": new_access_token,
+        "token_type": "bearer",
+        "expires_in": 900  # 15 minutes
+    })
 
-    return JSONResponse({"message": "success", "token": token})
+
+@router.post("/logout")
+async def logout_route(request: Request, refresh_request: RefreshRequest) -> JSONResponse:
+    """Logout by revoking refresh token"""
+    success = token_handler.revoke_refresh_token(refresh_request.refresh_token)
+    
+    if not success:
+        raise HTTPException(status_code=400, detail="Invalid refresh token")
+    
+    return JSONResponse({"message": "success"})
 
 
 @router.post("/update")

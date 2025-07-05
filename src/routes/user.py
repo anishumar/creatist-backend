@@ -36,8 +36,14 @@ async def login_user(request: Request, email: str, password: str):
     user = await user_handler.fetch_user(email=email, password=password)
     if not user:
         raise HTTPException(status_code=401, detail="Invalid credentials")
-    token = token_handler.create_access_token(user)
-    return JSONResponse({"message": "success", "token": token})
+    access_token, refresh_token = token_handler.create_token_pair(user)
+    return JSONResponse({
+        "message": "success", 
+        "access_token": access_token,
+        "refresh_token": refresh_token,
+        "token_type": "bearer",
+        "expires_in": 900  # 15 minutes
+    })
 
 @router.put("/update")
 async def update_user(request: Request, user: User, token: Token = Depends(get_user_token)):
@@ -236,36 +242,28 @@ async def create_visionboard_draft(request: Request, visionboard_id: str, token:
 async def get_top_rated_artists_by_genre(genre_name: str, token: Token = Depends(get_user_token)):
     artists = await user_handler.get_top_rated_artists(genre_name=genre_name)
     current_user_id = token.sub
-    print(f"DEBUG: Current user ID: {current_user_id}")
     # Batch get all following relationships
     artist_ids = [str(artist.id) for artist in artists]
-    print(f"DEBUG: Artist IDs to check: {artist_ids}")
     if not artist_ids:
         return JSONResponse({"message": "success", "artists": []})
     # Query all follows in one go
     follows = await user_handler.get_following_relationships(current_user_id, artist_ids)
     follows_set = set(follows)
-    print(f"DEBUG: Follows set: {follows_set}")
     for artist in artists:
         artist.is_following = str(artist.id) in follows_set
-        print(f"DEBUG: Artist {artist.name} (ID: {artist.id}) is_following: {artist.is_following}")
     return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
 
 @router.get("/browse/near-by-artist/{genre_name}")
 async def get_nearby_artists_by_genre(genre_name: str, token: Token = Depends(get_user_token)):
     artists = await user_handler.get_nearby_artists(user_id=token.sub, genre=genre_name)
     current_user_id = token.sub
-    print(f"DEBUG: Current user ID: {current_user_id}")
     artist_ids = [str(artist.id) for artist in artists]
-    print(f"DEBUG: Artist IDs to check: {artist_ids}")
     if not artist_ids:
         return JSONResponse({"message": "success", "artists": []})
     follows = await user_handler.get_following_relationships(current_user_id, artist_ids)
     follows_set = set(follows)
-    print(f"DEBUG: Follows set: {follows_set}")
     for artist in artists:
         artist.is_following = str(artist.id) in follows_set
-        print(f"DEBUG: Artist {artist.name} (ID: {artist.id}) is_following: {artist.is_following}")
     return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
 
 @router.get("/browse/artist/{artist_id}/showcase")
