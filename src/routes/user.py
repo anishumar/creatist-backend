@@ -5,6 +5,7 @@ import os
 from fastapi import Request, APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+from geopy.geocoders import Nominatim
 
 from src.app import app, user_handler
 from src.utils import Token, TokenHandler
@@ -57,7 +58,21 @@ async def update_user_location(
     location: LocationModel,
     token: Token = Depends(get_user_token)
 ):
-    user_update = UserUpdateModel(location=location)
+    # Reverse geocode to get city and country
+    geolocator = Nominatim(user_agent="creatist-app")
+    loc = geolocator.reverse((location.latitude, location.longitude), language='en')
+    city, country = '', ''
+    if loc and loc.raw and 'address' in loc.raw:
+        address = loc.raw['address']
+        city = address.get('city') or address.get('town') or address.get('village') or ''
+        country = address.get('country', '')
+
+    # Build the update model
+    user_update = UserUpdateModel(
+        location=location,
+        city=city,
+        country=country
+    )
     updated = await user_handler.update_user_partial(user_id=token.sub, user_update=user_update)
     if updated:
         return JSONResponse({"message": "success"})
@@ -194,19 +209,9 @@ async def create_visionboard_draft(request: Request, visionboard_id: str, token:
     return JSONResponse({"message": "success"})
 
 # Browse APIs Discover Page 
-@router.get("/browse/top-rated")
-async def get_top_rated_artists(request: Request, token: Token = Depends(get_user_token)):
-    artists = await user_handler.get_top_rated_artists()
-    return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
-
 @router.get("/browse/top-rated/{genre_name}")
 async def get_top_rated_artists_by_genre(genre_name: str, token: Token = Depends(get_user_token)):
     artists = await user_handler.get_top_rated_artists(genre_name=genre_name)
-    return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
-
-@router.get("/browse/near-by-artist")
-async def get_nearby_artists(request: Request, genre: str = None, token: Token = Depends(get_user_token)):
-    artists = await user_handler.get_nearby_artists(user_id=token.sub, genre=genre)
     return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
 
 @router.get("/browse/near-by-artist/{genre_name}")

@@ -24,6 +24,9 @@ class UserModel(BaseModel):
     work_mode: Optional[WorkMode] = None
     location: Optional[LocationModel] = None
     rating: Optional[float] = None
+    city: Optional[str] = None
+    country: Optional[str] = None
+    distance: Optional[float] = None
 
 
 class UserUpdateModel(BaseModel):
@@ -37,6 +40,9 @@ class UserUpdateModel(BaseModel):
     work_mode: Optional[WorkMode] = None
     location: Optional[LocationModel] = None
     rating: Optional[float] = None
+    city: Optional[str] = None
+    country: Optional[str] = None
+    distance: Optional[float] = None
     
 
 
