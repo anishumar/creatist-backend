@@ -86,14 +86,24 @@ async def update_user_location(
     return JSONResponse({"message": "failed"}, status_code=400)
 
 # Follower Management APIs
-@router.get("/followers")
-async def get_followers(request: Request, token: Token = Depends(get_user_token)):
-    followers = await user_handler.get_followers(user_id=token.sub)
+@router.get("/followers/{user_id}")
+async def get_user_followers(request: Request, user_id: str, token: Token = Depends(get_user_token)):
+    """Get followers of any user (for profile views)"""
+    user_id = user_id.lower()
+    if not await user_handler.user_exists(user_id):
+        return JSONResponse({"detail": f"User {user_id} does not exist"}, status_code=404)
+    
+    followers = await user_handler.get_followers(user_id=user_id)
     return JSONResponse({"message": "success", "followers": [user.model_dump(mode="json") for user in followers]})
 
-@router.get("/following")
-async def get_following(request: Request, token: Token = Depends(get_user_token)):
-    following = await user_handler.get_following(user_id=token.sub)
+@router.get("/following/{user_id}")
+async def get_user_following(request: Request, user_id: str, token: Token = Depends(get_user_token)):
+    """Get who any user is following (for profile views)"""
+    user_id = user_id.lower()
+    if not await user_handler.user_exists(user_id):
+        return JSONResponse({"detail": f"User {user_id} does not exist"}, status_code=404)
+    
+    following = await user_handler.get_following(user_id=user_id)
     return JSONResponse({"message": "success", "following": [user.model_dump(mode="json") for user in following]})
 
 @router.put("/follow/{user_id}")
