@@ -41,7 +41,7 @@ class UserHandler:
 
     async def create_user(self, *, user: User):
         payload = user.model_dump(mode="json")
-        response = await self.supabase.table("User").insert(payload).execute()
+        response = await self.supabase.table("users").insert(payload).execute()
         return self._parse(response.data)
 
     async def update_user(
@@ -51,7 +51,7 @@ class UserHandler:
         _id = payload.pop("id", user_id)
         assert _id == user_id
         response = await (
-            self.supabase.table("User").update(payload).eq("id", _id).execute()
+            self.supabase.table("users").update(payload).eq("id", _id).execute()
         )
         return self._parse(response.data)
 
@@ -59,7 +59,7 @@ class UserHandler:
         update_data = {k: v for k, v in user_update.model_dump(exclude_unset=True).items()}
         if not update_data:
             return False
-        response = await self.supabase.table("User") \
+        response = await self.supabase.table("users") \
             .update(update_data) \
             .eq("id", str(user_id)) \
             .execute()
@@ -68,21 +68,45 @@ class UserHandler:
     # Follower Management Methods
     async def get_followers(self, *, user_id: Union[UUID, str]) -> List[User]:
         response = await (
-            self.supabase.table("Follower")
+            self.supabase.table("followers")
             .select("user_id")
             .eq("following_id", str(user_id))
             .execute()
         )
-        return [User(**user) for user in response.data]
+        if not response.data:
+            return []
+        follower_ids = [record["user_id"] for record in response.data]
+        if not follower_ids:
+            return []
+        # Batch fetch all users
+        users_response = await (
+            self.supabase.table("users")
+            .select("*")
+            .in_("id", follower_ids)
+            .execute()
+        )
+        return [User(**user) for user in users_response.data]
 
     async def get_following(self, *, user_id: Union[UUID, str]) -> List[User]:
         response = await (
-            self.supabase.table("Follower")
+            self.supabase.table("followers")
             .select("following_id")
             .eq("user_id", str(user_id))
             .execute()
         )
-        return [User(**user) for user in response.data]
+        if not response.data:
+            return []
+        following_ids = [record["following_id"] for record in response.data]
+        if not following_ids:
+            return []
+        # Batch fetch all users
+        users_response = await (
+            self.supabase.table("users")
+            .select("*")
+            .in_("id", following_ids)
+            .execute()
+        )
+        return [User(**user) for user in users_response.data]
 
     async def follow(self, following_id: Union[UUID, str], *, user_id: Union[UUID, str]):
         if isinstance(user_id, str):
@@ -91,7 +115,7 @@ class UserHandler:
             following_id = UUID(following_id)
         data = Follower(user_id=user_id, following_id=following_id)
         payload = data.model_dump(mode="json")
-        await self.supabase.table("Follower").insert(payload).execute()
+        await self.supabase.table("followers").insert(payload).execute()
 
     async def unfollow(self, following_id: Union[UUID, str], *, user_id: Union[UUID, str]):
         if isinstance(user_id, str):
@@ -99,7 +123,7 @@ class UserHandler:
         if isinstance(following_id, str):
             following_id = UUID(following_id)
         await (
-            self.supabase.table("Follower")
+            self.supabase.table("followers")
             .delete()
             .eq("user_id", str(user_id))
             .eq("following_id", str(following_id))
@@ -183,11 +207,11 @@ class UserHandler:
     async def like_showcase(self, *, showcase_id: Union[UUID, str], user_id: Union[UUID, str]):
         data = ShowCaseLike(user_id=user_id, showcase_id=showcase_id)
         payload = data.model_dump(mode="json")
-        await self.supabase.table("ShowCaseLike").insert(payload).execute()
+        await self.supabase.table("showcase_likes").insert(payload).execute()
 
     async def unlike_showcase(self, *, showcase_id: Union[UUID, str], user_id: Union[UUID, str]):
         await (
-            self.supabase.table("ShowCaseLike")
+            self.supabase.table("showcase_likes")
             .delete()
             .eq("user_id", str(user_id))
             .eq("showcase_id", str(showcase_id))
@@ -203,11 +227,11 @@ class UserHandler:
     async def upvote_comment(self, *, comment_id: Union[UUID, str], user_id: Union[UUID, str]):
         data = CommentUpvote(user_id=user_id, comment_id=comment_id)
         payload = data.model_dump(mode="json")
-        await self.supabase.table("CommentUpvote").insert(payload).execute()
+        await self.supabase.table("comment_upvotes").insert(payload).execute()
 
     async def remove_comment_upvote(self, *, comment_id: Union[UUID, str], user_id: Union[UUID, str]):
         await (
-            self.supabase.table("CommentUpvote")
+            self.supabase.table("comment_upvotes")
             .delete()
             .eq("user_id", str(user_id))
             .eq("comment_id", str(comment_id))
@@ -217,11 +241,11 @@ class UserHandler:
     async def bookmark_showcase(self, *, showcase_id: Union[UUID, str], user_id: Union[UUID, str]):
         data = ShowCaseBookmark(user_id=user_id, showcase_id=showcase_id)
         payload = data.model_dump(mode="json")
-        await self.supabase.table("ShowCaseBookmark").insert(payload).execute()
+        await self.supabase.table("showcase_bookmarks").insert(payload).execute()
 
     async def unbookmark_showcase(self, *, showcase_id: Union[UUID, str], user_id: Union[UUID, str]):
         await (
-            self.supabase.table("ShowCaseBookmark")
+            self.supabase.table("showcase_bookmarks")
             .delete()
             .eq("user_id", str(user_id))
             .eq("showcase_id", str(showcase_id))
@@ -267,7 +291,7 @@ class UserHandler:
         payload["visionboard_id"] = str(visionboard_id)
         payload["user_id"] = str(user_id)
         payload["assigner_id"] = str(assigner_id)
-        await self.supabase.table("VisionBoardTask").insert(payload).execute()
+        await self.supabase.table("visionboard_tasks").insert(payload).execute()
 
     async def create_visionboard_draft(self, *, visionboard_id: Union[UUID, str], user_id: Union[UUID, str]):
         await (
@@ -281,7 +305,7 @@ class UserHandler:
     # Browse Methods
     async def get_nearby_artists(self, user_id: str, genre: str) -> list[User]:
         # 1. Fetch the current user's location
-        current_user_resp = await self.supabase.table("User").select("*").eq("id", str(user_id)).single().execute()
+        current_user_resp = await self.supabase.table("users").select("*").eq("id", str(user_id)).single().execute()
         current_user = current_user_resp.data
         if not current_user or not current_user.get("location"):
             return []
@@ -290,7 +314,7 @@ class UserHandler:
         lon1 = current_user["location"]["longitude"]
 
         # 2. Fetch all users in the same genre (excluding the current user)
-        response = await self.supabase.table("User") \
+        response = await self.supabase.table("users") \
             .select("*") \
             .neq("id", str(user_id)) \
             .contains("genres", f'["{genre}"]') \
@@ -320,7 +344,7 @@ class UserHandler:
 
     async def get_top_rated_artists(self, genre_name: str) -> list[User]:
         # Query users whose genres include the given genre_name, and order by rating descending
-        response = await self.supabase.table("User") \
+        response = await self.supabase.table("users") \
             .select("*") \
             .contains("genres", f'["{genre_name}"]') \
             .order("rating", desc=True) \
@@ -341,7 +365,7 @@ class UserHandler:
         self, email: str, password: str
     ) -> Optional[User]:
         response = await (
-            self.supabase.table("User")
+            self.supabase.table("users")
             .select("*")
             .eq("email", email)
             .eq("password", password)
@@ -354,7 +378,7 @@ class UserHandler:
         if isinstance(user_id, str):
             user_id = UUID(user_id)
         response = await (
-            self.supabase.table("User").select("*").eq("id", user_id).execute()
+            self.supabase.table("users").select("*").eq("id", user_id).execute()
         )
         return self._parse(response.data)
 
@@ -366,9 +390,41 @@ class UserHandler:
 
     async def get_users_by_genre(self, genre_name: str) -> list[User]:
         response = await (
-            self.supabase.table("User")
+            self.supabase.table("users")
             .select("*")
             .contains("genres", f'["{genre_name}"]')
             .execute()
         )
         return [User(**user) for user in response.data]
+
+    async def user_exists(self, user_id: str) -> bool:
+        user_id = str(user_id).lower()
+        print(f"DEBUG: Checking existence for user_id: '{user_id}'")
+        try:
+            result = await (
+                self.supabase.table("users")
+                .select("id")
+                .eq("id", user_id)
+                .execute()
+            )
+            print(f"DEBUG: Query result: {result.data}")
+            return len(result.data) > 0
+        except Exception as e:
+            print(f"Error in user_exists: {str(e)}")
+            return False
+
+    async def get_following_relationships(self, user_id: str, target_ids: List[str]) -> List[str]:
+        if not target_ids:
+            return []
+        print(f"DEBUG: Checking follow relationships for user {user_id} with targets: {target_ids}")
+        response = await (
+            self.supabase.table("followers")
+            .select("following_id")
+            .eq("user_id", str(user_id))
+            .in_("following_id", target_ids)
+            .execute()
+        )
+        print(f"DEBUG: Follow relationships query result: {response.data}")
+        result = [record["following_id"] for record in response.data]
+        print(f"DEBUG: Returning follow relationships: {result}")
+        return result

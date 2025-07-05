@@ -13,6 +13,7 @@ from src.models.user import (
     User, UserUpdate, Showcase, Comment, VisionBoard,
     VisionBoardTask, Location
 )
+from typing import List
 
 router = APIRouter(prefix="/v1", tags=["Users"])
 JWT_SECRET = os.environ["JWT_SECRET"]
@@ -82,22 +83,44 @@ async def update_user_location(
 @router.get("/followers")
 async def get_followers(request: Request, token: Token = Depends(get_user_token)):
     followers = await user_handler.get_followers(user_id=token.sub)
-    return JSONResponse({"message": "success", "followers": followers})
+    return JSONResponse({"message": "success", "followers": [user.model_dump(mode="json") for user in followers]})
 
 @router.get("/following")
 async def get_following(request: Request, token: Token = Depends(get_user_token)):
     following = await user_handler.get_following(user_id=token.sub)
-    return JSONResponse({"message": "success", "following": following})
+    return JSONResponse({"message": "success", "following": [user.model_dump(mode="json") for user in following]})
 
 @router.put("/follow/{user_id}")
 async def follow_user(request: Request, user_id: str, token: Token = Depends(get_user_token)):
-    await user_handler.follow(following_id=user_id, user_id=token.sub)
-    return JSONResponse({"message": "success"})
+    user_id = user_id.lower()
+    if user_id == token.sub:
+        return JSONResponse({"detail": "Cannot follow yourself"}, status_code=400)
+    if not await user_handler.user_exists(user_id):
+        return JSONResponse({"detail": f"User {user_id} does not exist"}, status_code=404)
+    try:
+        await user_handler.follow(following_id=user_id, user_id=token.sub)
+        return JSONResponse({"message": "success"})
+    except Exception as e:
+        error_msg = str(e)
+        if "no_self_follow" in error_msg:
+            return JSONResponse({"detail": "Cannot follow yourself"}, status_code=400)
+        elif "duplicate key value" in error_msg:
+            return JSONResponse({"detail": "Already following this user"}, status_code=400)
+        else:
+            return JSONResponse({"detail": "Failed to follow user"}, status_code=400)
 
-@router.put("/unfollow/{user_id}")
+@router.delete("/unfollow/{user_id}")
 async def unfollow_user(request: Request, user_id: str, token: Token = Depends(get_user_token)):
-    await user_handler.unfollow(following_id=user_id, user_id=token.sub)
-    return JSONResponse({"message": "success"})
+    user_id = user_id.lower()
+    if user_id == token.sub:
+        return JSONResponse({"detail": "Cannot unfollow yourself"}, status_code=400)
+    if not await user_handler.user_exists(user_id):
+        return JSONResponse({"detail": f"User {user_id} does not exist"}, status_code=404)
+    try:
+        await user_handler.unfollow(following_id=user_id, user_id=token.sub)
+        return JSONResponse({"message": "success"})
+    except Exception as e:
+        return JSONResponse({"detail": str(e)}, status_code=400)
 
 # Message APIs
 @router.get("/message/users")
@@ -212,11 +235,37 @@ async def create_visionboard_draft(request: Request, visionboard_id: str, token:
 @router.get("/browse/top-rated/{genre_name}")
 async def get_top_rated_artists_by_genre(genre_name: str, token: Token = Depends(get_user_token)):
     artists = await user_handler.get_top_rated_artists(genre_name=genre_name)
+    current_user_id = token.sub
+    print(f"DEBUG: Current user ID: {current_user_id}")
+    # Batch get all following relationships
+    artist_ids = [str(artist.id) for artist in artists]
+    print(f"DEBUG: Artist IDs to check: {artist_ids}")
+    if not artist_ids:
+        return JSONResponse({"message": "success", "artists": []})
+    # Query all follows in one go
+    follows = await user_handler.get_following_relationships(current_user_id, artist_ids)
+    follows_set = set(follows)
+    print(f"DEBUG: Follows set: {follows_set}")
+    for artist in artists:
+        artist.is_following = str(artist.id) in follows_set
+        print(f"DEBUG: Artist {artist.name} (ID: {artist.id}) is_following: {artist.is_following}")
     return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
 
 @router.get("/browse/near-by-artist/{genre_name}")
 async def get_nearby_artists_by_genre(genre_name: str, token: Token = Depends(get_user_token)):
     artists = await user_handler.get_nearby_artists(user_id=token.sub, genre=genre_name)
+    current_user_id = token.sub
+    print(f"DEBUG: Current user ID: {current_user_id}")
+    artist_ids = [str(artist.id) for artist in artists]
+    print(f"DEBUG: Artist IDs to check: {artist_ids}")
+    if not artist_ids:
+        return JSONResponse({"message": "success", "artists": []})
+    follows = await user_handler.get_following_relationships(current_user_id, artist_ids)
+    follows_set = set(follows)
+    print(f"DEBUG: Follows set: {follows_set}")
+    for artist in artists:
+        artist.is_following = str(artist.id) in follows_set
+        print(f"DEBUG: Artist {artist.name} (ID: {artist.id}) is_following: {artist.is_following}")
     return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
 
 @router.get("/browse/artist/{artist_id}/showcase")
