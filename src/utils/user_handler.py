@@ -3,14 +3,16 @@ from __future__ import annotations
 import os
 from typing import Optional, Union, List
 from uuid import UUID
+import math
 
 from dotenv import load_dotenv
 from src.models.user import (
-    UserModel, ShowcaseModel, CommentModel, VisionBoardModel,
+    UserModel, UserUpdateModel, ShowcaseModel, CommentModel, VisionBoardModel,
     ShowCaseLikeModel, ShowCaseBookmarkModel, CommentUpvoteModel,
-    VisionBoardTaskModel, FollowerModel
+    VisionBoardTaskModel, FollowerModel, LocationModel
 )
 from supabase import AsyncClient, create_async_client
+from fastapi import HTTPException
 
 load_dotenv()
 
@@ -52,6 +54,16 @@ class UserHandler:
             self.supabase.table("users").update(payload).eq("id", _id).execute()
         )
         return self._parse(response.data)
+
+    async def update_user_partial(self, user_id: str, user_update: UserUpdateModel) -> bool:
+        update_data = {k: v for k, v in user_update.model_dump(exclude_unset=True).items()}
+        if not update_data:
+            return False
+        response = await self.supabase.table("users") \
+            .update(update_data) \
+            .eq("id", str(user_id)) \
+            .execute()
+        return bool(response.data)
 
     # Follower Management Methods
     async def get_followers(self, *, user_id: Union[UUID, str]) -> List[UserModel]:
@@ -267,24 +279,53 @@ class UserHandler:
         )
 
     # Browse Methods
-    async def get_nearby_artists(self, *, user_id: Union[UUID, str]) -> List[UserModel]:
-        # TODO: Implement location-based search
-        response = await (
-            self.supabase.table("users")
-            .select("*")
-            .neq("id", str(user_id))
-            .execute()
-        )
-        return [UserModel(**user) for user in response.data]
+    async def get_nearby_artists(self, *, user_id: Union[UUID, str], genre: str = None) -> List[UserModel]:
+        # 1. Get current user's location
+        current_user_resp = await self.supabase.table("users").select("*").eq("id", str(user_id)).single().execute()
+        current_user = current_user_resp.data
+        if not current_user or not current_user.get("location"):
+            return []
 
-    async def get_top_rated_artists(self) -> List[UserModel]:
-        response = await (
-            self.supabase.table("users")
-            .select("*")
-            .order("rating", desc=True)
-            .limit(10)
-            .execute()
-        )
+        lat1 = current_user["location"]["latitude"]
+        lon1 = current_user["location"]["longitude"]
+
+        # 2. Query other users (optionally filter by genre)
+        query = self.supabase.table("users").select("*").neq("id", str(user_id))
+        if genre:
+            # Assumes genres is a JSON/array field
+            query = query.contains("genres", f'["{genre}"]')
+        response = await query.execute()
+
+        def haversine(lat1, lon1, lat2, lon2):
+            R = 6371  # Earth radius in km
+            phi1 = math.radians(lat1)
+            phi2 = math.radians(lat2)
+            dphi = math.radians(lat2 - lat1)
+            dlambda = math.radians(lon2 - lon1)
+            a = math.sin(dphi/2)**2 + math.cos(phi1)*math.cos(phi2)*math.sin(dlambda/2)**2
+            c = 2*math.atan2(math.sqrt(a), math.sqrt(1 - a))
+            return R * c
+
+        # 3. Add distance to each user and filter out users without location
+        users = []
+        for user in response.data:
+            loc = user.get("location")
+            if loc and "latitude" in loc and "longitude" in loc:
+                distance = haversine(lat1, lon1, loc["latitude"], loc["longitude"])
+                user["distance"] = distance
+                users.append(user)
+
+        # 4. Sort by distance
+        users.sort(key=lambda u: u["distance"])
+
+        # 5. Return as UserModel list
+        return [UserModel(**user) for user in users]
+
+    async def get_top_rated_artists(self, genre_name: str = None) -> List[UserModel]:
+        query = self.supabase.table("users").select("*")
+        if genre_name:
+            query = query.contains("genres", f'["{genre_name}"]')
+        response = await query.order("rating", desc=True).limit(10).execute()
         return [UserModel(**user) for user in response.data]
 
     async def get_artist_showcases(self, *, artist_id: Union[UUID, str]) -> List[ShowcaseModel]:

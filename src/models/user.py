@@ -6,6 +6,10 @@ import uuid
 from typing import Optional, List
 from src.models import UserGenre, WorkMode, PaymentMode
 
+class LocationModel(BaseModel):
+    latitude: float
+    longitude: float
+
 class UserModel(BaseModel):
     id: uuid.UUID = Field(default_factory=lambda: uuid.uuid4())
 
@@ -18,6 +22,21 @@ class UserModel(BaseModel):
     genres: Optional[List[UserGenre]] = None
     payment_mode: Optional[PaymentMode] = None
     work_mode: Optional[WorkMode] = None
+    location: Optional[LocationModel] = None
+    rating: Optional[float] = None
+
+
+class UserUpdateModel(BaseModel):
+    name: Optional[str] = None
+    email: Optional[str] = None
+    password: Optional[str] = None
+    profile_image_url: Optional[str] = None
+    age: Optional[int] = None
+    genres: Optional[List[UserGenre]] = None
+    payment_mode: Optional[PaymentMode] = None
+    work_mode: Optional[WorkMode] = None
+    location: Optional[LocationModel] = None
+    rating: Optional[float] = None
     
 
 

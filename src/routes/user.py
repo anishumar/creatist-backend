@@ -9,8 +9,8 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from src.app import app, user_handler
 from src.utils import Token, TokenHandler
 from src.models.user import (
-    UserModel, ShowcaseModel, CommentModel, VisionBoardModel,
-    VisionBoardTaskModel
+    UserModel, UserUpdateModel, ShowcaseModel, CommentModel, VisionBoardModel,
+    VisionBoardTaskModel, LocationModel
 )
 
 router = APIRouter(prefix="/v1", tags=["Users"])
@@ -41,6 +41,27 @@ async def login_user(request: Request, email: str, password: str):
 async def update_user(request: Request, user: UserModel, token: Token = Depends(get_user_token)):
     updated_user = await user_handler.update_user(user_id=token.sub, update_payload=user)
     return JSONResponse({"message": "success", "user": updated_user})
+
+@router.patch("/users")
+async def update_user_partial(
+    user_update: UserUpdateModel,
+    token: Token = Depends(get_user_token)
+):
+    updated = await user_handler.update_user_partial(user_id=token.sub, user_update=user_update)
+    if updated:
+        return JSONResponse({"message": "success"})
+    return JSONResponse({"message": "failed"}, status_code=400)
+
+@router.patch("/users/location")
+async def update_user_location(
+    location: LocationModel,
+    token: Token = Depends(get_user_token)
+):
+    user_update = UserUpdateModel(location=location)
+    updated = await user_handler.update_user_partial(user_id=token.sub, user_update=user_update)
+    if updated:
+        return JSONResponse({"message": "success"})
+    return JSONResponse({"message": "failed"}, status_code=400)
 
 # Follower Management APIs
 @router.get("/followers")
@@ -173,15 +194,25 @@ async def create_visionboard_draft(request: Request, visionboard_id: str, token:
     return JSONResponse({"message": "success"})
 
 # Browse APIs Discover Page 
-@router.get("/browse/near-by-artist")
-async def get_nearby_artists(request: Request, token: Token = Depends(get_user_token)):
-    artists = await user_handler.get_nearby_artists(user_id=token.sub)
-    return JSONResponse({"message": "success", "artists": artists})
-
 @router.get("/browse/top-rated")
 async def get_top_rated_artists(request: Request, token: Token = Depends(get_user_token)):
     artists = await user_handler.get_top_rated_artists()
-    return JSONResponse({"message": "success", "artists": artists})
+    return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
+
+@router.get("/browse/top-rated/{genre_name}")
+async def get_top_rated_artists_by_genre(genre_name: str, token: Token = Depends(get_user_token)):
+    artists = await user_handler.get_top_rated_artists(genre_name=genre_name)
+    return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
+
+@router.get("/browse/near-by-artist")
+async def get_nearby_artists(request: Request, genre: str = None, token: Token = Depends(get_user_token)):
+    artists = await user_handler.get_nearby_artists(user_id=token.sub, genre=genre)
+    return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
+
+@router.get("/browse/near-by-artist/{genre_name}")
+async def get_nearby_artists_by_genre(genre_name: str, token: Token = Depends(get_user_token)):
+    artists = await user_handler.get_nearby_artists(user_id=token.sub, genre=genre_name)
+    return JSONResponse({"message": "success", "artists": [artist.model_dump(mode="json") for artist in artists]})
 
 @router.get("/browse/artist/{artist_id}/showcase")
 async def get_artist_showcases(request: Request, artist_id: str, token: Token = Depends(get_user_token)):
