@@ -5608,3 +5608,655 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2025-07-05 15:30:24,400 - app - DEBUG - debug - Decoding token
 2025-07-05 15:30:24,400 - app - INFO - info - Token successfully decoded
 2025-07-05 15:30:24,400 - app - INFO - info - Token successfully decoded
+2025-07-07 10:36:24,602 - app - DEBUG - debug - Decoding token
+2025-07-07 10:36:24,609 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 156, in decode_complete
+    decoded = api_jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 220, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 328, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2025-07-07 10:36:36,499 - app - DEBUG - debug - Decoding token
+2025-07-07 10:36:36,500 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 156, in decode_complete
+    decoded = api_jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 220, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 328, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2025-07-07 10:37:04,931 - app - DEBUG - debug - Decoding token
+2025-07-07 10:37:04,932 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 156, in decode_complete
+    decoded = api_jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 220, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 328, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2025-07-07 10:37:05,694 - app - DEBUG - debug - Decoding token
+2025-07-07 10:37:05,694 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 156, in decode_complete
+    decoded = api_jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 220, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 328, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2025-07-07 10:37:10,929 - app - DEBUG - debug - Decoding token
+2025-07-07 10:37:10,930 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 156, in decode_complete
+    decoded = api_jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 220, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 328, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2025-07-07 10:37:11,928 - app - DEBUG - debug - Decoding token
+2025-07-07 10:37:11,929 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 156, in decode_complete
+    decoded = api_jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 220, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 328, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2025-07-07 10:38:15,809 - app - DEBUG - debug - Decoding token
+2025-07-07 10:38:15,816 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 156, in decode_complete
+    decoded = api_jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 220, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 328, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2025-07-07 10:38:15,837 - app - DEBUG - debug - Decoding token
+2025-07-07 10:38:15,837 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jwt.py", line 156, in decode_complete
+    decoded = api_jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 220, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jwt/api_jws.py", line 328, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2025-07-07 10:38:16,739 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:16,739 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:16,741 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:16,741 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:16,741 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:16,741 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:35,194 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:35,195 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:35,197 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:35,197 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:35,197 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:35,197 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:38:35,214 - app - DEBUG - debug - Decoding token
+2025-07-07 10:38:35,215 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:24,507 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:24,508 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:25,503 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:25,503 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:28,571 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:28,571 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:28,820 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:28,821 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:30,254 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:30,255 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:30,263 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:30,263 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:30,263 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:30,263 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:30,264 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:30,265 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:32,930 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:32,931 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:33,080 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:33,080 - app - INFO - info - Token successfully decoded
+2025-07-07 10:47:39,121 - app - DEBUG - debug - Decoding token
+2025-07-07 10:47:39,121 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:27,924 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:27,926 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:31,541 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:31,541 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:35,627 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:35,627 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:35,883 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:35,883 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:37,260 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:37,261 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:37,268 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:37,269 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:37,270 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:37,270 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:37,271 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:37,271 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:39,878 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:39,878 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:40,043 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:40,043 - app - INFO - info - Token successfully decoded
+2025-07-07 10:48:45,239 - app - DEBUG - debug - Decoding token
+2025-07-07 10:48:45,239 - app - INFO - info - Token successfully decoded
+2025-07-07 10:50:43,958 - app - DEBUG - debug - Decoding token
+2025-07-07 10:50:43,962 - app - INFO - info - Token successfully decoded
+2025-07-07 10:50:55,750 - app - DEBUG - debug - Decoding token
+2025-07-07 10:50:55,755 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:06,102 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:06,102 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:06,349 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:06,349 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:08,042 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:08,042 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:08,049 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:08,049 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:08,050 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:08,050 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:08,051 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:08,051 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:09,734 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:09,734 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:11,598 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:11,599 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:11,747 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:11,748 - app - INFO - info - Token successfully decoded
+2025-07-07 10:51:16,774 - app - DEBUG - debug - Decoding token
+2025-07-07 10:51:16,775 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:10,196 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:10,198 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:10,216 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:10,216 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:12,502 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:12,502 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:12,507 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:12,507 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:12,510 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:12,510 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:12,514 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:12,514 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:15,385 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:15,385 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:15,391 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:15,391 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:15,391 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:15,392 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:15,392 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:15,393 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 10:55:37,351 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:55:37,352 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:55:37,352 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:55:37,352 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:55:37,352 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:55:37,352 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:55:37,376 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:37,377 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:37,575 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:37,575 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:37,771 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:37,772 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:41,121 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:41,121 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:41,128 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:41,128 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:41,130 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:41,130 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:41,131 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:41,131 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:42,728 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:42,728 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:43,986 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:43,986 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:48,419 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:48,420 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:51,736 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:51,737 - app - INFO - info - Token successfully decoded
+2025-07-07 10:55:51,887 - app - DEBUG - debug - Decoding token
+2025-07-07 10:55:51,888 - app - INFO - info - Token successfully decoded
+2025-07-07 10:56:01,371 - app - DEBUG - debug - Decoding token
+2025-07-07 10:56:01,372 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:13,956 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:13,963 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:15,054 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:15,055 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:15,300 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:57:15,300 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:57:15,301 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:57:15,301 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:57:15,301 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:57:15,301 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 10:57:15,762 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:15,763 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:15,901 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:15,901 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:22,418 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:22,425 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:29,718 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:29,718 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:32,444 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:32,445 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:34,726 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:34,726 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:38,973 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:38,973 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:42,672 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:42,672 - app - INFO - info - Token successfully decoded
+2025-07-07 10:57:50,532 - app - DEBUG - debug - Decoding token
+2025-07-07 10:57:50,532 - app - INFO - info - Token successfully decoded
+2025-07-07 10:58:14,861 - app - DEBUG - debug - Decoding token
+2025-07-07 10:58:14,866 - app - INFO - info - Token successfully decoded
+2025-07-07 11:00:40,125 - app - DEBUG - debug - Decoding token
+2025-07-07 11:00:40,132 - app - INFO - info - Token successfully decoded
+2025-07-07 11:00:40,944 - app - DEBUG - debug - Decoding token
+2025-07-07 11:00:40,944 - app - INFO - info - Token successfully decoded
+2025-07-07 11:00:41,228 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 11:00:41,229 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 11:00:41,229 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 11:00:41,229 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 11:00:41,229 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 11:00:41,229 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 11:00:41,690 - app - DEBUG - debug - Decoding token
+2025-07-07 11:00:41,690 - app - INFO - info - Token successfully decoded
+2025-07-07 11:00:42,539 - app - DEBUG - debug - Decoding token
+2025-07-07 11:00:42,539 - app - INFO - info - Token successfully decoded
+2025-07-07 11:01:06,745 - app - DEBUG - debug - Decoding token
+2025-07-07 11:01:06,750 - app - INFO - info - Token successfully decoded
+2025-07-07 11:01:09,584 - app - DEBUG - debug - Decoding token
+2025-07-07 11:01:09,585 - app - INFO - info - Token successfully decoded
+2025-07-07 11:01:11,851 - app - DEBUG - debug - Decoding token
+2025-07-07 11:01:11,851 - app - INFO - info - Token successfully decoded
+2025-07-07 11:01:16,778 - app - DEBUG - debug - Decoding token
+2025-07-07 11:01:16,779 - app - INFO - info - Token successfully decoded
+2025-07-07 11:01:31,144 - app - DEBUG - debug - Decoding token
+2025-07-07 11:01:31,144 - app - INFO - info - Token successfully decoded
+2025-07-07 11:03:39,600 - app - DEBUG - debug - Decoding token
+2025-07-07 11:03:39,601 - app - INFO - info - Token successfully decoded
+2025-07-07 11:04:17,255 - app - DEBUG - debug - Decoding token
+2025-07-07 11:04:17,256 - app - INFO - info - Token successfully decoded
+2025-07-07 11:05:42,111 - app - DEBUG - debug - Decoding token
+2025-07-07 11:05:42,112 - app - INFO - info - Token successfully decoded
+2025-07-07 11:05:52,286 - app - DEBUG - debug - Decoding token
+2025-07-07 11:05:52,287 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:49,922 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:49,922 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:50,235 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:50,236 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:50,476 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:50,476 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:50,635 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:50,636 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:50,875 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:50,875 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:51,033 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:51,034 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:51,183 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:51,183 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:53,178 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:53,178 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:53,439 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:53,439 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:53,720 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:53,720 - app - INFO - info - Token successfully decoded
+2025-07-07 11:07:57,655 - app - DEBUG - debug - Decoding token
+2025-07-07 11:07:57,656 - app - INFO - info - Token successfully decoded

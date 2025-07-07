@@ -108,6 +108,29 @@ class UserHandler:
         )
         return [User(**user) for user in users_response.data]
 
+    async def get_following_by_role(self, *, user_id: Union[UUID, str], role: str) -> List[User]:
+        """Get following users filtered by role"""
+        response = await (
+            self.supabase.table("followers")
+            .select("following_id")
+            .eq("user_id", str(user_id))
+            .execute()
+        )
+        if not response.data:
+            return []
+        following_ids = [record["following_id"] for record in response.data]
+        if not following_ids:
+            return []
+        # Batch fetch all users with the specified role
+        users_response = await (
+            self.supabase.table("users")
+            .select("*")
+            .in_("id", following_ids)
+            .contains("genres", f'["{role}"]')
+            .execute()
+        )
+        return [User(**user) for user in users_response.data]
+
     async def follow(self, following_id: Union[UUID, str], *, user_id: Union[UUID, str]):
         if isinstance(user_id, str):
             user_id = UUID(user_id)
@@ -257,14 +280,14 @@ class UserHandler:
         response = await (
             self.supabase.table("visionboards")
             .select("*")
-            .eq("owner_id", str(user_id))
+            .eq("created_by", str(user_id))
             .execute()
         )
         return [VisionBoard(**visionboard) for visionboard in response.data]
 
     async def create_visionboard(self, *, visionboard: VisionBoard, user_id: Union[UUID, str]):
         payload = visionboard.model_dump(mode="json")
-        payload["owner_id"] = str(user_id)
+        payload["created_by"] = str(user_id)
         await self.supabase.table("visionboards").insert(payload).execute()
 
     async def update_visionboard(self, *, visionboard_id: Union[UUID, str], visionboard: VisionBoard, user_id: Union[UUID, str]):
@@ -273,7 +296,7 @@ class UserHandler:
             self.supabase.table("visionboards")
             .update(payload)
             .eq("id", str(visionboard_id))
-            .eq("owner_id", str(user_id))
+            .eq("created_by", str(user_id))
             .execute()
         )
 
@@ -282,7 +305,7 @@ class UserHandler:
             self.supabase.table("visionboards")
             .delete()
             .eq("id", str(visionboard_id))
-            .eq("owner_id", str(user_id))
+            .eq("created_by", str(user_id))
             .execute()
         )
 
@@ -298,7 +321,7 @@ class UserHandler:
             self.supabase.table("visionboards")
             .update({"status": "draft"})
             .eq("id", str(visionboard_id))
-            .eq("owner_id", str(user_id))
+            .eq("created_by", str(user_id))
             .execute()
         )
 

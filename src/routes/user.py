@@ -106,6 +106,16 @@ async def get_user_following(request: Request, user_id: str, token: Token = Depe
     following = await user_handler.get_following(user_id=user_id)
     return JSONResponse({"message": "success", "following": [user.model_dump(mode="json") for user in following]})
 
+@router.get("/following/{user_id}/{role}")
+async def get_user_following_by_role(request: Request, user_id: str, role: str, token: Token = Depends(get_user_token)):
+    """Get who any user is following filtered by role"""
+    user_id = user_id.lower()
+    if not await user_handler.user_exists(user_id):
+        return JSONResponse({"detail": f"User {user_id} does not exist"}, status_code=404)
+    
+    following = await user_handler.get_following_by_role(user_id=user_id, role=role)
+    return JSONResponse({"message": "success", "following": [user.model_dump(mode="json") for user in following]})
+
 @router.put("/follow/{user_id}")
 async def follow_user(request: Request, user_id: str, token: Token = Depends(get_user_token)):
     user_id = user_id.lower()
@@ -216,36 +226,7 @@ async def unbookmark_showcase(request: Request, showcase_id: str, token: Token =
     await user_handler.unbookmark_showcase(showcase_id=showcase_id, user_id=token.sub)
     return JSONResponse({"message": "success"})
 
-# Vision Board APIs
-@router.get("/visionboards")
-async def get_visionboards(request: Request, token: Token = Depends(get_user_token)):
-    visionboards = await user_handler.get_visionboards(user_id=token.sub)
-    return JSONResponse({"message": "success", "visionboards": visionboards})
-
-@router.post("/visionboard/create")
-async def create_visionboard(request: Request, visionboard: VisionBoard, token: Token = Depends(get_user_token)):
-    await user_handler.create_visionboard(visionboard=visionboard, user_id=token.sub)
-    return JSONResponse({"message": "success"})
-
-@router.put("/visionboard/{visionboard_id}/update")
-async def update_visionboard(request: Request, visionboard_id: str, visionboard: VisionBoard, token: Token = Depends(get_user_token)):
-    await user_handler.update_visionboard(visionboard_id=visionboard_id, visionboard=visionboard, user_id=token.sub)
-    return JSONResponse({"message": "success"})
-
-@router.delete("/visionboard/{visionboard_id}/delete")
-async def delete_visionboard(request: Request, visionboard_id: str, token: Token = Depends(get_user_token)):
-    await user_handler.delete_visionboard(visionboard_id=visionboard_id, user_id=token.sub)
-    return JSONResponse({"message": "success"})
-
-@router.patch("/visionboard/{visionboard_id}/assign-task/{user_id}")
-async def assign_visionboard_task(request: Request, visionboard_id: str, user_id: str, task: VisionBoardTask, token: Token = Depends(get_user_token)):
-    await user_handler.assign_visionboard_task(visionboard_id=visionboard_id, user_id=user_id, task=task, assigner_id=token.sub)
-    return JSONResponse({"message": "success"})
-
-@router.post("/visionboard/{visionboard_id}/create-draft")
-async def create_visionboard_draft(request: Request, visionboard_id: str, token: Token = Depends(get_user_token)):
-    await user_handler.create_visionboard_draft(visionboard_id=visionboard_id, user_id=token.sub)
-    return JSONResponse({"message": "success"})
+# Vision Board APIs - Removed duplicate endpoints (use /v1/visionboard/ endpoints instead)
 
 # Browse APIs Discover Page 
 @router.get("/browse/top-rated/{genre_name}")

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import asyncpg
 
 from dotenv import load_dotenv
 from fastapi import FastAPI
@@ -16,8 +17,21 @@ PORT = os.environ["PORT"]
 
 async def startup():
     await user_handler.init()
+    
+    # Initialize PostgreSQL connection pool
+    app.state.pool = await asyncpg.create_pool(
+        os.environ["DATABASE_URL"],
+        min_size=1,
+        max_size=10
+    )
+    app.state.jwt_secret = os.environ["JWT_SECRET"]
 
 
-app = FastAPI(title="Creatist API Documentation", on_startup=[startup])
+async def shutdown():
+    if hasattr(app.state, 'pool'):
+        await app.state.pool.close()
+
+
+app = FastAPI(title="Creatist API Documentation", on_startup=[startup], on_shutdown=[shutdown])
 
 from .routes import *  # 
