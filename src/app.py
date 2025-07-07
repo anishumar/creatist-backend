@@ -17,7 +17,7 @@ PORT = os.environ["PORT"]
 
 async def startup():
     await user_handler.init()
-    
+
     # Initialize PostgreSQL connection pool
     app.state.pool = await asyncpg.create_pool(
         os.environ["DATABASE_URL"],

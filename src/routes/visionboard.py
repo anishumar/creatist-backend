@@ -5,6 +5,7 @@ from fastapi.responses import JSONResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 import decimal
 import datetime
+from typing import List
 
 from src.app import app
 from src.utils import Token, TokenHandler
@@ -21,6 +22,7 @@ from src.models.visionboard import (
     TaskAttachmentCreate,
     VisionBoardStatus, AssignmentStatus, TaskStatus
 )
+from src.models.notification import Notification
 
 router = APIRouter(prefix="/v1/visionboard", tags=["Vision Board"])
 security = HTTPBearer()
@@ -594,6 +596,40 @@ async def get_visionboard_users(
     except Exception as e:
         print(f"DEBUG: Exception in get_visionboard_users: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/notifications/batch-create")
+async def batch_create_notifications(request: Request, assignments: List[dict], token: Token = Depends(get_user_token)):
+    """Batch create notifications for multiple assignments."""
+    handler = get_visionboard_handler()
+    created = []
+    for assignment in assignments:
+        await handler.create_notification(
+            receiver_id=assignment["user_id"],
+            sender_id=token.sub,
+            visionboard_id=assignment["visionboard_id"],
+            genre_id=assignment.get("genre_id"),
+            assignment_id=assignment.get("assignment_id"),
+            type=assignment.get("type", "invitation"),
+            message=assignment.get("message")
+        )
+        created.append(assignment["user_id"])
+    return {"message": "Notifications created", "notified_users": created}
+
+@router.get("/notifications")
+async def get_notifications(token: Token = Depends(get_user_token)):
+    """Fetch all notifications for the logged-in user."""
+    handler = get_visionboard_handler()
+    notifications = await handler.get_notifications_for_user(token.sub)
+    return {"notifications": [n.model_dump(mode="json") for n in notifications]}
+
+@router.post("/notifications/{notification_id}/respond")
+async def respond_to_notification(notification_id: uuid.UUID, response: str, comment: str = None, token: Token = Depends(get_user_token)):
+    """Accept or reject an invitation and notify the sender."""
+    handler = get_visionboard_handler()
+    notif = await handler.respond_to_notification(notification_id, responder_id=token.sub, response=response, comment=comment)
+    if notif is None:
+        raise HTTPException(status_code=404, detail="Notification not found or not allowed")
+    return {"message": f"Invitation {response.lower()}.", "notification": notif.model_dump(mode="json")}
 
 # Include the router in the main app
 app.include_router(router) 

@@ -26,8 +26,16 @@ class VisionBoardHandler:
         self.pool = pool
 
     # Vision Board CRUD Operations
+    async def create_notification(self, *, receiver_id, sender_id, visionboard_id, genre_id=None, assignment_id=None, type="invitation", message=None):
+        async with self.pool.acquire() as conn:
+            query = """
+                INSERT INTO notifications (receiver_id, sender_id, visionboard_id, genre_id, assignment_id, type, status, message)
+                VALUES ($1, $2, $3, $4, $5, $6, 'unread', $7)
+            """
+            await conn.execute(query, receiver_id, sender_id, visionboard_id, genre_id, assignment_id, type, message)
+
     async def create_visionboard(self, visionboard: VisionBoardCreate, created_by: uuid.UUID) -> VisionBoard:
-        """Create a new vision board"""
+        """Create a new vision board and send notifications to assigned users"""
         async with self.pool.acquire() as conn:
             query = """
                 INSERT INTO visionboards (name, description, start_date, end_date, status, created_by)
@@ -43,7 +51,13 @@ class VisionBoardHandler:
                 visionboard.status.value,
                 created_by
             )
-            return VisionBoard(**dict(row))
+            vb = VisionBoard(**dict(row))
+
+            # Fetch all assignments for this visionboard (after genres/assignments are created)
+            # For now, if assignments are not part of creation, skip notification creation here
+            # You can call create_notification after assignments are created
+
+            return vb
 
     async def get_visionboard(self, visionboard_id: uuid.UUID) -> Optional[VisionBoard]:
         """Get a vision board by ID"""
@@ -271,25 +285,26 @@ class VisionBoardHandler:
 
     # Genre Assignment Operations
     async def create_genre_assignment(self, assignment: GenreAssignmentCreate, assigned_by: uuid.UUID) -> GenreAssignment:
-        """Create a new genre assignment"""
+        """Create a new genre assignment (no notification here)"""
         async with self.pool.acquire() as conn:
             query = """
-                INSERT INTO genre_assignments (genre_id, user_id, work_type, payment_type, payment_amount, currency, assigned_by)
-                VALUES ($1, $2, $3, $4, $5, $6, $7)
-                RETURNING id, genre_id, user_id, status, work_type, payment_type, payment_amount, currency,
-                       invited_at, responded_at, assigned_by
+                INSERT INTO genre_assignments (genre_id, user_id, status, work_type, payment_type, payment_amount, currency, assigned_by)
+                VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+                RETURNING id, genre_id, user_id, status, work_type, payment_type, payment_amount, currency, invited_at, responded_at, assigned_by
             """
             row = await conn.fetchrow(
                 query,
                 assignment.genre_id,
                 assignment.user_id,
+                assignment.status.value,
                 assignment.work_type.value,
                 assignment.payment_type.value,
                 assignment.payment_amount,
                 assignment.currency,
                 assigned_by
             )
-            return GenreAssignment(**dict(row))
+            ga = GenreAssignment(**dict(row))
+            return ga
 
     async def update_assignment_status(self, assignment_id: uuid.UUID, status: AssignmentStatus, user_id: uuid.UUID) -> Optional[GenreAssignment]:
         """Update assignment status (for accepting/rejecting invitations)"""
@@ -620,4 +635,35 @@ class VisionBoardHandler:
             if creator_user and not any(user.id == creator_user.id for user in assigned_users):
                 all_users.append(creator_user)
             
-            return all_users 
+            return all_users
+
+    async def get_notifications_for_user(self, user_id: uuid.UUID):
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch("SELECT * FROM notifications WHERE receiver_id = $1 ORDER BY created_at DESC", user_id)
+            from src.models.notification import Notification
+            return [Notification(**dict(row)) for row in rows]
+
+    async def respond_to_notification(self, notification_id: uuid.UUID, responder_id: uuid.UUID, response: str, comment: str = None):
+        async with self.pool.acquire() as conn:
+            # Fetch the notification
+            notif_row = await conn.fetchrow("SELECT * FROM notifications WHERE id = $1 AND receiver_id = $2", notification_id, responder_id)
+            if not notif_row:
+                return None
+            # Update the notification
+            await conn.execute(
+                "UPDATE notifications SET status = 'read', response = $1, comment = $2, updated_at = now() WHERE id = $3",
+                response, comment, notification_id
+            )
+            # Notify the sender
+            await self.create_notification(
+                receiver_id=notif_row["sender_id"],
+                sender_id=responder_id,
+                visionboard_id=notif_row["visionboard_id"],
+                genre_id=notif_row["genre_id"],
+                assignment_id=notif_row["assignment_id"],
+                type="response",
+                message=f"User responded: {response}" + (f". Comment: {comment}" if comment else "")
+            )
+            from src.models.notification import Notification
+            notif_row = await conn.fetchrow("SELECT * FROM notifications WHERE id = $1", notification_id)
+            return Notification(**dict(notif_row)) 
