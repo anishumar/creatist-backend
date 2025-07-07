@@ -147,6 +147,30 @@ async def update_visionboard(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@router.patch("/{visionboard_id}")
+async def patch_visionboard(
+    request: Request, 
+    visionboard_id: str, 
+    updates: VisionBoardUpdate, 
+    token: Token = Depends(get_user_token)
+):
+    """Patch a vision board (partial update)"""
+    try:
+        visionboard = await get_visionboard_handler().update_visionboard(
+            uuid.UUID(visionboard_id), 
+            updates
+        )
+        if not visionboard:
+            raise HTTPException(status_code=404, detail="Vision board not found")
+        return JSONResponse({
+            "message": "Vision board updated successfully",
+            "visionboard": visionboard.model_dump(mode="json")
+        })
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid vision board ID")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @router.delete("/{visionboard_id}")
 async def delete_visionboard(
     request: Request, 

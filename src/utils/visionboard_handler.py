@@ -105,56 +105,71 @@ class VisionBoardHandler:
             return VisionBoardWithGenres(**visionboard.model_dump(), genres=genres)
 
     async def update_visionboard(self, visionboard_id: uuid.UUID, updates: VisionBoardUpdate) -> Optional[VisionBoard]:
-        """Update a vision board"""
+        """Update a vision board. If status is set to 'Active' or 'Started', notify all partners."""
         async with self.pool.acquire() as conn:
             # Build dynamic update query
             set_clauses = []
             values = []
             param_count = 1
-            
+            status_being_set = None
             if updates.name is not None:
                 set_clauses.append(f"name = ${param_count}")
                 values.append(updates.name)
                 param_count += 1
-            
             if updates.description is not None:
                 set_clauses.append(f"description = ${param_count}")
                 values.append(updates.description)
                 param_count += 1
-            
             if updates.start_date is not None:
                 set_clauses.append(f"start_date = ${param_count}")
                 values.append(updates.start_date)
                 param_count += 1
-            
             if updates.end_date is not None:
                 set_clauses.append(f"end_date = ${param_count}")
                 values.append(updates.end_date)
                 param_count += 1
-            
             if updates.status is not None:
                 set_clauses.append(f"status = ${param_count}")
                 values.append(updates.status.value)
+                status_being_set = updates.status.value
                 param_count += 1
-            
             if not set_clauses:
                 return await self.get_visionboard(visionboard_id)
-            
             set_clauses.append(f"updated_at = ${param_count}")
             values.append(datetime.datetime.utcnow())
             param_count += 1
-            
             values.append(visionboard_id)
-            
             query = f"""
                 UPDATE visionboards 
                 SET {', '.join(set_clauses)}
                 WHERE id = ${param_count}
                 RETURNING id, name, description, start_date, end_date, status, created_at, updated_at, created_by
             """
-            
             row = await conn.fetchrow(query, *values)
-            return VisionBoard(**dict(row)) if row else None
+            vb = VisionBoard(**dict(row)) if row else None
+
+            # If status is set to 'Active' or 'Started', notify all partners
+            if status_being_set and status_being_set.lower() in ["active", "started"]:
+                # Get all assigned users (partners) with accepted assignments
+                partners_query = """
+                    SELECT ga.user_id FROM genre_assignments ga
+                    JOIN genres g ON ga.genre_id = g.id
+                    WHERE g.visionboard_id = $1 AND ga.status = 'Accepted'
+                """
+                partner_rows = await conn.fetch(partners_query, visionboard_id)
+                partner_ids = [row['user_id'] for row in partner_rows]
+                for partner_id in partner_ids:
+                    await self.create_notification(
+                        receiver_id=partner_id,
+                        sender_id=vb.created_by,
+                        object_type="visionboard",
+                        object_id=vb.id,
+                        event_type="started",
+                        data=None,
+                        message="The vision board has been started."
+                    )
+
+            return vb
 
     async def delete_visionboard(self, visionboard_id: uuid.UUID) -> bool:
         """Delete a vision board (cascade will handle related data)"""
@@ -179,23 +194,20 @@ class VisionBoardHandler:
             return [VisionBoard(**dict(row)) for row in rows]
 
     async def get_user_assigned_visionboards(self, *, user_id: uuid.UUID, status: Optional[VisionBoardStatus] = None) -> List[VisionBoard]:
-        """Get all vision boards where a user is assigned/partner"""
+        """Get all vision boards where a user is assigned/partner and assignment is accepted"""
         async with self.pool.acquire() as conn:
             query = """
                 SELECT DISTINCT vb.* 
                 FROM visionboards vb
                 JOIN genres g ON vb.id = g.visionboard_id
                 JOIN genre_assignments ga ON g.id = ga.genre_id
-                WHERE ga.user_id = $1
+                WHERE ga.user_id = $1 AND ga.status = 'Accepted'
             """
             params = [user_id]
-            
             if status:
                 query += " AND vb.status = $2"
                 params.append(status.value)
-            
             query += " ORDER BY vb.created_at DESC"
-            
             rows = await conn.fetch(query, *params)
             return [VisionBoard(**dict(row)) for row in rows]
 
@@ -791,11 +803,35 @@ class VisionBoardHandler:
                 responder_id
             )
             if not row:
+                print(f"DEBUG: Invitation not found or not allowed for id={invitation_id}, responder_id={responder_id}")
                 return None
             row_dict = dict(row)
+            print(f"DEBUG: Invitation after update: {row_dict}")
             if isinstance(row_dict.get('data'), str):
                 try:
                     row_dict['data'] = json.loads(row_dict['data'])
                 except Exception:
                     row_dict['data'] = None
+
+            # Update assignment status if this is a genre invitation
+            if row_dict.get('object_type') == 'genre':
+                assignment_status = None
+                if status == InvitationStatus.ACCEPTED:
+                    assignment_status = 'Accepted'
+                elif status == InvitationStatus.REJECTED:
+                    assignment_status = 'Rejected'
+                if assignment_status:
+                    print(f"DEBUG: Attempting to update assignment for genre_id={row_dict['object_id']} and user_id={row_dict['receiver_id']} to status={assignment_status}")
+                    result = await conn.execute(
+                        """
+                        UPDATE genre_assignments
+                        SET status = $1, responded_at = now()
+                        WHERE genre_id = $2 AND user_id = $3
+                        """,
+                        assignment_status,
+                        row_dict['object_id'],
+                        row_dict['receiver_id']
+                    )
+                    print(f"DEBUG: Assignment update result: {result}")
+
             return Invitation(**row_dict) 

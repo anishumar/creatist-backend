@@ -273,4 +273,11 @@ async def get_users_by_genre(request: Request, genre: str, token: Token = Depend
     print([user.model_dump(mode="json") for user in users])
     return [user.model_dump(mode="json") for user in users]
 
+@router.get("/users/{user_id}")
+async def get_user(user_id: str):
+    user = await user_handler.fetch_user(user_id=user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return JSONResponse({"message": "success", "user": user.model_dump(mode="json")})
+
 app.include_router(router)
