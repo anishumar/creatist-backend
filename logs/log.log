@@ -6260,3 +6260,1864 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2025-07-07 11:07:53,720 - app - INFO - info - Token successfully decoded
 2025-07-07 11:07:57,655 - app - DEBUG - debug - Decoding token
 2025-07-07 11:07:57,656 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:21,590 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 14:34:21,591 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 14:34:21,592 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 14:34:21,592 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 14:34:21,592 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 14:34:21,592 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 14:34:21,619 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:21,619 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:22,531 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:22,547 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:22,831 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:22,832 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:23,142 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:23,142 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:45,827 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:45,830 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:45,834 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:45,834 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:45,834 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:45,834 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:45,835 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:45,837 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:49,692 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:49,692 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:49,692 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:49,693 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:49,847 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:49,847 - app - INFO - info - Token successfully decoded
+2025-07-07 14:34:50,001 - app - DEBUG - debug - Decoding token
+2025-07-07 14:34:50,002 - app - INFO - info - Token successfully decoded
+2025-07-07 14:35:10,499 - app - DEBUG - debug - Decoding token
+2025-07-07 14:35:10,505 - app - INFO - info - Token successfully decoded
+2025-07-07 14:35:18,198 - app - DEBUG - debug - Decoding token
+2025-07-07 14:35:18,199 - app - INFO - info - Token successfully decoded
+2025-07-07 14:35:27,012 - app - DEBUG - debug - Decoding token
+2025-07-07 14:35:27,013 - app - INFO - info - Token successfully decoded
+2025-07-07 14:35:43,843 - app - DEBUG - debug - Decoding token
+2025-07-07 14:35:43,844 - app - INFO - info - Token successfully decoded
+2025-07-07 14:35:44,109 - app - DEBUG - debug - Decoding token
+2025-07-07 14:35:44,109 - app - INFO - info - Token successfully decoded
+2025-07-07 14:35:44,357 - app - DEBUG - debug - Decoding token
+2025-07-07 14:35:44,357 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:01,783 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:01,787 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:02,049 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:02,049 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:02,305 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:02,305 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:04,494 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:04,495 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:04,752 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:04,753 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:05,020 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:05,020 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:05,027 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:05,027 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:05,035 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:05,035 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:30,889 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 14:48:30,890 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 14:48:30,892 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 14:48:30,892 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 14:48:30,893 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 14:48:30,893 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 14:48:30,920 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:30,920 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:31,161 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:31,161 - app - INFO - info - Token successfully decoded
+2025-07-07 14:48:31,393 - app - DEBUG - debug - Decoding token
+2025-07-07 14:48:31,393 - app - INFO - info - Token successfully decoded
+2025-07-07 14:49:44,965 - app - DEBUG - debug - Decoding token
+2025-07-07 14:49:44,970 - app - INFO - info - Token successfully decoded
+2025-07-07 14:49:44,971 - app - DEBUG - debug - Decoding token
+2025-07-07 14:49:44,971 - app - INFO - info - Token successfully decoded
+2025-07-07 14:49:44,971 - app - DEBUG - debug - Decoding token
+2025-07-07 14:49:44,971 - app - DEBUG - debug - Decoding token
+2025-07-07 14:49:44,971 - app - INFO - info - Token successfully decoded
+2025-07-07 14:49:44,974 - app - INFO - info - Token successfully decoded
+2025-07-07 14:49:48,495 - app - DEBUG - debug - Decoding token
+2025-07-07 14:49:48,495 - app - INFO - info - Token successfully decoded
+2025-07-07 14:49:48,657 - app - DEBUG - debug - Decoding token
+2025-07-07 14:49:48,657 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:05,652 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:00:05,656 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:00:05,660 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:00:05,661 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:00:05,662 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:00:05,662 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:00:05,695 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:05,695 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:06,310 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:06,310 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:07,228 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:07,229 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:10,261 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:10,262 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:10,454 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:10,455 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:17,645 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:17,645 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:17,648 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:17,649 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:17,652 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:17,652 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:17,652 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:17,653 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:21,365 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:21,366 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:21,569 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:21,571 - app - INFO - info - Token successfully decoded
+2025-07-07 15:00:30,882 - app - DEBUG - debug - Decoding token
+2025-07-07 15:00:30,886 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:28,162 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:28,167 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:33,498 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:33,498 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:33,673 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:33,673 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:39,119 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:39,120 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:39,123 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:39,123 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:39,128 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:39,128 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:39,128 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:39,128 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:41,037 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:41,037 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:43,146 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:43,147 - app - INFO - info - Token successfully decoded
+2025-07-07 15:02:43,308 - app - DEBUG - debug - Decoding token
+2025-07-07 15:02:43,308 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:09,660 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:09,662 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:29,282 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:29,283 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:29,538 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:29,539 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:29,798 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:29,798 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:31,820 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:31,821 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:31,980 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:31,981 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:32,142 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:32,142 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:32,721 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:32,721 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:34,472 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:34,472 - app - INFO - info - Token successfully decoded
+2025-07-07 15:03:36,037 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:36,037 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 15:03:36,069 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:36,069 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 15:03:45,728 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:45,728 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 15:03:51,388 - app - DEBUG - debug - Decoding token
+2025-07-07 15:03:51,388 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 15:04:14,331 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:04:14,333 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:04:14,336 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:04:14,336 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:04:14,336 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:04:14,336 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:04:14,359 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:14,359 - app - INFO - info - Token successfully decoded
+2025-07-07 15:04:14,580 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:14,580 - app - INFO - info - Token successfully decoded
+2025-07-07 15:04:14,772 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:14,772 - app - INFO - info - Token successfully decoded
+2025-07-07 15:04:14,945 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:14,945 - app - INFO - info - Token successfully decoded
+2025-07-07 15:04:14,960 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:14,960 - app - INFO - info - Token successfully decoded
+2025-07-07 15:04:14,971 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:14,971 - app - INFO - info - Token successfully decoded
+2025-07-07 15:04:17,378 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:17,379 - app - INFO - info - Token successfully decoded
+2025-07-07 15:04:19,435 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:19,458 - app - INFO - info - Token successfully decoded
+2025-07-07 15:04:19,459 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:19,460 - app - INFO - info - Token successfully decoded
+2025-07-07 15:04:19,460 - app - DEBUG - debug - Decoding token
+2025-07-07 15:04:19,460 - app - INFO - info - Token successfully decoded
+2025-07-07 15:08:33,563 - app - DEBUG - debug - Decoding token
+2025-07-07 15:08:33,568 - app - INFO - info - Token successfully decoded
+2025-07-07 15:08:34,618 - app - DEBUG - debug - Decoding token
+2025-07-07 15:08:34,618 - app - INFO - info - Token successfully decoded
+2025-07-07 15:08:36,965 - app - DEBUG - debug - Decoding token
+2025-07-07 15:08:36,966 - app - INFO - info - Token successfully decoded
+2025-07-07 15:08:37,177 - app - DEBUG - debug - Decoding token
+2025-07-07 15:08:37,177 - app - INFO - info - Token successfully decoded
+2025-07-07 15:08:37,429 - app - DEBUG - debug - Decoding token
+2025-07-07 15:08:37,430 - app - INFO - info - Token successfully decoded
+2025-07-07 15:08:37,437 - app - DEBUG - debug - Decoding token
+2025-07-07 15:08:37,437 - app - INFO - info - Token successfully decoded
+2025-07-07 15:08:37,438 - app - DEBUG - debug - Decoding token
+2025-07-07 15:08:37,439 - app - INFO - info - Token successfully decoded
+2025-07-07 15:08:37,440 - app - DEBUG - debug - Decoding token
+2025-07-07 15:08:37,440 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:09,138 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:09,146 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:14,751 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:14,751 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:15,007 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:15,007 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:15,260 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:15,260 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:15,266 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:15,267 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:15,269 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:15,269 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:15,289 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:15,289 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:16,993 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:16,993 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:16,993 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:16,993 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:16,993 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:16,993 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:16,994 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:16,994 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,657 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,658 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,658 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,658 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,659 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,659 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,660 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,660 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,660 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,661 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,815 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,815 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,984 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,984 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,984 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,985 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,985 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,985 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:20,985 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:20,985 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:37,206 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:37,211 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:44,547 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:44,547 - app - INFO - info - Token successfully decoded
+2025-07-07 15:09:53,735 - app - DEBUG - debug - Decoding token
+2025-07-07 15:09:53,736 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:05,090 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:05,091 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:23,309 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:23,309 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:23,767 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:23,767 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:23,988 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:23,988 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:24,149 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:24,150 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:24,407 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:24,408 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:26,346 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:26,346 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:26,588 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:26,588 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:26,847 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:26,848 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:26,859 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:26,860 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:26,862 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:26,862 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:26,864 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:26,868 - app - INFO - info - Token successfully decoded
+2025-07-07 15:10:26,868 - app - DEBUG - debug - Decoding token
+2025-07-07 15:10:26,868 - app - INFO - info - Token successfully decoded
+2025-07-07 15:11:45,884 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:11:45,884 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:11:45,885 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:11:45,885 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:11:45,885 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:11:45,885 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:11:45,910 - app - DEBUG - debug - Decoding token
+2025-07-07 15:11:45,910 - app - INFO - info - Token successfully decoded
+2025-07-07 15:11:46,118 - app - DEBUG - debug - Decoding token
+2025-07-07 15:11:46,118 - app - INFO - info - Token successfully decoded
+2025-07-07 15:11:46,281 - app - DEBUG - debug - Decoding token
+2025-07-07 15:11:46,281 - app - INFO - info - Token successfully decoded
+2025-07-07 15:11:46,450 - app - DEBUG - debug - Decoding token
+2025-07-07 15:11:46,450 - app - INFO - info - Token successfully decoded
+2025-07-07 15:11:49,826 - app - DEBUG - debug - Decoding token
+2025-07-07 15:11:49,826 - app - INFO - info - Token successfully decoded
+2025-07-07 15:11:49,831 - app - DEBUG - debug - Decoding token
+2025-07-07 15:11:49,832 - app - INFO - info - Token successfully decoded
+2025-07-07 15:11:52,189 - app - DEBUG - debug - Decoding token
+2025-07-07 15:11:52,189 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:41,193 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:41,199 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:41,201 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:41,201 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:41,201 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:41,203 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:41,203 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:41,203 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:45,817 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:45,817 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:45,817 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:45,820 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:46,109 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:46,110 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:46,357 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:46,357 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:48,217 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:48,219 - app - DEBUG - debug - Decoding token
+2025-07-07 15:25:48,222 - app - INFO - info - Token successfully decoded
+2025-07-07 15:25:48,222 - app - INFO - info - Token successfully decoded
+2025-07-07 15:29:50,499 - app - DEBUG - debug - Decoding token
+2025-07-07 15:29:50,521 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 15:29:50,586 - app - DEBUG - debug - Decoding token
+2025-07-07 15:29:50,586 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 15:30:06,503 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:06,509 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 15:30:07,320 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:30:07,320 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:30:07,321 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:30:07,321 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:30:07,321 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:30:07,322 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 15:30:07,364 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:07,364 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:08,571 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:08,573 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:08,753 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:08,754 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:08,935 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:08,935 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:08,952 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:08,952 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:08,954 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:08,954 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:08,961 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:08,962 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:08,963 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:08,964 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:14,889 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:14,890 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:16,049 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:16,050 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:16,061 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:16,062 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:16,066 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:16,067 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:16,067 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:16,067 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:16,068 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:16,068 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:45,921 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:30:45,921 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:30:45,922 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:30:45,922 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:30:45,922 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:30:45,922 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 15:30:45,949 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:45,950 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:46,318 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:46,318 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:46,600 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:46,600 - app - INFO - info - Token successfully decoded
+2025-07-07 15:30:46,929 - app - DEBUG - debug - Decoding token
+2025-07-07 15:30:46,929 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:05,002 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:05:05,004 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:05:05,005 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:05:05,005 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:05:05,005 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:05:05,005 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:05:05,028 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:05,029 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:05,333 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:05,333 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:06,322 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:06,322 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:06,549 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:06,550 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:06,560 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:06,560 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:06,563 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:06,564 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:06,565 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:06,566 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:06,566 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:06,566 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:15,780 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:15,781 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:16,714 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:16,714 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:16,727 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:16,727 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:16,732 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:16,732 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:16,733 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:16,733 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:16,733 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:16,734 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:18,593 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:18,593 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:20,256 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:20,257 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:20,257 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:20,257 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:20,258 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:20,258 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:20,258 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:20,258 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:20,258 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:20,259 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:22,818 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:22,819 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:23,927 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:23,928 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:23,928 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:23,928 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:23,928 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:23,928 - app - DEBUG - debug - Decoding token
+2025-07-07 16:05:23,928 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:23,929 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:23,929 - app - INFO - info - Token successfully decoded
+2025-07-07 16:05:23,929 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:26,982 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:26,986 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:27,876 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:27,876 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:28,140 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:28,140 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:28,140 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:28,141 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:28,141 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:28,141 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:28,660 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:28,660 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:28,998 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:28,998 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:29,337 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:29,338 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:29,352 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:29,352 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:29,355 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:29,355 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:29,356 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:29,356 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:29,356 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:29,356 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,285 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,286 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,286 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,286 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,287 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,287 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,287 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,288 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,288 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,289 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,290 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,290 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,587 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,588 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,829 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,831 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,833 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,833 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,833 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,833 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,833 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,833 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:35,834 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:35,834 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:56,426 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:56,433 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:56,983 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:56,983 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:57,316 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:57,316 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:57,316 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:57,316 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:57,317 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:57,317 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:07:57,806 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:57,806 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:58,066 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:58,066 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:58,358 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:58,358 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:58,369 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:58,369 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:58,371 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:58,372 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:58,372 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:58,373 - app - INFO - info - Token successfully decoded
+2025-07-07 16:07:58,373 - app - DEBUG - debug - Decoding token
+2025-07-07 16:07:58,373 - app - INFO - info - Token successfully decoded
+2025-07-07 16:10:38,332 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:10:38,332 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:10:38,334 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:10:38,334 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:10:38,334 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:10:38,334 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:10:38,370 - app - DEBUG - debug - Decoding token
+2025-07-07 16:10:38,370 - app - INFO - info - Token successfully decoded
+2025-07-07 16:10:39,134 - app - DEBUG - debug - Decoding token
+2025-07-07 16:10:39,134 - app - INFO - info - Token successfully decoded
+2025-07-07 16:10:39,369 - app - DEBUG - debug - Decoding token
+2025-07-07 16:10:39,370 - app - INFO - info - Token successfully decoded
+2025-07-07 16:10:39,546 - app - DEBUG - debug - Decoding token
+2025-07-07 16:10:39,546 - app - INFO - info - Token successfully decoded
+2025-07-07 16:10:39,555 - app - DEBUG - debug - Decoding token
+2025-07-07 16:10:39,556 - app - INFO - info - Token successfully decoded
+2025-07-07 16:10:39,560 - app - DEBUG - debug - Decoding token
+2025-07-07 16:10:39,560 - app - INFO - info - Token successfully decoded
+2025-07-07 16:10:39,561 - app - DEBUG - debug - Decoding token
+2025-07-07 16:10:39,561 - app - DEBUG - debug - Decoding token
+2025-07-07 16:10:39,561 - app - INFO - info - Token successfully decoded
+2025-07-07 16:10:39,561 - app - INFO - info - Token successfully decoded
+2025-07-07 16:12:42,323 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:12:42,324 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:12:42,326 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:12:42,326 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:12:42,326 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:12:42,326 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 16:12:42,346 - app - DEBUG - debug - Decoding token
+2025-07-07 16:12:42,346 - app - INFO - info - Token successfully decoded
+2025-07-07 16:12:42,966 - app - DEBUG - debug - Decoding token
+2025-07-07 16:12:42,967 - app - INFO - info - Token successfully decoded
+2025-07-07 16:12:43,637 - app - DEBUG - debug - Decoding token
+2025-07-07 16:12:43,638 - app - INFO - info - Token successfully decoded
+2025-07-07 16:12:43,975 - app - DEBUG - debug - Decoding token
+2025-07-07 16:12:43,976 - app - INFO - info - Token successfully decoded
+2025-07-07 16:12:43,984 - app - DEBUG - debug - Decoding token
+2025-07-07 16:12:43,984 - app - INFO - info - Token successfully decoded
+2025-07-07 16:12:43,988 - app - DEBUG - debug - Decoding token
+2025-07-07 16:12:43,988 - app - INFO - info - Token successfully decoded
+2025-07-07 16:12:43,989 - app - DEBUG - debug - Decoding token
+2025-07-07 16:12:43,989 - app - DEBUG - debug - Decoding token
+2025-07-07 16:12:43,989 - app - INFO - info - Token successfully decoded
+2025-07-07 16:12:43,989 - app - INFO - info - Token successfully decoded
+2025-07-07 16:12:45,289 - app - DEBUG - debug - Decoding token
+2025-07-07 16:12:45,289 - app - INFO - info - Token successfully decoded
+2025-07-07 16:16:14,701 - app - DEBUG - debug - Decoding token
+2025-07-07 16:16:14,703 - app - INFO - info - Token successfully decoded
+2025-07-07 16:16:41,522 - app - DEBUG - debug - Decoding token
+2025-07-07 16:16:41,528 - app - INFO - info - Token successfully decoded
+2025-07-07 16:16:41,984 - app - DEBUG - debug - Decoding token
+2025-07-07 16:16:41,985 - app - INFO - info - Token successfully decoded
+2025-07-07 16:16:41,992 - app - DEBUG - debug - Decoding token
+2025-07-07 16:16:41,992 - app - INFO - info - Token successfully decoded
+2025-07-07 16:16:41,992 - app - DEBUG - debug - Decoding token
+2025-07-07 16:16:41,993 - app - DEBUG - debug - Decoding token
+2025-07-07 16:16:41,993 - app - INFO - info - Token successfully decoded
+2025-07-07 16:16:41,993 - app - INFO - info - Token successfully decoded
+2025-07-07 16:16:41,994 - app - DEBUG - debug - Decoding token
+2025-07-07 16:16:41,994 - app - INFO - info - Token successfully decoded
+2025-07-07 16:16:44,027 - app - DEBUG - debug - Decoding token
+2025-07-07 16:16:44,028 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:02,956 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:02,966 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:03,471 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:03,472 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:03,473 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:03,474 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:03,483 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:03,483 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:03,483 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:03,483 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:03,483 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:03,483 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:05,704 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:05,706 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:06,048 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:06,048 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:06,294 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:06,295 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:06,303 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:06,303 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:06,304 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:06,304 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:06,304 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:06,305 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:09,196 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:09,197 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:31,689 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:31,690 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:33,976 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:33,976 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:35,904 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:35,904 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:35,914 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:35,914 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:35,917 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:35,917 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:35,918 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:35,918 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:35,919 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:35,919 - app - INFO - info - Token successfully decoded
+2025-07-07 16:20:37,006 - app - DEBUG - debug - Decoding token
+2025-07-07 16:20:37,007 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:16,502 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:08:16,503 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:08:16,503 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:08:16,503 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:08:16,503 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:08:16,503 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:08:16,529 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:16,529 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:16,745 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:16,745 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:17,700 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:17,701 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:18,037 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:18,037 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:18,049 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:18,049 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:18,054 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:18,054 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:18,054 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:18,054 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:18,055 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:18,055 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:37,431 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:37,436 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:40,674 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:40,674 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:41,277 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:41,277 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:41,593 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:41,593 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:43,581 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:43,582 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:43,929 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:43,929 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:44,243 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:44,243 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:44,256 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:44,257 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:44,266 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:44,267 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:44,267 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:44,267 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:44,268 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:44,268 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:44,268 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:44,268 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:44,971 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:44,971 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:45,656 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:45,657 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:45,659 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:45,660 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:45,660 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:45,660 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:45,660 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:45,660 - app - DEBUG - debug - Decoding token
+2025-07-07 17:08:45,660 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:45,660 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:45,660 - app - INFO - info - Token successfully decoded
+2025-07-07 17:08:45,660 - app - INFO - info - Token successfully decoded
+2025-07-07 17:17:22,730 - app - DEBUG - debug - Decoding token
+2025-07-07 17:17:22,731 - app - INFO - info - Token successfully decoded
+2025-07-07 17:17:45,701 - app - DEBUG - debug - Decoding token
+2025-07-07 17:17:45,702 - app - INFO - info - Token successfully decoded
+2025-07-07 17:17:46,799 - app - DEBUG - debug - Decoding token
+2025-07-07 17:17:46,799 - app - INFO - info - Token successfully decoded
+2025-07-07 17:17:47,053 - app - DEBUG - debug - Decoding token
+2025-07-07 17:17:47,053 - app - INFO - info - Token successfully decoded
+2025-07-07 17:19:22,375 - app - DEBUG - debug - Decoding token
+2025-07-07 17:19:22,380 - app - INFO - info - Token successfully decoded
+2025-07-07 17:19:23,401 - app - DEBUG - debug - Decoding token
+2025-07-07 17:19:23,401 - app - INFO - info - Token successfully decoded
+2025-07-07 17:19:23,626 - app - DEBUG - debug - Decoding token
+2025-07-07 17:19:23,627 - app - INFO - info - Token successfully decoded
+2025-07-07 17:19:31,700 - app - DEBUG - debug - Decoding token
+2025-07-07 17:19:31,706 - app - INFO - info - Token successfully decoded
+2025-07-07 17:19:32,050 - app - DEBUG - debug - Decoding token
+2025-07-07 17:19:32,051 - app - INFO - info - Token successfully decoded
+2025-07-07 17:19:32,213 - app - DEBUG - debug - Decoding token
+2025-07-07 17:19:32,213 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:41,428 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:41,433 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:44,296 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:44,296 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:44,516 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:44,517 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:46,901 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:46,902 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:47,143 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:47,143 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:47,396 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:47,397 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:47,431 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:47,431 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:47,432 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:47,432 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:47,433 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:47,434 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:47,435 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:47,435 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:47,435 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:47,435 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:47,883 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:47,883 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:47,890 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:47,890 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,133 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,133 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,148 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,148 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,339 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,339 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,500 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,501 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,502 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,502 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,505 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,505 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,506 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,506 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,506 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,506 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,578 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,579 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,760 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,760 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,766 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,766 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,767 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,767 - app - INFO - info - Token successfully decoded
+2025-07-07 17:20:48,771 - app - DEBUG - debug - Decoding token
+2025-07-07 17:20:48,771 - app - INFO - info - Token successfully decoded
+2025-07-07 17:21:51,550 - app - DEBUG - debug - Decoding token
+2025-07-07 17:21:51,555 - app - INFO - info - Token successfully decoded
+2025-07-07 17:21:57,243 - app - DEBUG - debug - Decoding token
+2025-07-07 17:21:57,243 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:17,009 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:17,010 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:17,436 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:17,436 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:17,674 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:17,675 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:19,957 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:19,957 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,204 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,204 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,475 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,476 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,487 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,487 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,491 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,491 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,492 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,492 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,494 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,494 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,494 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,494 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,748 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,749 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,750 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,751 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,757 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,757 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,760 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,761 - app - DEBUG - debug - Decoding token
+2025-07-07 17:22:20,761 - app - INFO - info - Token successfully decoded
+2025-07-07 17:22:20,761 - app - INFO - info - Token successfully decoded
+2025-07-07 17:23:53,327 - app - DEBUG - debug - Decoding token
+2025-07-07 17:23:53,332 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 17:23:56,796 - app - DEBUG - debug - Decoding token
+2025-07-07 17:23:56,796 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 17:23:56,815 - app - DEBUG - debug - Decoding token
+2025-07-07 17:23:56,815 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 17:24:20,710 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:24:20,711 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:24:20,711 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:24:20,711 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:24:20,712 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:24:20,712 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:24:20,732 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:20,732 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:20,922 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:20,922 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,091 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,091 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,285 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,287 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,303 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,304 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,304 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,305 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,305 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,305 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,305 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,305 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,305 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,305 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,550 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,550 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,579 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,580 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,580 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,580 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,580 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:21,580 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,580 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:21,581 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:24,971 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:24,971 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,232 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,233 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,261 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,262 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,276 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,276 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,278 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,278 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,278 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,278 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,279 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,279 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,393 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,393 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,503 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,503 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,512 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,512 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,520 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,520 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,530 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,530 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,534 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,534 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,684 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,685 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,872 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,872 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,873 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,874 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,874 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,874 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,875 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,875 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,875 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:28,875 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,875 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:28,876 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:29,127 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:29,127 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:29,140 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:29,141 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:29,141 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:29,141 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:29,142 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:29,142 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:29,142 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:29,142 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:39,105 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:39,106 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:43,036 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:43,036 - app - INFO - info - Token successfully decoded
+2025-07-07 17:24:45,620 - app - DEBUG - debug - Decoding token
+2025-07-07 17:24:45,621 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:08,419 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:08,425 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:08,712 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:08,712 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:08,845 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:08,846 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:09,235 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:09,235 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:09,638 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:09,638 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:11,787 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:11,788 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:11,947 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:11,948 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,143 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,144 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,151 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,151 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,168 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,168 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,169 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,169 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,169 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,169 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,170 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,170 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,399 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,399 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,403 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,403 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,427 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,427 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,427 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,427 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,431 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,431 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:12,443 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:12,443 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:45,187 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:45,188 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:45,191 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:45,191 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:45,191 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:45,191 - app - DEBUG - debug - Decoding token
+2025-07-07 17:25:45,192 - app - INFO - info - Token successfully decoded
+2025-07-07 17:25:45,200 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:22,697 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:22,699 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:22,701 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:22,701 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:22,701 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:22,702 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:22,702 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:22,702 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:22,704 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:22,704 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:22,704 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:22,709 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:23,198 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:23,198 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:23,448 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:23,448 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:23,450 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:23,450 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:23,455 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:23,455 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:23,530 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:23,530 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:23,630 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:23,630 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:23,702 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:23,702 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:23,717 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:23,718 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,011 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,011 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,020 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,021 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,022 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,022 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,022 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,023 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,023 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,023 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,023 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,023 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,251 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,251 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,259 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,259 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,269 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,269 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,279 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,279 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,309 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,309 - app - INFO - info - Token successfully decoded
+2025-07-07 17:26:24,309 - app - DEBUG - debug - Decoding token
+2025-07-07 17:26:24,309 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:50,842 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:50,851 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:51,589 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:51,590 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:51,858 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:36:51,858 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:36:51,859 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:36:51,859 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:36:51,859 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:36:51,859 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 17:36:52,365 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:52,365 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:53,227 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:53,227 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:53,548 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:53,548 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:53,565 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:53,565 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:53,567 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:53,567 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:53,569 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:53,569 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:53,571 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:53,571 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:53,572 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:53,572 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:53,987 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:53,988 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:54,245 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:54,245 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:54,497 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:54,498 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:54,521 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:54,521 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:54,629 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:54,630 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:54,630 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:54,630 - app - INFO - info - Token successfully decoded
+2025-07-07 17:36:55,258 - app - DEBUG - debug - Decoding token
+2025-07-07 17:36:55,258 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:02,858 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:02,860 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:02,885 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:02,886 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:02,886 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:02,886 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:02,886 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:02,886 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:02,886 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:02,886 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:02,886 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:02,887 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,115 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,116 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,128 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,128 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,161 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,161 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,178 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,178 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,178 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,178 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,184 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,184 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,366 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,366 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,386 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,386 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,624 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,624 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,626 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,626 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,626 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,627 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,627 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,628 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,631 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,631 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,631 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,631 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,877 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,877 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,907 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,907 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,907 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,907 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,915 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,915 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,916 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,916 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:03,916 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:03,916 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:20,419 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:20,424 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:38,310 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:38,311 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:38,975 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:38,976 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:39,292 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:39,293 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:41,814 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:41,814 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,093 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,093 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,383 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,384 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,400 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,401 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,405 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,405 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,407 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,407 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,407 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,407 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,407 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,408 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,711 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,711 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,720 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,721 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,723 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,723 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,723 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,723 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,724 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,724 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:42,724 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:42,725 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,051 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,052 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,052 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,052 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,275 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,275 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,284 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,284 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,285 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,285 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,285 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,285 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,307 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,308 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,310 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,310 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,569 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,569 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,578 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,578 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,578 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,578 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,579 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,579 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,579 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,579 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,579 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,580 - app - INFO - info - Token successfully decoded
+2025-07-07 17:37:43,963 - app - DEBUG - debug - Decoding token
+2025-07-07 17:37:43,963 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:07,432 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:38:07,433 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:38:07,433 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:38:07,433 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:38:07,433 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:38:07,433 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:38:07,460 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:07,460 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:08,302 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:08,302 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:08,561 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:08,561 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:08,732 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:08,733 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:10,815 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:10,815 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:16,984 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:16,984 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:16,987 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:16,987 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:16,988 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:16,988 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:19,320 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:19,321 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:20,468 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:20,468 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:20,469 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:20,469 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:20,469 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:20,469 - app - INFO - info - Token successfully decoded
+2025-07-07 17:38:22,884 - app - DEBUG - debug - Decoding token
+2025-07-07 17:38:22,884 - app - INFO - info - Token successfully decoded
+2025-07-07 17:40:29,223 - app - DEBUG - debug - Decoding token
+2025-07-07 17:40:29,231 - app - INFO - info - Token successfully decoded
+2025-07-07 17:40:30,023 - app - DEBUG - debug - Decoding token
+2025-07-07 17:40:30,023 - app - INFO - info - Token successfully decoded
+2025-07-07 17:40:30,353 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:40:30,354 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:40:30,354 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:40:30,354 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:40:30,354 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:40:30,354 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:40:30,845 - app - DEBUG - debug - Decoding token
+2025-07-07 17:40:30,846 - app - INFO - info - Token successfully decoded
+2025-07-07 17:40:31,146 - app - DEBUG - debug - Decoding token
+2025-07-07 17:40:31,146 - app - INFO - info - Token successfully decoded
+2025-07-07 17:40:31,476 - app - DEBUG - debug - Decoding token
+2025-07-07 17:40:31,476 - app - INFO - info - Token successfully decoded
+2025-07-07 17:40:32,552 - app - DEBUG - debug - Decoding token
+2025-07-07 17:40:32,552 - app - INFO - info - Token successfully decoded
+2025-07-07 17:40:32,696 - app - DEBUG - debug - Decoding token
+2025-07-07 17:40:32,696 - app - INFO - info - Token successfully decoded
+2025-07-07 17:43:22,009 - app - DEBUG - debug - Decoding token
+2025-07-07 17:43:22,013 - app - INFO - info - Token successfully decoded
+2025-07-07 17:43:24,118 - app - DEBUG - debug - Decoding token
+2025-07-07 17:43:24,118 - app - INFO - info - Token successfully decoded
+2025-07-07 17:43:24,730 - app - DEBUG - debug - Decoding token
+2025-07-07 17:43:24,730 - app - INFO - info - Token successfully decoded
+2025-07-07 17:49:49,732 - app - DEBUG - debug - Decoding token
+2025-07-07 17:49:49,740 - app - INFO - info - Token successfully decoded
+2025-07-07 17:49:50,521 - app - DEBUG - debug - Decoding token
+2025-07-07 17:49:50,522 - app - INFO - info - Token successfully decoded
+2025-07-07 17:49:51,000 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:49:51,000 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:49:51,002 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:49:51,003 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:49:51,004 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:49:51,004 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:49:51,402 - app - DEBUG - debug - Decoding token
+2025-07-07 17:49:51,402 - app - INFO - info - Token successfully decoded
+2025-07-07 17:49:52,365 - app - DEBUG - debug - Decoding token
+2025-07-07 17:49:52,366 - app - INFO - info - Token successfully decoded
+2025-07-07 17:49:52,675 - app - DEBUG - debug - Decoding token
+2025-07-07 17:49:52,675 - app - INFO - info - Token successfully decoded
+2025-07-07 17:49:53,319 - app - DEBUG - debug - Decoding token
+2025-07-07 17:49:53,319 - app - INFO - info - Token successfully decoded
+2025-07-07 17:49:53,561 - app - DEBUG - debug - Decoding token
+2025-07-07 17:49:53,562 - app - INFO - info - Token successfully decoded
+2025-07-07 17:57:01,918 - app - DEBUG - debug - Decoding token
+2025-07-07 17:57:01,928 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 17:57:01,980 - app - DEBUG - debug - Decoding token
+2025-07-07 17:57:01,980 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 17:57:02,693 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:02,693 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:02,693 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:02,693 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:02,693 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:02,693 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:33,394 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:33,394 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:33,395 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:33,395 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:33,395 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:33,395 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 17:57:33,425 - app - DEBUG - debug - Decoding token
+2025-07-07 17:57:33,426 - app - INFO - info - Token successfully decoded
+2025-07-07 17:57:34,207 - app - DEBUG - debug - Decoding token
+2025-07-07 17:57:34,207 - app - INFO - info - Token successfully decoded
+2025-07-07 17:57:35,094 - app - DEBUG - debug - Decoding token
+2025-07-07 17:57:35,094 - app - INFO - info - Token successfully decoded
+2025-07-07 17:57:35,338 - app - DEBUG - debug - Decoding token
+2025-07-07 17:57:35,338 - app - INFO - info - Token successfully decoded
+2025-07-07 17:57:36,020 - app - DEBUG - debug - Decoding token
+2025-07-07 17:57:36,021 - app - INFO - info - Token successfully decoded
+2025-07-07 17:57:36,319 - app - DEBUG - debug - Decoding token
+2025-07-07 17:57:36,319 - app - INFO - info - Token successfully decoded
+2025-07-07 18:01:29,382 - app - DEBUG - debug - Decoding token
+2025-07-07 18:01:29,391 - app - INFO - info - Token successfully decoded
+2025-07-07 18:01:29,394 - app - DEBUG - debug - Decoding token
+2025-07-07 18:01:29,394 - app - INFO - info - Token successfully decoded
+2025-07-07 18:01:29,394 - app - DEBUG - debug - Decoding token
+2025-07-07 18:01:29,394 - app - INFO - info - Token successfully decoded
+2025-07-07 18:01:33,206 - app - DEBUG - debug - Decoding token
+2025-07-07 18:01:33,207 - app - INFO - info - Token successfully decoded
+2025-07-07 18:01:33,510 - app - DEBUG - debug - Decoding token
+2025-07-07 18:01:33,510 - app - INFO - info - Token successfully decoded
+2025-07-07 18:01:44,788 - app - DEBUG - debug - Decoding token
+2025-07-07 18:01:44,793 - app - INFO - info - Token successfully decoded
+2025-07-07 18:01:45,035 - app - DEBUG - debug - Decoding token
+2025-07-07 18:01:45,036 - app - INFO - info - Token successfully decoded
+2025-07-07 18:05:12,584 - app - DEBUG - debug - Decoding token
+2025-07-07 18:05:12,602 - app - INFO - info - Token successfully decoded
+2025-07-07 18:05:13,442 - app - DEBUG - debug - Decoding token
+2025-07-07 18:05:13,443 - app - INFO - info - Token successfully decoded
+2025-07-07 18:05:13,787 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:05:13,788 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:05:13,790 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:05:13,790 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:05:13,790 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:05:13,790 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:05:14,519 - app - DEBUG - debug - Decoding token
+2025-07-07 18:05:14,519 - app - INFO - info - Token successfully decoded
+2025-07-07 18:05:14,843 - app - DEBUG - debug - Decoding token
+2025-07-07 18:05:14,843 - app - INFO - info - Token successfully decoded
+2025-07-07 18:05:15,164 - app - DEBUG - debug - Decoding token
+2025-07-07 18:05:15,165 - app - INFO - info - Token successfully decoded
+2025-07-07 18:05:16,739 - app - DEBUG - debug - Decoding token
+2025-07-07 18:05:16,741 - app - INFO - info - Token successfully decoded
+2025-07-07 18:05:16,957 - app - DEBUG - debug - Decoding token
+2025-07-07 18:05:16,957 - app - INFO - info - Token successfully decoded
+2025-07-07 18:05:17,197 - app - DEBUG - debug - Decoding token
+2025-07-07 18:05:17,198 - app - INFO - info - Token successfully decoded
+2025-07-07 18:07:01,533 - app - DEBUG - debug - Decoding token
+2025-07-07 18:07:01,539 - app - INFO - info - Token successfully decoded
+2025-07-07 18:07:02,509 - app - DEBUG - debug - Decoding token
+2025-07-07 18:07:02,509 - app - INFO - info - Token successfully decoded
+2025-07-07 18:07:02,823 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:07:02,823 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:07:02,823 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:07:02,823 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:07:02,823 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:07:02,823 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:07:03,361 - app - DEBUG - debug - Decoding token
+2025-07-07 18:07:03,361 - app - INFO - info - Token successfully decoded
+2025-07-07 18:07:03,626 - app - DEBUG - debug - Decoding token
+2025-07-07 18:07:03,626 - app - INFO - info - Token successfully decoded
+2025-07-07 18:07:03,885 - app - DEBUG - debug - Decoding token
+2025-07-07 18:07:03,885 - app - INFO - info - Token successfully decoded
+2025-07-07 18:07:05,749 - app - DEBUG - debug - Decoding token
+2025-07-07 18:07:05,749 - app - INFO - info - Token successfully decoded
+2025-07-07 18:07:05,993 - app - DEBUG - debug - Decoding token
+2025-07-07 18:07:05,993 - app - INFO - info - Token successfully decoded
+2025-07-07 18:07:06,467 - app - DEBUG - debug - Decoding token
+2025-07-07 18:07:06,468 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:49,607 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:49,615 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:50,478 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:50,479 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:50,738 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:11:50,738 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:11:50,739 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:11:50,739 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:11:50,739 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:11:50,739 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:11:51,279 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:51,280 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:51,947 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:51,947 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:52,258 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:52,258 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:53,364 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:53,365 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:53,728 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:53,728 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:53,992 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:53,993 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:55,569 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:55,569 - app - INFO - info - Token successfully decoded
+2025-07-07 18:11:57,353 - app - DEBUG - debug - Decoding token
+2025-07-07 18:11:57,354 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:38,481 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:38,496 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 18:13:38,587 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:38,587 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 18:13:52,900 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:52,907 - app - ERROR - error - Token decoding failed due to invalid token
+Traceback (most recent call last):
+  File "/Users/anishumar/Desktop/creatist-backend/src/utils/token_handler.py", line 160, in decode_token
+    decoded = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 262, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anishumar/Desktop/creatist-backend/venv/lib/python3.13/site-packages/jwt/api_jwt.py", line 363, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2025-07-07 18:13:53,716 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:13:53,716 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:13:53,717 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:13:53,717 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:13:53,717 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:13:53,717 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:13:53,750 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:53,750 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:56,124 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:56,130 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:56,426 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:56,427 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:56,681 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:56,682 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:56,704 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:56,705 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:56,732 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:56,732 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:56,732 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:56,732 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:56,732 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:56,732 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:56,732 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:56,733 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:57,802 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:57,802 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:57,982 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:57,982 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:57,993 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:57,993 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:58,081 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:58,081 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:58,086 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:58,086 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:58,088 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:58,088 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:58,089 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:58,090 - app - INFO - info - Token successfully decoded
+2025-07-07 18:13:58,212 - app - DEBUG - debug - Decoding token
+2025-07-07 18:13:58,213 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:26,020 - app - DEBUG - debug - Creating token pair for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:14:26,021 - app - DEBUG - debug - Creating access token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:14:26,022 - app - INFO - info - Access token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:14:26,022 - app - DEBUG - debug - Creating refresh token for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:14:26,022 - app - INFO - info - Refresh token created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:14:26,022 - app - INFO - info - Token pair created for user: 67c74ef1-b519-42f4-9841-c71b318ac70a
+2025-07-07 18:14:26,074 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:26,074 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:26,388 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:26,388 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:26,684 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:26,684 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:26,923 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:26,923 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:28,512 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:28,513 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:28,700 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:28,700 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:29,098 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:29,099 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:30,580 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:30,580 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:45,884 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:45,889 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:48,962 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:48,962 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:48,967 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:48,968 - app - INFO - info - Token successfully decoded
+2025-07-07 18:14:48,975 - app - DEBUG - debug - Decoding token
+2025-07-07 18:14:48,976 - app - INFO - info - Token successfully decoded
+2025-07-07 18:15:45,806 - app - DEBUG - debug - Decoding token
+2025-07-07 18:15:45,811 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:04,219 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:04,220 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:04,968 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:04,968 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:05,254 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:05,255 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:07,649 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:07,649 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:07,902 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:07,902 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:08,074 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:08,075 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:08,085 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:08,085 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:08,087 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:08,087 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:08,677 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:08,678 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:08,678 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:08,679 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:26,367 - app - DEBUG - debug - Creating token pair for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:16:26,367 - app - DEBUG - debug - Creating access token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:16:26,369 - app - INFO - info - Access token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:16:26,369 - app - DEBUG - debug - Creating refresh token for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:16:26,369 - app - INFO - info - Refresh token created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:16:26,369 - app - INFO - info - Token pair created for user: 1b8280ba-b64f-4590-a1d6-185c69cd4709
+2025-07-07 18:16:26,396 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:26,396 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:26,687 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:26,687 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:26,957 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:26,957 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,292 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,293 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,308 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,308 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,313 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,313 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,315 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,315 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,317 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,317 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,318 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,318 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,617 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,618 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,629 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,630 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,636 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,637 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,644 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,644 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,646 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,646 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,648 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,648 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:27,910 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:27,910 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:28,776 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:28,776 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:29,094 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:29,094 - app - INFO - info - Token successfully decoded
+2025-07-07 18:16:29,497 - app - DEBUG - debug - Decoding token
+2025-07-07 18:16:29,497 - app - INFO - info - Token successfully decoded
+2025-07-07 18:18:08,978 - app - DEBUG - debug - Decoding token
+2025-07-07 18:18:08,985 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:03,546 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:03,551 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:03,553 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:03,553 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,218 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,218 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,221 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,221 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,222 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,222 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,224 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,224 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,432 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,432 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,640 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,640 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,698 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,698 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,894 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,894 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,899 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,900 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,900 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,900 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,920 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,920 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,978 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,978 - app - INFO - info - Token successfully decoded
+2025-07-07 18:19:04,979 - app - DEBUG - debug - Decoding token
+2025-07-07 18:19:04,979 - app - INFO - info - Token successfully decoded

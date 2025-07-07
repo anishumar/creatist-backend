@@ -49,6 +49,12 @@ class DependencyType(Enum):
     START_TO_START = "Start-to-Start"
     FINISH_TO_FINISH = "Finish-to-Finish"
 
+class InvitationStatus(str, Enum):
+    PENDING = "pending"
+    ACCEPTED = "accepted"
+    REJECTED = "rejected"
+    CANCELLED = "cancelled"
+
 # Core Models
 class VisionBoard(BaseModel):
     id: uuid.UUID = Field(default_factory=uuid.uuid4)
@@ -300,4 +306,26 @@ class VisionBoardStats(BaseModel):
     pending_assignments: int
     total_tasks: int
     completed_tasks: int
-    overdue_tasks: int 
+    overdue_tasks: int
+
+class Invitation(BaseModel):
+    id: uuid.UUID
+    receiver_id: uuid.UUID
+    sender_id: uuid.UUID
+    object_type: str
+    object_id: uuid.UUID
+    status: InvitationStatus
+    data: dict | None = None
+    created_at: datetime.datetime
+    responded_at: datetime.datetime | None = None
+
+class InvitationCreate(BaseModel):
+    receiver_id: uuid.UUID
+    object_type: str
+    object_id: uuid.UUID
+    data: dict | None = None
+
+class InvitationUpdate(BaseModel):
+    status: InvitationStatus
+    data: dict | None = None
+    responded_at: datetime.datetime | None = None 

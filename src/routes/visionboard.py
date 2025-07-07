@@ -20,7 +20,8 @@ from src.models.visionboard import (
     TaskDependencyCreate,
     TaskCommentCreate, TaskCommentUpdate,
     TaskAttachmentCreate,
-    VisionBoardStatus, AssignmentStatus, TaskStatus
+    VisionBoardStatus, AssignmentStatus, TaskStatus,
+    Invitation, InvitationCreate, InvitationUpdate, InvitationStatus
 )
 from src.models.notification import Notification
 
@@ -44,7 +45,9 @@ def get_token_handler():
     return token_handler
 
 def get_user_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
-    return get_token_handler().decode_token(credentials.credentials)
+    token = get_token_handler().decode_token(credentials.credentials)
+    print('DEBUG: Decoded token:', token)
+    return token
 
 def to_serializable(obj):
     if isinstance(obj, decimal.Decimal):
@@ -573,6 +576,15 @@ async def get_visionboard_equipment_requirements(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@router.get("/notifications")
+async def get_notifications(token: Token = Depends(get_user_token)):
+    """
+    Fetch all notifications for the logged-in user.
+    """
+    handler = get_visionboard_handler()
+    notifications = await handler.get_notifications_for_user(token.sub)
+    return {"notifications": [n.model_dump(mode="json") for n in notifications]}
+
 @router.get("/{visionboard_id}/users")
 async def get_visionboard_users(
     request: Request, 
@@ -598,29 +610,22 @@ async def get_visionboard_users(
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/notifications/batch-create")
-async def batch_create_notifications(request: Request, assignments: List[dict], token: Token = Depends(get_user_token)):
-    """Batch create notifications for multiple assignments."""
+async def batch_create_notifications(request: Request, notifications: List[dict], token: Token = Depends(get_user_token)):
+    """Batch create notifications for multiple events."""
     handler = get_visionboard_handler()
     created = []
-    for assignment in assignments:
+    for notif in notifications:
         await handler.create_notification(
-            receiver_id=assignment["user_id"],
+            receiver_id=notif["receiver_id"],
             sender_id=token.sub,
-            visionboard_id=assignment["visionboard_id"],
-            genre_id=assignment.get("genre_id"),
-            assignment_id=assignment.get("assignment_id"),
-            type=assignment.get("type", "invitation"),
-            message=assignment.get("message")
+            object_type=notif["object_type"],
+            object_id=notif["object_id"],
+            event_type=notif["event_type"],
+            data=notif.get("data"),
+            message=notif.get("message")
         )
-        created.append(assignment["user_id"])
+        created.append(notif["receiver_id"])
     return {"message": "Notifications created", "notified_users": created}
-
-@router.get("/notifications")
-async def get_notifications(token: Token = Depends(get_user_token)):
-    """Fetch all notifications for the logged-in user."""
-    handler = get_visionboard_handler()
-    notifications = await handler.get_notifications_for_user(token.sub)
-    return {"notifications": [n.model_dump(mode="json") for n in notifications]}
 
 @router.post("/notifications/{notification_id}/respond")
 async def respond_to_notification(notification_id: uuid.UUID, response: str, comment: str = None, token: Token = Depends(get_user_token)):
@@ -630,6 +635,90 @@ async def respond_to_notification(notification_id: uuid.UUID, response: str, com
     if notif is None:
         raise HTTPException(status_code=404, detail="Notification not found or not allowed")
     return {"message": f"Invitation {response.lower()}.", "notification": notif.model_dump(mode="json")}
+
+# Invitation Endpoints
+@router.post("/invitations")
+async def create_invitation(
+    request: Request,
+    invitation: InvitationCreate,
+    token: Token = Depends(get_user_token)
+):
+    """Create a new invitation (generic)"""
+    handler = get_visionboard_handler()
+    inv = await handler.create_invitation(sender_id=token.sub, invitation=invitation)
+    # Optionally, send a notification here
+    await handler.create_notification(
+        receiver_id=invitation.receiver_id,
+        sender_id=token.sub,
+        object_type=invitation.object_type,
+        object_id=invitation.object_id,
+        event_type="invited",
+        data=invitation.data,
+        message=f"You have been invited to a {invitation.object_type}."
+    )
+    return {"message": "Invitation created", "invitation": inv.model_dump(mode="json")}
+
+@router.get("/invitations/user")
+async def get_user_invitations(
+    request: Request,
+    status: str = None,
+    token: Token = Depends(get_user_token)
+):
+    """Get all invitations for the current user (optionally filter by status)"""
+    handler = get_visionboard_handler()
+    inv_status = None
+    if status:
+        try:
+            inv_status = InvitationStatus(status)
+        except ValueError:
+            raise HTTPException(status_code=400, detail="Invalid invitation status")
+    invitations = await handler.get_invitations_for_user(token.sub, status=inv_status)
+    return {"invitations": [i.model_dump(mode="json") for i in invitations]}
+
+@router.get("/invitations/object/{object_type}/{object_id}")
+async def get_object_invitations(
+    request: Request,
+    object_type: str,
+    object_id: str,
+    token: Token = Depends(get_user_token)
+):
+    """Get all invitations for a given object (e.g., visionboard, genre, etc.)"""
+    handler = get_visionboard_handler()
+    try:
+        obj_uuid = uuid.UUID(object_id)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid object ID")
+    invitations = await handler.get_invitations_for_object(object_type, obj_uuid)
+    return {"invitations": [i.model_dump(mode="json") for i in invitations]}
+
+@router.post("/invitations/{invitation_id}/respond")
+async def respond_to_invitation(
+    invitation_id: str,
+    response: str,
+    data: dict = None,
+    token: Token = Depends(get_user_token)
+):
+    """Accept or reject an invitation (only receiver can respond)"""
+    handler = get_visionboard_handler()
+    try:
+        inv_uuid = uuid.UUID(invitation_id)
+        status = InvitationStatus(response)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid invitation ID or response")
+    inv = await handler.respond_to_invitation(inv_uuid, responder_id=token.sub, status=status, data=data)
+    if not inv:
+        raise HTTPException(status_code=404, detail="Invitation not found or not allowed")
+    # Optionally, send a notification to the sender
+    await handler.create_notification(
+        receiver_id=inv.sender_id,
+        sender_id=token.sub,
+        object_type=inv.object_type,
+        object_id=inv.object_id,
+        event_type="invitation_response",
+        data={"response": response, "data": data},
+        message=f"User responded: {response} to your invitation."
+    )
+    return {"message": f"Invitation {response.lower()}.", "invitation": inv.model_dump(mode="json")}
 
 # Include the router in the main app
 app.include_router(router) 

@@ -38,3 +38,6 @@ typing-inspection==0.4.1
 typing_extensions==4.14.1
 uvicorn==0.35.0
 websockets==15.0.1
+
+# NOTE: You must run a migration to add the 'invitations' table for the scalable invitation system.
+# See migration script in documentation or ask the assistant for the SQL.

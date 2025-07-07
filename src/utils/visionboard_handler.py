@@ -15,7 +15,8 @@ from src.models.visionboard import (
     TaskComment, TaskCommentCreate, TaskCommentUpdate,
     TaskAttachment, TaskAttachmentCreate,
     VisionBoardSummary, VisionBoardStats,
-    VisionBoardStatus, AssignmentStatus, TaskStatus, EquipmentStatus
+    VisionBoardStatus, AssignmentStatus, TaskStatus, EquipmentStatus,
+    Invitation, InvitationCreate, InvitationUpdate, InvitationStatus
 )
 from src.models.user import User
 import json
@@ -26,16 +27,19 @@ class VisionBoardHandler:
         self.pool = pool
 
     # Vision Board CRUD Operations
-    async def create_notification(self, *, receiver_id, sender_id, visionboard_id, genre_id=None, assignment_id=None, type="invitation", message=None):
+    async def create_notification(self, *, receiver_id, sender_id, object_type, object_id, event_type, data=None, message=None):
         async with self.pool.acquire() as conn:
             query = """
-                INSERT INTO notifications (receiver_id, sender_id, visionboard_id, genre_id, assignment_id, type, status, message)
-                VALUES ($1, $2, $3, $4, $5, $6, 'unread', $7)
+                INSERT INTO notifications (receiver_id, sender_id, object_type, object_id, event_type, status, data, message)
+                VALUES ($1, $2, $3, $4, $5, 'unread', $6, $7)
             """
-            await conn.execute(query, receiver_id, sender_id, visionboard_id, genre_id, assignment_id, type, message)
+            # Serialize data if it's a dict
+            if isinstance(data, dict):
+                data = json.dumps(data)
+            await conn.execute(query, receiver_id, sender_id, object_type, object_id, event_type, data, message)
 
     async def create_visionboard(self, visionboard: VisionBoardCreate, created_by: uuid.UUID) -> VisionBoard:
-        """Create a new vision board and send notifications to assigned users"""
+        """Create a new vision board and send notification to the creator"""
         async with self.pool.acquire() as conn:
             query = """
                 INSERT INTO visionboards (name, description, start_date, end_date, status, created_by)
@@ -53,9 +57,16 @@ class VisionBoardHandler:
             )
             vb = VisionBoard(**dict(row))
 
-            # Fetch all assignments for this visionboard (after genres/assignments are created)
-            # For now, if assignments are not part of creation, skip notification creation here
-            # You can call create_notification after assignments are created
+            # Send notification to the creator (generic model)
+            await self.create_notification(
+                receiver_id=created_by,
+                sender_id=created_by,
+                object_type="visionboard",
+                object_id=vb.id,
+                event_type="created",
+                data=None,
+                message="Your vision board has been created."
+            )
 
             return vb
 
@@ -285,18 +296,19 @@ class VisionBoardHandler:
 
     # Genre Assignment Operations
     async def create_genre_assignment(self, assignment: GenreAssignmentCreate, assigned_by: uuid.UUID) -> GenreAssignment:
-        """Create a new genre assignment (no notification here)"""
+        """Create a new genre assignment, then create an invitation and notification for the user"""
         async with self.pool.acquire() as conn:
             query = """
                 INSERT INTO genre_assignments (genre_id, user_id, status, work_type, payment_type, payment_amount, currency, assigned_by)
                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
                 RETURNING id, genre_id, user_id, status, work_type, payment_type, payment_amount, currency, invited_at, responded_at, assigned_by
             """
+            from src.models.visionboard import AssignmentStatus
             row = await conn.fetchrow(
                 query,
                 assignment.genre_id,
                 assignment.user_id,
-                assignment.status.value,
+                AssignmentStatus.PENDING.value,
                 assignment.work_type.value,
                 assignment.payment_type.value,
                 assignment.payment_amount,
@@ -304,6 +316,38 @@ class VisionBoardHandler:
                 assigned_by
             )
             ga = GenreAssignment(**dict(row))
+
+            # Create invitation for the user
+            from src.models.visionboard import InvitationCreate
+            invitation = InvitationCreate(
+                receiver_id=assignment.user_id,
+                object_type="genre",
+                object_id=assignment.genre_id,
+                data={
+                    "work_type": assignment.work_type.value,
+                    "payment_type": assignment.payment_type.value,
+                    "payment_amount": str(assignment.payment_amount) if assignment.payment_amount else None,
+                    "currency": assignment.currency
+                }
+            )
+            await self.create_invitation(sender_id=assigned_by, invitation=invitation)
+
+            # Send notification to the user
+            await self.create_notification(
+                receiver_id=assignment.user_id,
+                sender_id=assigned_by,
+                object_type="genre",
+                object_id=assignment.genre_id,
+                event_type="invited",
+                data={
+                    "work_type": assignment.work_type.value,
+                    "payment_type": assignment.payment_type.value,
+                    "payment_amount": str(assignment.payment_amount) if assignment.payment_amount else None,
+                    "currency": assignment.currency
+                },
+                message=f"You have been invited to a genre."
+            )
+
             return ga
 
     async def update_assignment_status(self, assignment_id: uuid.UUID, status: AssignmentStatus, user_id: uuid.UUID) -> Optional[GenreAssignment]:
@@ -651,19 +695,107 @@ class VisionBoardHandler:
                 return None
             # Update the notification
             await conn.execute(
-                "UPDATE notifications SET status = 'read', response = $1, comment = $2, updated_at = now() WHERE id = $3",
-                response, comment, notification_id
+                "UPDATE notifications SET status = 'read', updated_at = now() WHERE id = $1",
+                notification_id
             )
-            # Notify the sender
+            # Notify the sender (generic model)
             await self.create_notification(
                 receiver_id=notif_row["sender_id"],
                 sender_id=responder_id,
-                visionboard_id=notif_row["visionboard_id"],
-                genre_id=notif_row["genre_id"],
-                assignment_id=notif_row["assignment_id"],
-                type="response",
+                object_type=notif_row["object_type"],
+                object_id=notif_row["object_id"],
+                event_type="response",
+                data={"response": response, "comment": comment},
                 message=f"User responded: {response}" + (f". Comment: {comment}" if comment else "")
             )
             from src.models.notification import Notification
             notif_row = await conn.fetchrow("SELECT * FROM notifications WHERE id = $1", notification_id)
-            return Notification(**dict(notif_row)) 
+            return Notification(**dict(notif_row))
+
+    # Invitation Operations
+    async def create_invitation(self, sender_id: uuid.UUID, invitation: InvitationCreate) -> Invitation:
+        """Create a new invitation"""
+        async with self.pool.acquire() as conn:
+            query = """
+                INSERT INTO invitations (receiver_id, sender_id, object_type, object_id, status, data)
+                VALUES ($1, $2, $3, $4, 'pending', $5)
+                RETURNING id, receiver_id, sender_id, object_type, object_id, status, data, created_at, responded_at
+            """
+            row = await conn.fetchrow(
+                query,
+                invitation.receiver_id,
+                sender_id,
+                invitation.object_type,
+                invitation.object_id,
+                json.dumps(invitation.data) if invitation.data else None
+            )
+            row_dict = dict(row)
+            if isinstance(row_dict.get('data'), str):
+                try:
+                    row_dict['data'] = json.loads(row_dict['data'])
+                except Exception:
+                    row_dict['data'] = None
+            return Invitation(**row_dict)
+
+    async def get_invitations_for_user(self, user_id: uuid.UUID, status: InvitationStatus | None = None) -> list[Invitation]:
+        """Get all invitations for a user (optionally filter by status)"""
+        async with self.pool.acquire() as conn:
+            if status:
+                query = "SELECT * FROM invitations WHERE receiver_id = $1 AND status = $2 ORDER BY created_at DESC"
+                rows = await conn.fetch(query, user_id, status.value)
+            else:
+                query = "SELECT * FROM invitations WHERE receiver_id = $1 ORDER BY created_at DESC"
+                rows = await conn.fetch(query, user_id)
+            invitations = []
+            for row in rows:
+                row_dict = dict(row)
+                if isinstance(row_dict.get('data'), str):
+                    try:
+                        row_dict['data'] = json.loads(row_dict['data'])
+                    except Exception:
+                        row_dict['data'] = None
+                invitations.append(Invitation(**row_dict))
+            return invitations
+
+    async def get_invitations_for_object(self, object_type: str, object_id: uuid.UUID) -> list[Invitation]:
+        """Get all invitations for a given object (e.g., visionboard, genre, etc.)"""
+        async with self.pool.acquire() as conn:
+            query = "SELECT * FROM invitations WHERE object_type = $1 AND object_id = $2 ORDER BY created_at DESC"
+            rows = await conn.fetch(query, object_type, object_id)
+            invitations = []
+            for row in rows:
+                row_dict = dict(row)
+                if isinstance(row_dict.get('data'), str):
+                    try:
+                        row_dict['data'] = json.loads(row_dict['data'])
+                    except Exception:
+                        row_dict['data'] = None
+                invitations.append(Invitation(**row_dict))
+            return invitations
+
+    async def respond_to_invitation(self, invitation_id: uuid.UUID, responder_id: uuid.UUID, status: InvitationStatus, data: dict | None = None) -> Invitation | None:
+        """Accept or reject an invitation (only receiver can respond)"""
+        async with self.pool.acquire() as conn:
+            # Only allow receiver to respond
+            query = """
+                UPDATE invitations
+                SET status = $1, responded_at = now(), data = $2
+                WHERE id = $3 AND receiver_id = $4
+                RETURNING id, receiver_id, sender_id, object_type, object_id, status, data, created_at, responded_at
+            """
+            row = await conn.fetchrow(
+                query,
+                status.value,
+                json.dumps(data) if data else None,
+                invitation_id,
+                responder_id
+            )
+            if not row:
+                return None
+            row_dict = dict(row)
+            if isinstance(row_dict.get('data'), str):
+                try:
+                    row_dict['data'] = json.loads(row_dict['data'])
+                except Exception:
+                    row_dict['data'] = None
+            return Invitation(**row_dict) 
