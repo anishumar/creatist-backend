@@ -445,3 +445,29 @@ class UserHandler:
             .execute()
         )
         return [record["following_id"] for record in response.data]
+
+    async def send_direct_message(self, sender_id: str, receiver_id: str, message: str):
+        # Security: sender_id must match authenticated user
+        payload = {
+            "sender_id": str(sender_id),
+            "receiver_id": str(receiver_id),
+            "message": message
+        }
+        await self.supabase.table("direct_messages").insert(payload).execute()
+
+    async def get_direct_messages(self, user_id: str, other_user_id: str, limit: int = 50, before: str = None):
+        # Fetch messages where (sender_id=user_id AND receiver_id=other_user_id) OR (sender_id=other_user_id AND receiver_id=user_id)
+        query = (
+            self.supabase.table("direct_messages")
+            .select("*")
+            .or_(
+                f"and(sender_id.eq.{user_id},receiver_id.eq.{other_user_id}),"
+                f"and(sender_id.eq.{other_user_id},receiver_id.eq.{user_id})"
+            )
+            .order("created_at", desc=True)
+            .limit(limit)
+        )
+        if before:
+            query = query.lt("created_at", before)
+        response = await query.execute()
+        return response.data

@@ -6,6 +6,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 import decimal
 import datetime
 from typing import List
+import logging
 
 from src.app import app
 from src.utils import Token, TokenHandler
@@ -21,9 +22,11 @@ from src.models.visionboard import (
     TaskCommentCreate, TaskCommentUpdate,
     TaskAttachmentCreate,
     VisionBoardStatus, AssignmentStatus, TaskStatus,
-    Invitation, InvitationCreate, InvitationUpdate, InvitationStatus
+    Invitation, InvitationCreate, InvitationUpdate, InvitationStatus,
+    GroupMessageCreate
 )
 from src.models.notification import Notification
+from src.models.user import User
 
 router = APIRouter(prefix="/v1/visionboard", tags=["Vision Board"])
 security = HTTPBearer()
@@ -31,6 +34,8 @@ security = HTTPBearer()
 # Initialize handlers (lazy initialization)
 visionboard_handler = None
 token_handler = None
+
+logger = logging.getLogger(__name__)
 
 def get_visionboard_handler():
     global visionboard_handler
@@ -743,6 +748,95 @@ async def respond_to_invitation(
         message=f"User responded: {response} to your invitation."
     )
     return {"message": f"Invitation {response.lower()}.", "invitation": inv.model_dump(mode="json")}
+
+@router.post("/{visionboard_id}/group-chat/message")
+async def send_group_message(
+    visionboard_id: str,
+    msg: GroupMessageCreate,
+    token: Token = Depends(get_user_token)
+):
+    """Send group message with debug logging"""
+    logger.info(f"📤 Group message send attempt")
+    logger.debug(f"   Visionboard ID: {visionboard_id}")
+    logger.debug(f"   Sender (from token): {token.sub}")
+    logger.debug(f"   Message content: {msg.message[:50]}...")
+    
+    handler = get_visionboard_handler()
+    try:
+        logger.info(f"✅ Sending group message to visionboard {visionboard_id}")
+        message = await handler.send_group_message(
+            visionboard_id=uuid.UUID(visionboard_id),
+            sender_id=token.sub,
+            message=msg.message
+        )
+        logger.info(f"✅ Group message sent successfully")
+        return {"message": "Message sent", "group_message": message.model_dump(mode="json")}
+    except PermissionError as e:
+        logger.warning(f"🚫 Permission denied for group message: {str(e)}")
+        logger.warning(f"   User: {token.sub}")
+        logger.warning(f"   Visionboard: {visionboard_id}")
+        raise HTTPException(status_code=403, detail=str(e))
+    except Exception as e:
+        logger.error(f"❌ Failed to send group message: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to send message: {str(e)}")
+
+@router.get("/{visionboard_id}/group-chat/messages")
+async def get_group_messages(
+    visionboard_id: str,
+    limit: int = 50,
+    before: datetime.datetime = None,
+    token: Token = Depends(get_user_token)
+):
+    """Get group messages with debug logging"""
+    logger.info(f"📥 Group message fetch attempt")
+    logger.debug(f"   Visionboard ID: {visionboard_id}")
+    logger.debug(f"   Requesting user (from token): {token.sub}")
+    logger.debug(f"   Limit: {limit}")
+    logger.debug(f"   Before: {before}")
+    
+    handler = get_visionboard_handler()
+    try:
+        logger.info(f"✅ Fetching group messages for visionboard {visionboard_id}")
+        messages = await handler.get_group_messages(
+            visionboard_id=uuid.UUID(visionboard_id),
+            user_id=token.sub,
+            limit=limit,
+            before=before
+        )
+        logger.info(f"✅ Retrieved {len(messages)} group messages")
+        
+        # Fetch avatar_url for each sender
+        from src.utils.user_handler import UserHandler
+        user_handler = UserHandler()
+        result = []
+        
+        logger.debug(f"👤 Fetching avatars for {len(messages)} group messages...")
+        for i, m in enumerate(messages):
+            sender_id = str(m.sender_id)
+            logger.debug(f"   Message {i+1}: sender_id = {sender_id}")
+            
+            try:
+                user = await user_handler.fetch_user(user_id=sender_id)
+                avatar_url = user.profile_image_url if user and hasattr(user, 'profile_image_url') else None
+                logger.debug(f"   ✅ Avatar for {sender_id}: {avatar_url}")
+            except Exception as e:
+                logger.error(f"   ❌ Failed to fetch avatar for {sender_id}: {str(e)}")
+                avatar_url = None
+            
+            msg_dict = m.model_dump(mode="json")
+            msg_dict["avatar_url"] = avatar_url
+            result.append(msg_dict)
+        
+        logger.info(f"✅ Returning {len(result)} group messages with avatars")
+        return {"messages": result}
+    except PermissionError as e:
+        logger.warning(f"🚫 Permission denied for group messages: {str(e)}")
+        logger.warning(f"   User: {token.sub}")
+        logger.warning(f"   Visionboard: {visionboard_id}")
+        raise HTTPException(status_code=403, detail=str(e))
+    except Exception as e:
+        logger.error(f"❌ Failed to fetch group messages: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to fetch messages: {str(e)}")
 
 # Include the router in the main app
 app.include_router(router) 

@@ -34,4 +34,8 @@ async def shutdown():
 
 app = FastAPI(title="Creatist API Documentation", on_startup=[startup], on_shutdown=[shutdown])
 
-from .routes import *  # 
+from .routes import *  # noqa
+from .routes.ws_chat import router as ws_router
+
+# Include WebSocket router
+app.include_router(ws_router)

@@ -7,6 +7,7 @@ from uuid import UUID
 import jwt
 from pydantic import BaseModel, Field
 from pytz import timezone
+import time
 
 from src.models import User
 from src.utils.log import log
@@ -56,49 +57,41 @@ class TokenHandler:
         log.debug("Creating token pair for user: %s", user.id)
         
         # Access token - short lived (15 minutes)
-        access_token = self.create_access_token(user, expire_in=900)
+        access_token = self.create_access_token(user)
         
         # Refresh token - longer lived (7 days)
-        refresh_token = self.create_refresh_token(user, expire_in=604800)
+        refresh_token = self.create_refresh_token(user)
         
         log.info("Token pair created for user: %s", user.id)
         return access_token, refresh_token
 
-    def create_access_token(self, user: User, expire_in: int = 900) -> str:  # 15 minutes
+    def create_access_token(self, user: User) -> str:  # 15 minutes
         log.debug("Creating access token for user: %s", user.id)
-        payload = Token(
-            sub=user.id,
-            email=user.email,
-            name="%s" % user.name,
-            exp=int(
-                (
-                    datetime.now(timezone("UTC")) + timedelta(seconds=expire_in)
-                ).timestamp()
-            ),
-        )
-        token = jwt.encode(
-            payload.model_dump(mode="json"), self.secret, algorithm=self.algorithm
-        )
+        now = int(time.time())
+        access_payload = {
+            "sub": str(user.id),
+            "email": user.email,
+            "name": user.name,
+            "iat": now,
+            "exp": now + 60 * 15  # 15 minutes
+        }
+        token = jwt.encode(access_payload, self.secret, algorithm=self.algorithm)
         log.info("Access token created for user: %s", user.id)
         return token
 
-    def create_refresh_token(self, user: User, expire_in: int = 604800) -> str:  # 7 days
+    def create_refresh_token(self, user: User) -> str:  # 7 days
         log.debug("Creating refresh token for user: %s", user.id)
         import secrets
         jti = secrets.token_urlsafe(32)  # Unique token ID
         
-        payload = RefreshToken(
-            sub=user.id,
-            jti=jti,
-            exp=int(
-                (
-                    datetime.now(timezone("UTC")) + timedelta(seconds=expire_in)
-                ).timestamp()
-            ),
-        )
-        token = jwt.encode(
-            payload.model_dump(mode="json"), self.secret, algorithm=self.algorithm
-        )
+        now = int(time.time())
+        refresh_payload = {
+            "sub": str(user.id),
+            "type": "refresh",
+            "iat": now,
+            "exp": now + 60 * 60 * 24 * 7  # 7 days
+        }
+        token = jwt.encode(refresh_payload, self.secret, algorithm=self.algorithm)
         log.info("Refresh token created for user: %s", user.id)
         return token
 
@@ -163,3 +156,9 @@ class TokenHandler:
         except jwt.InvalidTokenError:
             log.error("Token decoding failed due to invalid token", exc_info=True)
             raise
+
+    def decode_refresh_token(self, token: str) -> dict:
+        payload = jwt.decode(token, self.secret, algorithms=[self.algorithm])
+        if payload.get("type") != "refresh":
+            raise Exception("Not a refresh token")
+        return payload

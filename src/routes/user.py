@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import logging
 
 from fastapi import Request, APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
@@ -13,7 +14,11 @@ from src.models.user import (
     User, UserUpdate, Showcase, Comment, VisionBoard,
     VisionBoardTask, Location
 )
+from src.models.visionboard import DirectMessageCreate
 from typing import List
+
+# Set up logging
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/v1", tags=["Users"])
 JWT_SECRET = os.environ["JWT_SECRET"]
@@ -44,6 +49,27 @@ async def login_user(request: Request, email: str, password: str):
         "token_type": "bearer",
         "expires_in": 86400  # 24 hours
     })
+
+@router.post("/refresh")
+async def refresh_token(request: Request):
+    data = await request.json()
+    refresh_token = data.get("refresh_token")
+    if not refresh_token:
+        raise HTTPException(status_code=400, detail="Missing refresh_token")
+    try:
+        token_data = token_handler.decode_refresh_token(refresh_token)
+        user_id = token_data["sub"]
+        user = await user_handler.fetch_user(user_id=user_id)
+        if not user:
+            raise HTTPException(status_code=401, detail="User not found")
+        access_token = token_handler.create_access_token(user)
+        return JSONResponse({
+            "access_token": access_token,
+            "token_type": "bearer",
+            "expires_in": 900
+        })
+    except Exception as e:
+        raise HTTPException(status_code=401, detail="Invalid refresh token")
 
 @router.put("/update")
 async def update_user(request: Request, user: User, token: Token = Depends(get_user_token)):
@@ -163,6 +189,89 @@ async def create_message(request: Request, user_id: str, message: str, token: To
 async def get_messages(request: Request, user_id: str, limit: int, token: Token = Depends(get_user_token)):
     messages = await user_handler.get_messages(user_id=token.sub, other_user_id=user_id, limit=limit)
     return JSONResponse({"message": "success", "messages": messages})
+
+@router.post("/message/{user_id}")
+async def send_direct_message(user_id: str, msg: DirectMessageCreate, token: Token = Depends(get_user_token)):
+    """Send direct message with debug logging"""
+    logger.info(f"📤 Direct message send attempt")
+    logger.debug(f"   Sender (from token): {token.sub}")
+    logger.debug(f"   Receiver (from URL): {user_id}")
+    logger.debug(f"   Message receiver (from payload): {msg.receiver_id}")
+    logger.debug(f"   Message content: {msg.message[:50]}...")
+    
+    # Permission check
+    logger.debug(f"🔒 Checking send permissions...")
+    logger.debug(f"   Token user ID: {token.sub}")
+    logger.debug(f"   URL user ID: {user_id}")
+    logger.debug(f"   Payload receiver ID: {msg.receiver_id}")
+    
+    if str(token.sub) != str(msg.receiver_id) and str(token.sub) != str(user_id):
+        logger.warning(f"🚫 Permission denied: User {token.sub} not allowed to send message")
+        logger.warning(f"   Token user: {token.sub}")
+        logger.warning(f"   URL user: {user_id}")
+        logger.warning(f"   Payload receiver: {msg.receiver_id}")
+        raise HTTPException(status_code=403, detail="Not allowed to send message as another user.")
+    
+    logger.info(f"✅ Permission granted. Sending message from {token.sub} to {user_id}")
+    
+    try:
+        await user_handler.send_direct_message(sender_id=token.sub, receiver_id=user_id, message=msg.message)
+        logger.info(f"✅ Direct message sent successfully")
+        return {"message": "Message sent"}
+    except Exception as e:
+        logger.error(f"❌ Failed to send direct message: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to send message: {str(e)}")
+
+@router.get("/message/{user_id}")
+async def get_direct_messages(user_id: str, limit: int = 50, before: str = None, token: Token = Depends(get_user_token)):
+    """Get direct messages with debug logging"""
+    logger.info(f"📥 Direct message fetch attempt")
+    logger.debug(f"   Requesting user (from token): {token.sub}")
+    logger.debug(f"   Target user (from URL): {user_id}")
+    logger.debug(f"   Limit: {limit}")
+    logger.debug(f"   Before: {before}")
+    
+    # Permission check
+    logger.debug(f"🔒 Checking fetch permissions...")
+    logger.debug(f"   Token user ID: {token.sub}")
+    logger.debug(f"   URL user ID: {user_id}")
+    logger.debug(f"   Are they the same? {str(token.sub) == str(user_id)}")
+    
+    # For direct messages, both participants should be able to view the conversation
+    # The URL user_id represents the other user in the conversation
+    # The token user should be able to view messages with the URL user
+    logger.info(f"✅ Permission granted. Fetching messages between {token.sub} and {user_id}")
+    
+    try:
+        messages = await user_handler.get_direct_messages(user_id=str(token.sub), other_user_id=user_id, limit=limit, before=before)
+        logger.info(f"✅ Retrieved {len(messages)} messages")
+        
+        # Fetch avatar_url for each sender
+        from src.app import user_handler as user_handler_local
+        result = []
+        
+        logger.debug(f"👤 Fetching avatars for {len(messages)} messages...")
+        for i, m in enumerate(messages):
+            sender_id = m.get("sender_id")
+            logger.debug(f"   Message {i+1}: sender_id = {sender_id}")
+            
+            try:
+                user = await user_handler_local.fetch_user(user_id=str(sender_id))
+                avatar_url = user.profile_image_url if user and hasattr(user, 'profile_image_url') and user.profile_image_url else "https://ui-avatars.com/api/?name=User"
+                logger.debug(f"   ✅ Avatar for {sender_id}: {avatar_url}")
+            except Exception as e:
+                logger.error(f"   ❌ Failed to fetch avatar for {sender_id}: {str(e)}")
+                avatar_url = "https://ui-avatars.com/api/?name=User"
+            
+            m["avatar_url"] = avatar_url
+            result.append(m)
+        
+        logger.info(f"✅ Returning {len(result)} messages with avatars")
+        return {"messages": result}
+        
+    except Exception as e:
+        logger.error(f"❌ Failed to fetch direct messages: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to fetch messages: {str(e)}")
 
 # Showcase APIs
 @router.get("/showcases")

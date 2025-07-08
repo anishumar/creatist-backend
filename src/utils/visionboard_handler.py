@@ -16,7 +16,8 @@ from src.models.visionboard import (
     TaskAttachment, TaskAttachmentCreate,
     VisionBoardSummary, VisionBoardStats,
     VisionBoardStatus, AssignmentStatus, TaskStatus, EquipmentStatus,
-    Invitation, InvitationCreate, InvitationUpdate, InvitationStatus
+    Invitation, InvitationCreate, InvitationUpdate, InvitationStatus,
+    GroupMessage
 )
 from src.models.user import User
 import json
@@ -834,4 +835,54 @@ class VisionBoardHandler:
                     )
                     print(f"DEBUG: Assignment update result: {result}")
 
-            return Invitation(**row_dict) 
+            return Invitation(**row_dict)
+
+    async def send_group_message(self, visionboard_id: uuid.UUID, sender_id: uuid.UUID, message: str) -> 'GroupMessage':
+        """Send a group chat message to a vision board group."""
+        async with self.pool.acquire() as conn:
+            # Security: check sender is a member (creator or assigned)
+            member_query = """
+                SELECT 1 FROM visionboards WHERE id = $1 AND created_by = $2
+                UNION
+                SELECT 1 FROM genre_assignments ga
+                JOIN genres g ON ga.genre_id = g.id
+                WHERE g.visionboard_id = $1 AND ga.user_id = $2 AND ga.status = 'Accepted'
+            """
+            member = await conn.fetchrow(member_query, visionboard_id, sender_id)
+            if not member:
+                raise PermissionError("Not a member of this vision board group chat.")
+            query = """
+                INSERT INTO group_messages (visionboard_id, sender_id, message)
+                VALUES ($1, $2, $3)
+                RETURNING id, visionboard_id, sender_id, message, created_at
+            """
+            row = await conn.fetchrow(query, visionboard_id, sender_id, message)
+            return GroupMessage(**dict(row))
+
+    async def get_group_messages(self, visionboard_id: uuid.UUID, user_id: uuid.UUID, limit: int = 50, before: datetime.datetime = None) -> list['GroupMessage']:
+        """Fetch group chat messages for a vision board (paginated, newest first)."""
+        async with self.pool.acquire() as conn:
+            # Security: check user is a member
+            member_query = """
+                SELECT 1 FROM visionboards WHERE id = $1 AND created_by = $2
+                UNION
+                SELECT 1 FROM genre_assignments ga
+                JOIN genres g ON ga.genre_id = g.id
+                WHERE g.visionboard_id = $1 AND ga.user_id = $2 AND ga.status = 'Accepted'
+            """
+            member = await conn.fetchrow(member_query, visionboard_id, user_id)
+            if not member:
+                raise PermissionError("Not a member of this vision board group chat.")
+            query = """
+                SELECT id, visionboard_id, sender_id, message, created_at
+                FROM group_messages
+                WHERE visionboard_id = $1
+            """
+            params = [visionboard_id]
+            if before:
+                query += " AND created_at < $2"
+                params.append(before)
+            query += " ORDER BY created_at DESC LIMIT $%d" % (len(params) + 1)
+            params.append(limit)
+            rows = await conn.fetch(query, *params)
+            return [GroupMessage(**dict(row)) for row in rows] 

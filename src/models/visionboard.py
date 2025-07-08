@@ -328,4 +328,25 @@ class InvitationCreate(BaseModel):
 class InvitationUpdate(BaseModel):
     status: InvitationStatus
     data: dict | None = None
-    responded_at: datetime.datetime | None = None 
+    responded_at: datetime.datetime | None = None
+
+class GroupMessage(BaseModel):
+    id: uuid.UUID
+    visionboard_id: uuid.UUID
+    sender_id: uuid.UUID
+    message: str
+    created_at: datetime.datetime
+
+class GroupMessageCreate(BaseModel):
+    message: str
+
+class DirectMessage(BaseModel):
+    id: uuid.UUID
+    sender_id: uuid.UUID
+    receiver_id: uuid.UUID
+    message: str
+    created_at: datetime.datetime
+
+class DirectMessageCreate(BaseModel):
+    receiver_id: uuid.UUID
+    message: str 
