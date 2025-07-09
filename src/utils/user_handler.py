@@ -4,6 +4,7 @@ import os
 from typing import Optional, Union, List
 from uuid import UUID
 import math
+import enum
 
 from dotenv import load_dotenv
 from src.models.user import (
@@ -56,7 +57,15 @@ class UserHandler:
         return self._parse(response.data)
 
     async def update_user_partial(self, user_id: str, user_update: UserUpdate) -> bool:
-        update_data = {k: v for k, v in user_update.model_dump(exclude_unset=True).items()}
+        def to_json_serializable(val):
+            if isinstance(val, list):
+                return [to_json_serializable(i) for i in val]
+            if hasattr(val, "model_dump"):
+                return val.model_dump()
+            if isinstance(val, enum.Enum):
+                return val.value
+            return val
+        update_data = {k: to_json_serializable(v) for k, v in user_update.model_dump(exclude_unset=True).items()}
         if not update_data:
             return False
         response = await self.supabase.table("users") \

@@ -17,7 +17,7 @@ from src.models.visionboard import (
     VisionBoardSummary, VisionBoardStats,
     VisionBoardStatus, AssignmentStatus, TaskStatus, EquipmentStatus,
     Invitation, InvitationCreate, InvitationUpdate, InvitationStatus,
-    GroupMessage
+    GroupMessage, Draft, DraftComment
 )
 from src.models.user import User
 import json
@@ -886,3 +886,101 @@ class VisionBoardHandler:
             params.append(limit)
             rows = await conn.fetch(query, *params)
             return [GroupMessage(**dict(row)) for row in rows] 
+
+    # --- Drafts ---
+    async def list_drafts(self, visionboard_id: uuid.UUID) -> list:
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """
+                SELECT * FROM drafts WHERE visionboard_id = $1 ORDER BY updated_at DESC
+                """, visionboard_id
+            )
+            return [Draft(**dict(row)) for row in rows]
+
+    async def create_draft(self, visionboard_id: uuid.UUID, user_id: uuid.UUID, media_url: str, media_type: str = None, description: str = None):
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(
+                """
+                INSERT INTO drafts (visionboard_id, user_id, media_url, media_type, description)
+                VALUES ($1, $2, $3, $4, $5)
+                RETURNING *
+                """,
+                visionboard_id, user_id, media_url, media_type, description
+            )
+            return Draft(**dict(row))
+
+    async def get_draft(self, draft_id: uuid.UUID):
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(
+                "SELECT * FROM drafts WHERE id = $1", draft_id
+            )
+            return Draft(**dict(row)) if row else None
+
+    async def update_draft(self, draft_id: uuid.UUID, user_id: uuid.UUID, **fields):
+        if not fields:
+            return await self.get_draft(draft_id)
+        set_clauses = []
+        values = []
+        param_count = 1
+        for k, v in fields.items():
+            set_clauses.append(f"{k} = ${param_count}")
+            values.append(v)
+            param_count += 1
+        set_clauses.append(f"updated_at = ${param_count}")
+        values.append(datetime.datetime.utcnow())
+        param_count += 1
+        values.extend([draft_id, user_id])
+        query = f"""
+            UPDATE drafts SET {', '.join(set_clauses)}
+            WHERE id = ${param_count} AND user_id = ${param_count+1}
+            RETURNING *
+        """
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(query, *values)
+            return Draft(**dict(row)) if row else None
+
+    async def delete_draft(self, draft_id: uuid.UUID, user_id: uuid.UUID) -> bool:
+        async with self.pool.acquire() as conn:
+            result = await conn.execute(
+                "DELETE FROM drafts WHERE id = $1 AND user_id = $2", draft_id, user_id
+            )
+            return result.startswith("DELETE 1")
+
+    # --- Draft Comments ---
+    async def list_draft_comments(self, draft_id: uuid.UUID) -> list:
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                "SELECT * FROM draft_comments WHERE draft_id = $1 ORDER BY created_at ASC", draft_id
+            )
+            return [DraftComment(**dict(row)) for row in rows]
+
+    async def create_draft_comment(self, draft_id: uuid.UUID, user_id: uuid.UUID, comment: str):
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(
+                """
+                INSERT INTO draft_comments (draft_id, user_id, comment)
+                VALUES ($1, $2, $3)
+                RETURNING *
+                """,
+                draft_id, user_id, comment
+            )
+            return DraftComment(**dict(row))
+
+    async def update_draft_comment(self, comment_id: uuid.UUID, user_id: uuid.UUID, comment: str):
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(
+                """
+                UPDATE draft_comments SET comment = $1, updated_at = $2
+                WHERE id = $3 AND user_id = $4
+                RETURNING *
+                """,
+                comment, datetime.datetime.utcnow(), comment_id, user_id
+            )
+            return DraftComment(**dict(row)) if row else None
+
+    async def delete_draft_comment(self, comment_id: uuid.UUID, user_id: uuid.UUID) -> bool:
+        async with self.pool.acquire() as conn:
+            result = await conn.execute(
+                "DELETE FROM draft_comments WHERE id = $1 AND user_id = $2", comment_id, user_id
+            )
+            return result.startswith("DELETE 1") 

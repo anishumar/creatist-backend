@@ -23,7 +23,7 @@ from src.models.visionboard import (
     TaskAttachmentCreate,
     VisionBoardStatus, AssignmentStatus, TaskStatus,
     Invitation, InvitationCreate, InvitationUpdate, InvitationStatus,
-    GroupMessageCreate
+    GroupMessageCreate, Draft, DraftCreate, DraftUpdate, DraftComment, DraftCommentCreate, DraftCommentUpdate
 )
 from src.models.notification import Notification
 from src.models.user import User
@@ -837,6 +837,78 @@ async def get_group_messages(
     except Exception as e:
         logger.error(f"❌ Failed to fetch group messages: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Failed to fetch messages: {str(e)}")
+
+# --- Draft Endpoints ---
+@router.get("/{visionboard_id}/drafts")
+async def list_drafts(visionboard_id: str, token: Token = Depends(get_user_token)):
+    drafts = await get_visionboard_handler().list_drafts(uuid.UUID(visionboard_id))
+    return [d.model_dump(mode="json") for d in drafts]
+
+@router.post("/{visionboard_id}/drafts")
+async def create_draft(visionboard_id: str, draft: DraftCreate, token: Token = Depends(get_user_token)):
+    created = await get_visionboard_handler().create_draft(
+        visionboard_id=uuid.UUID(visionboard_id),
+        user_id=token.sub,
+        media_url=draft.media_url,
+        media_type=draft.media_type,
+        description=draft.description
+    )
+    return created.model_dump(mode="json")
+
+@router.get("/drafts/{draft_id}")
+async def get_draft(draft_id: str, token: Token = Depends(get_user_token)):
+    draft = await get_visionboard_handler().get_draft(uuid.UUID(draft_id))
+    if not draft:
+        raise HTTPException(status_code=404, detail="Draft not found")
+    return draft.model_dump(mode="json")
+
+@router.patch("/drafts/{draft_id}")
+async def update_draft(draft_id: str, update: DraftUpdate, token: Token = Depends(get_user_token)):
+    fields = {k: v for k, v in update.model_dump(exclude_unset=True).items()}
+    updated = await get_visionboard_handler().update_draft(uuid.UUID(draft_id), token.sub, **fields)
+    if not updated:
+        raise HTTPException(status_code=404, detail="Draft not found or not allowed")
+    return updated.model_dump(mode="json")
+
+@router.delete("/drafts/{draft_id}")
+async def delete_draft(draft_id: str, token: Token = Depends(get_user_token)):
+    success = await get_visionboard_handler().delete_draft(uuid.UUID(draft_id), token.sub)
+    if not success:
+        raise HTTPException(status_code=404, detail="Draft not found or not allowed")
+    return {"message": "Draft deleted"}
+
+# --- Draft Comment Endpoints ---
+@router.get("/drafts/{draft_id}/comments")
+async def list_draft_comments(draft_id: str, token: Token = Depends(get_user_token)):
+    comments = await get_visionboard_handler().list_draft_comments(uuid.UUID(draft_id))
+    return [c.model_dump(mode="json") for c in comments]
+
+@router.post("/drafts/{draft_id}/comments")
+async def create_draft_comment(draft_id: str, comment: DraftCommentCreate, token: Token = Depends(get_user_token)):
+    created = await get_visionboard_handler().create_draft_comment(
+        draft_id=uuid.UUID(draft_id),
+        user_id=token.sub,
+        comment=comment.comment
+    )
+    return created.model_dump(mode="json")
+
+@router.patch("/draft-comments/{comment_id}")
+async def update_draft_comment(comment_id: str, update: DraftCommentUpdate, token: Token = Depends(get_user_token)):
+    updated = await get_visionboard_handler().update_draft_comment(
+        comment_id=uuid.UUID(comment_id),
+        user_id=token.sub,
+        comment=update.comment
+    )
+    if not updated:
+        raise HTTPException(status_code=404, detail="Comment not found or not allowed")
+    return updated.model_dump(mode="json")
+
+@router.delete("/draft-comments/{comment_id}")
+async def delete_draft_comment(comment_id: str, token: Token = Depends(get_user_token)):
+    success = await get_visionboard_handler().delete_draft_comment(uuid.UUID(comment_id), token.sub)
+    if not success:
+        raise HTTPException(status_code=404, detail="Comment not found or not allowed")
+    return {"message": "Comment deleted"}
 
 # Include the router in the main app
 app.include_router(router) 

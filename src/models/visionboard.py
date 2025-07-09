@@ -350,3 +350,43 @@ class DirectMessage(BaseModel):
 class DirectMessageCreate(BaseModel):
     receiver_id: uuid.UUID
     message: str 
+
+class Draft(BaseModel):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
+    visionboard_id: uuid.UUID
+    user_id: uuid.UUID
+    media_url: str
+    media_type: Optional[str] = None  # e.g., 'image', 'video', 'audio'
+    description: Optional[str] = None
+    created_at: datetime.datetime = Field(default_factory=datetime.datetime.utcnow)
+    updated_at: datetime.datetime = Field(default_factory=datetime.datetime.utcnow)
+
+class DraftCreate(BaseModel):
+    visionboard_id: uuid.UUID
+    media_url: str
+    media_type: Optional[str] = None
+    description: Optional[str] = None
+
+class DraftUpdate(BaseModel):
+    media_url: Optional[str] = None
+    media_type: Optional[str] = None
+    description: Optional[str] = None
+
+class DraftComment(BaseModel):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
+    draft_id: uuid.UUID
+    user_id: uuid.UUID
+    comment: str
+    created_at: datetime.datetime = Field(default_factory=datetime.datetime.utcnow)
+    updated_at: datetime.datetime = Field(default_factory=datetime.datetime.utcnow)
+
+class DraftCommentCreate(BaseModel):
+    draft_id: uuid.UUID
+    comment: str
+
+class DraftCommentUpdate(BaseModel):
+    comment: str
+
+class DraftWithComments(Draft):
+    comments: List[DraftComment] = []
+    user_name: Optional[str] = None 
