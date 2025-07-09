@@ -23,7 +23,7 @@ from src.models.visionboard import (
     TaskAttachmentCreate,
     VisionBoardStatus, AssignmentStatus, TaskStatus,
     Invitation, InvitationCreate, InvitationUpdate, InvitationStatus,
-    GroupMessageCreate
+    GroupMessageCreate, DraftCreate, DraftUpdate, DraftCommentCreate, DraftCommentUpdate
 )
 from src.models.notification import Notification
 from src.models.user import User
@@ -838,5 +838,188 @@ async def get_group_messages(
         logger.error(f"❌ Failed to fetch group messages: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Failed to fetch messages: {str(e)}")
 
-# Include the router in the main app
-app.include_router(router) 
+# Draft Endpoints
+@router.get("/drafts")
+async def get_drafts(
+    request: Request,
+    visionboard_id: str,
+    token: Token = Depends(get_user_token)
+):
+    """Get all drafts for a vision board"""
+    try:
+        drafts = await get_visionboard_handler().get_drafts_for_visionboard(
+            visionboard_id=uuid.UUID(visionboard_id),
+            user_id=token.sub
+        )
+        return JSONResponse({
+            "message": "success",
+            "drafts": [draft.model_dump(mode="json") for draft in drafts]
+        })
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid vision board ID")
+    except PermissionError as e:
+        raise HTTPException(status_code=403, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/drafts")
+async def create_draft(
+    request: Request,
+    draft: DraftCreate,
+    token: Token = Depends(get_user_token)
+):
+    """Create a new draft"""
+    try:
+        created_draft = await get_visionboard_handler().create_draft(
+            draft=draft,
+            user_id=token.sub
+        )
+        return JSONResponse({
+            "message": "Draft created successfully",
+            "draft": created_draft.model_dump(mode="json")
+        })
+    except PermissionError as e:
+        raise HTTPException(status_code=403, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.put("/drafts/{draft_id}")
+async def update_draft(
+    request: Request,
+    draft_id: str,
+    updates: DraftUpdate,
+    token: Token = Depends(get_user_token)
+):
+    """Update a draft"""
+    try:
+        draft = await get_visionboard_handler().update_draft(
+            draft_id=uuid.UUID(draft_id),
+            updates=updates,
+            user_id=token.sub
+        )
+        if not draft:
+            raise HTTPException(status_code=404, detail="Draft not found")
+        
+        return JSONResponse({
+            "message": "Draft updated successfully",
+            "draft": draft.model_dump(mode="json")
+        })
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid draft ID")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.delete("/drafts/{draft_id}")
+async def delete_draft(
+    request: Request,
+    draft_id: str,
+    token: Token = Depends(get_user_token)
+):
+    """Delete a draft"""
+    try:
+        success = await get_visionboard_handler().delete_draft(
+            draft_id=uuid.UUID(draft_id),
+            user_id=token.sub
+        )
+        if not success:
+            raise HTTPException(status_code=404, detail="Draft not found")
+        
+        return JSONResponse({"message": "Draft deleted successfully"})
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid draft ID")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Draft Comment Endpoints
+@router.get("/draft-comments")
+async def get_draft_comments(
+    request: Request,
+    draft_id: str,
+    token: Token = Depends(get_user_token)
+):
+    """Get all comments for a draft"""
+    try:
+        comments = await get_visionboard_handler().get_draft_comments(
+            draft_id=uuid.UUID(draft_id),
+            user_id=token.sub
+        )
+        return JSONResponse({
+            "message": "success",
+            "comments": [comment.model_dump(mode="json") for comment in comments]
+        })
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid draft ID")
+    except PermissionError as e:
+        raise HTTPException(status_code=403, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/draft-comments")
+async def create_draft_comment(
+    request: Request,
+    comment: DraftCommentCreate,
+    token: Token = Depends(get_user_token)
+):
+    """Create a new comment on a draft"""
+    try:
+        created_comment = await get_visionboard_handler().create_draft_comment(
+            comment=comment,
+            user_id=token.sub
+        )
+        return JSONResponse({
+            "message": "Comment created successfully",
+            "comment": created_comment.model_dump(mode="json")
+        })
+    except PermissionError as e:
+        raise HTTPException(status_code=403, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.put("/draft-comments/{comment_id}")
+async def update_draft_comment(
+    request: Request,
+    comment_id: str,
+    updates: DraftCommentUpdate,
+    token: Token = Depends(get_user_token)
+):
+    """Update a draft comment"""
+    try:
+        comment = await get_visionboard_handler().update_draft_comment(
+            comment_id=uuid.UUID(comment_id),
+            updates=updates,
+            user_id=token.sub
+        )
+        if not comment:
+            raise HTTPException(status_code=404, detail="Comment not found")
+        
+        return JSONResponse({
+            "message": "Comment updated successfully",
+            "comment": comment.model_dump(mode="json")
+        })
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid comment ID")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.delete("/draft-comments/{comment_id}")
+async def delete_draft_comment(
+    request: Request,
+    comment_id: str,
+    token: Token = Depends(get_user_token)
+):
+    """Delete a draft comment"""
+    try:
+        success = await get_visionboard_handler().delete_draft_comment(
+            comment_id=uuid.UUID(comment_id),
+            user_id=token.sub
+        )
+        if not success:
+            raise HTTPException(status_code=404, detail="Comment not found")
+        
+        return JSONResponse({"message": "Comment deleted successfully"})
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid comment ID")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Include the router in the main app 

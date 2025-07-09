@@ -17,7 +17,7 @@ from src.models.visionboard import (
     VisionBoardSummary, VisionBoardStats,
     VisionBoardStatus, AssignmentStatus, TaskStatus, EquipmentStatus,
     Invitation, InvitationCreate, InvitationUpdate, InvitationStatus,
-    GroupMessage
+    GroupMessage, Draft, DraftCreate, DraftUpdate, DraftComment, DraftCommentCreate, DraftCommentUpdate, DraftWithComments
 )
 from src.models.user import User
 import json
@@ -886,3 +886,225 @@ class VisionBoardHandler:
             params.append(limit)
             rows = await conn.fetch(query, *params)
             return [GroupMessage(**dict(row)) for row in rows] 
+
+    # Draft Operations
+    async def create_draft(self, draft: DraftCreate, user_id: uuid.UUID) -> Draft:
+        """Create a new draft for a vision board"""
+        async with self.pool.acquire() as conn:
+            # Security: check user is a member of the vision board
+            member_query = """
+                SELECT 1 FROM visionboards WHERE id = $1 AND created_by = $2
+                UNION
+                SELECT 1 FROM genre_assignments ga
+                JOIN genres g ON ga.genre_id = g.id
+                WHERE g.visionboard_id = $1 AND ga.user_id = $2 AND ga.status = 'Accepted'
+            """
+            member = await conn.fetchrow(member_query, draft.visionboard_id, user_id)
+            if not member:
+                raise PermissionError("Not a member of this vision board.")
+            
+            query = """
+                INSERT INTO drafts (visionboard_id, user_id, media_url, media_type, description)
+                VALUES ($1, $2, $3, $4, $5)
+                RETURNING id, visionboard_id, user_id, media_url, media_type, description, created_at, updated_at
+            """
+            row = await conn.fetchrow(
+                query,
+                draft.visionboard_id,
+                user_id,
+                draft.media_url,
+                draft.media_type,
+                draft.description
+            )
+            return Draft(**dict(row))
+
+    async def get_drafts_for_visionboard(self, visionboard_id: uuid.UUID, user_id: uuid.UUID) -> List[DraftWithComments]:
+        """Get all drafts for a vision board with comments"""
+        async with self.pool.acquire() as conn:
+            # Security: check user is a member of the vision board
+            member_query = """
+                SELECT 1 FROM visionboards WHERE id = $1 AND created_by = $2
+                UNION
+                SELECT 1 FROM genre_assignments ga
+                JOIN genres g ON ga.genre_id = g.id
+                WHERE g.visionboard_id = $1 AND ga.user_id = $2 AND ga.status = 'Accepted'
+            """
+            member = await conn.fetchrow(member_query, visionboard_id, user_id)
+            if not member:
+                raise PermissionError("Not a member of this vision board.")
+            
+            # Get drafts with user names
+            drafts_query = """
+                SELECT d.id, d.visionboard_id, d.user_id, d.media_url, d.media_type, d.description, 
+                       d.created_at, d.updated_at, u.name as user_name
+                FROM drafts d
+                JOIN users u ON d.user_id = u.id
+                WHERE d.visionboard_id = $1
+                ORDER BY d.created_at DESC
+            """
+            drafts_rows = await conn.fetch(drafts_query, visionboard_id)
+            
+            drafts_with_comments = []
+            for draft_row in drafts_rows:
+                draft_data = dict(draft_row)
+                user_name = draft_data.pop('user_name')
+                draft = Draft(**draft_data)
+                
+                # Get comments for this draft
+                comments_query = """
+                    SELECT dc.id, dc.draft_id, dc.user_id, dc.comment, dc.created_at, dc.updated_at
+                    FROM draft_comments dc
+                    WHERE dc.draft_id = $1
+                    ORDER BY dc.created_at ASC
+                """
+                comments_rows = await conn.fetch(comments_query, draft.id)
+                comments = [DraftComment(**dict(row)) for row in comments_rows]
+                
+                draft_with_comments = DraftWithComments(
+                    **draft.model_dump(),
+                    comments=comments,
+                    user_name=user_name
+                )
+                drafts_with_comments.append(draft_with_comments)
+            
+            return drafts_with_comments
+
+    async def update_draft(self, draft_id: uuid.UUID, updates: DraftUpdate, user_id: uuid.UUID) -> Optional[Draft]:
+        """Update a draft (only the creator can update)"""
+        async with self.pool.acquire() as conn:
+            # Build dynamic update query
+            set_clauses = []
+            values = []
+            param_count = 1
+            
+            if updates.media_url is not None:
+                set_clauses.append(f"media_url = ${param_count}")
+                values.append(updates.media_url)
+                param_count += 1
+            if updates.media_type is not None:
+                set_clauses.append(f"media_type = ${param_count}")
+                values.append(updates.media_type)
+                param_count += 1
+            if updates.description is not None:
+                set_clauses.append(f"description = ${param_count}")
+                values.append(updates.description)
+                param_count += 1
+            
+            if not set_clauses:
+                return await self.get_draft(draft_id)
+            
+            set_clauses.append(f"updated_at = ${param_count}")
+            values.append(datetime.datetime.utcnow())
+            param_count += 1
+            values.append(draft_id)
+            values.append(user_id)
+            
+            query = f"""
+                UPDATE drafts 
+                SET {', '.join(set_clauses)}
+                WHERE id = ${param_count} AND user_id = ${param_count + 1}
+                RETURNING id, visionboard_id, user_id, media_url, media_type, description, created_at, updated_at
+            """
+            row = await conn.fetchrow(query, *values)
+            return Draft(**dict(row)) if row else None
+
+    async def get_draft(self, draft_id: uuid.UUID) -> Optional[Draft]:
+        """Get a draft by ID"""
+        async with self.pool.acquire() as conn:
+            query = """
+                SELECT id, visionboard_id, user_id, media_url, media_type, description, created_at, updated_at
+                FROM drafts WHERE id = $1
+            """
+            row = await conn.fetchrow(query, draft_id)
+            return Draft(**dict(row)) if row else None
+
+    async def delete_draft(self, draft_id: uuid.UUID, user_id: uuid.UUID) -> bool:
+        """Delete a draft (only the creator can delete)"""
+        async with self.pool.acquire() as conn:
+            query = "DELETE FROM drafts WHERE id = $1 AND user_id = $2"
+            result = await conn.execute(query, draft_id, user_id)
+            return result == "DELETE 1"
+
+    # Draft Comment Operations
+    async def create_draft_comment(self, comment: DraftCommentCreate, user_id: uuid.UUID) -> DraftComment:
+        """Create a new comment on a draft"""
+        async with self.pool.acquire() as conn:
+            # Security: check user is a member of the vision board that contains this draft
+            member_query = """
+                SELECT 1 FROM drafts d
+                JOIN visionboards vb ON d.visionboard_id = vb.id
+                WHERE d.id = $1 AND vb.created_by = $2
+                UNION
+                SELECT 1 FROM drafts d
+                JOIN genre_assignments ga ON d.visionboard_id = ga.genre_id
+                JOIN genres g ON ga.genre_id = g.id
+                WHERE d.id = $1 AND ga.user_id = $2 AND ga.status = 'Accepted'
+            """
+            member = await conn.fetchrow(member_query, comment.draft_id, user_id)
+            if not member:
+                raise PermissionError("Not a member of this vision board.")
+            
+            query = """
+                INSERT INTO draft_comments (draft_id, user_id, comment)
+                VALUES ($1, $2, $3)
+                RETURNING id, draft_id, user_id, comment, created_at, updated_at
+            """
+            row = await conn.fetchrow(
+                query,
+                comment.draft_id,
+                user_id,
+                comment.comment
+            )
+            return DraftComment(**dict(row))
+
+    async def get_draft_comments(self, draft_id: uuid.UUID, user_id: uuid.UUID) -> List[DraftComment]:
+        """Get all comments for a draft"""
+        async with self.pool.acquire() as conn:
+            # Security: check user is a member of the vision board that contains this draft
+            member_query = """
+                SELECT 1 FROM drafts d
+                JOIN visionboards vb ON d.visionboard_id = vb.id
+                WHERE d.id = $1 AND vb.created_by = $2
+                UNION
+                SELECT 1 FROM drafts d
+                JOIN genre_assignments ga ON d.visionboard_id = ga.genre_id
+                JOIN genres g ON ga.genre_id = g.id
+                WHERE d.id = $1 AND ga.user_id = $2 AND ga.status = 'Accepted'
+            """
+            member = await conn.fetchrow(member_query, draft_id, user_id)
+            if not member:
+                raise PermissionError("Not a member of this vision board.")
+            
+            query = """
+                SELECT id, draft_id, user_id, comment, created_at, updated_at
+                FROM draft_comments
+                WHERE draft_id = $1
+                ORDER BY created_at ASC
+            """
+            rows = await conn.fetch(query, draft_id)
+            return [DraftComment(**dict(row)) for row in rows]
+
+    async def update_draft_comment(self, comment_id: uuid.UUID, updates: DraftCommentUpdate, user_id: uuid.UUID) -> Optional[DraftComment]:
+        """Update a draft comment (only the creator can update)"""
+        async with self.pool.acquire() as conn:
+            query = """
+                UPDATE draft_comments 
+                SET comment = $1, updated_at = $2
+                WHERE id = $3 AND user_id = $4
+                RETURNING id, draft_id, user_id, comment, created_at, updated_at
+            """
+            row = await conn.fetchrow(
+                query,
+                updates.comment,
+                datetime.datetime.utcnow(),
+                comment_id,
+                user_id
+            )
+            return DraftComment(**dict(row)) if row else None
+
+    async def delete_draft_comment(self, comment_id: uuid.UUID, user_id: uuid.UUID) -> bool:
+        """Delete a draft comment (only the creator can delete)"""
+        async with self.pool.acquire() as conn:
+            query = "DELETE FROM draft_comments WHERE id = $1 AND user_id = $2"
+            result = await conn.execute(query, comment_id, user_id)
+            return result == "DELETE 1" 

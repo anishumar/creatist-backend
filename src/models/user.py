@@ -14,6 +14,8 @@ class User(BaseModel):
     id: uuid.UUID = Field(default_factory=lambda: uuid.uuid4())
 
     name: str
+    username: Optional[str] = None
+    description: Optional[str] = None
     email: str
     password: str
 
@@ -32,6 +34,8 @@ class User(BaseModel):
 
 class UserUpdate(BaseModel):
     name: Optional[str] = None
+    username: Optional[str] = None
+    description: Optional[str] = None
     email: Optional[str] = None
     password: Optional[str] = None
     profile_image_url: Optional[str] = None
