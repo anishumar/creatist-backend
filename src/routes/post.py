@@ -61,7 +61,7 @@ async def create_post(post: PostCreate, request: Request, token: Token = Depends
         logger.error(f"   Post data that caused error: {post.model_dump()}")
         raise HTTPException(status_code=500, detail=f"Failed to create post: {str(e)}")
 
-@router.get("/feed", response_model=List[PostWithDetails])
+@router.get("/feed", response_model=dict)
 async def get_feed(request: Request, limit: int = 10, cursor: Optional[str] = None):
     handler = get_post_handler(request)
     return await handler.get_feed(limit=limit, cursor=cursor)
@@ -107,10 +107,10 @@ async def search_posts(request: Request, q: str, tag: Optional[str] = None, limi
     handler = get_post_handler(request)
     return await handler.search_posts(q, tag, limit, cursor)
 
-@router.get("/trending", response_model=List[PostWithDetails])
-async def get_trending_posts(request: Request, limit: int = 10):
+@router.get("/trending", response_model=dict)
+async def get_trending_posts(request: Request, limit: int = 10, cursor: Optional[str] = None):
     handler = get_post_handler(request)
-    return await handler.get_trending_posts(limit)
+    return await handler.get_trending_posts(limit, cursor)
 
 @router.delete("/{post_id}")
 async def soft_delete_post(post_id: str, request: Request, token: Token = Depends(get_user_token)):

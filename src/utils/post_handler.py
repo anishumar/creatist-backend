@@ -149,7 +149,7 @@ class PostHandler:
             logger.error(f"   Post data: {post.model_dump()}")
             raise
 
-    async def get_feed(self, limit: int = 10, cursor: Optional[str] = None) -> List[PostWithDetails]:
+    async def get_feed(self, limit: int = 10, cursor: Optional[str] = None) -> dict:
         async with self.pool.acquire() as conn:
             params = []
             query = "SELECT * FROM posts WHERE deleted_at IS NULL"
@@ -157,9 +157,13 @@ class PostHandler:
                 query += " AND created_at < $1"
                 params.append(cursor)
             query += " ORDER BY created_at DESC LIMIT $%d" % (len(params) + 1)
-            params.append(limit)
+            params.append(limit + 1)
             rows = await conn.fetch(query, *params)
-            return [await self._post_with_details(conn, row) for row in rows]
+            posts = [await self._post_with_details(conn, row) for row in rows[:limit]]
+            next_cursor = None
+            if len(rows) > limit:
+                next_cursor = str(rows[limit - 1]['created_at'].isoformat())
+            return {"posts": posts, "nextCursor": next_cursor}
 
     async def get_post_by_id(self, post_id: uuid.UUID) -> Optional[PostWithDetails]:
         async with self.pool.acquire() as conn:
@@ -246,9 +250,8 @@ class PostHandler:
             rows = await conn.fetch(query, *params)
             return [await self._post_with_details(conn, row) for row in rows]
 
-    async def get_trending_posts(self, limit: int = 10) -> List[PostWithDetails]:
+    async def get_trending_posts(self, limit: int = 10, cursor: Optional[str] = None) -> dict:
         async with self.pool.acquire() as conn:
-            # Example: order by like count, then view count, then recency
             query = """
                 SELECT p.* FROM posts p
                 LEFT JOIN (
@@ -258,11 +261,19 @@ class PostHandler:
                     SELECT post_id, COUNT(*) as view_count FROM post_views GROUP BY post_id
                 ) v ON p.id = v.post_id
                 WHERE p.deleted_at IS NULL
-                ORDER BY COALESCE(l.like_count,0) DESC, COALESCE(v.view_count,0) DESC, p.created_at DESC
-                LIMIT $1
             """
-            rows = await conn.fetch(query, limit)
-            return [await self._post_with_details(conn, row) for row in rows]
+            params = []
+            if cursor:
+                query += " AND p.created_at < $1"
+                params.append(cursor)
+            query += " ORDER BY COALESCE(l.like_count,0) DESC, COALESCE(v.view_count,0) DESC, p.created_at DESC LIMIT $%d" % (len(params) + 1)
+            params.append(limit + 1)
+            rows = await conn.fetch(query, *params)
+            posts = [await self._post_with_details(conn, row) for row in rows[:limit]]
+            next_cursor = None
+            if len(rows) > limit:
+                next_cursor = str(rows[limit - 1]['created_at'].isoformat())
+            return {"posts": posts, "nextCursor": next_cursor}
 
     async def soft_delete_post(self, post_id: uuid.UUID, user_id: uuid.UUID):
         async with self.pool.acquire() as conn:
