@@ -846,14 +846,21 @@ async def list_drafts(visionboard_id: str, token: Token = Depends(get_user_token
 
 @router.post("/{visionboard_id}/drafts")
 async def create_draft(visionboard_id: str, draft: DraftCreate, token: Token = Depends(get_user_token)):
-    created = await get_visionboard_handler().create_draft(
-        visionboard_id=uuid.UUID(visionboard_id),
-        user_id=token.sub,
-        media_url=draft.media_url,
-        media_type=draft.media_type,
-        description=draft.description
-    )
-    return created.model_dump(mode="json")
+    logger = logging.getLogger("visionboard.draft")
+    logger.debug(f"Received create_draft request: visionboard_id={visionboard_id}, user_id={token.sub}, draft={draft}")
+    try:
+        created = await get_visionboard_handler().create_draft(
+            visionboard_id=uuid.UUID(visionboard_id),
+            user_id=token.sub,
+            media_url=draft.media_url,
+            media_type=draft.media_type,
+            description=draft.description
+        )
+        logger.debug(f"Draft created successfully: {created}")
+        return created.model_dump(mode="json")
+    except Exception as e:
+        logger.error(f"Error creating draft: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/drafts/{draft_id}")
 async def get_draft(draft_id: str, token: Token = Depends(get_user_token)):
@@ -909,6 +916,17 @@ async def delete_draft_comment(comment_id: str, token: Token = Depends(get_user_
     if not success:
         raise HTTPException(status_code=404, detail="Comment not found or not allowed")
     return {"message": "Comment deleted"}
+
+@router.get("/{visionboard_id}/collaborators")
+async def get_visionboard_collaborators(visionboard_id: str, token: Token = Depends(get_user_token)):
+    """Get all collaborators (user_id, role) for a vision board."""
+    handler = get_visionboard_handler()
+    try:
+        uuid_vb = uuid.UUID(visionboard_id)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid vision board ID")
+    collaborators = await handler.get_visionboard_collaborators(uuid_vb)
+    return [{"user_id": str(user_id), "role": role} for user_id, role in collaborators]
 
 # Include the router in the main app
 app.include_router(router) 

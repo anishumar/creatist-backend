@@ -984,3 +984,15 @@ class VisionBoardHandler:
                 "DELETE FROM draft_comments WHERE id = $1 AND user_id = $2", comment_id, user_id
             )
             return result.startswith("DELETE 1") 
+
+    async def get_visionboard_collaborators(self, visionboard_id: uuid.UUID):
+        """Get all collaborators (user_id, role) for a vision board. Role is the genre name."""
+        async with self.pool.acquire() as conn:
+            query = """
+                SELECT ga.user_id, g.name as role
+                FROM genre_assignments ga
+                JOIN genres g ON ga.genre_id = g.id
+                WHERE g.visionboard_id = $1 AND ga.status = 'Accepted'
+            """
+            rows = await conn.fetch(query, visionboard_id)
+            return [(row['user_id'], row['role']) for row in rows] 
