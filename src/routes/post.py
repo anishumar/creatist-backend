@@ -68,8 +68,14 @@ async def get_feed(request: Request, limit: int = 10, cursor: Optional[str] = No
 
 @router.get("/{post_id}", response_model=PostWithDetails)
 async def get_post(post_id: str, request: Request):
+    import uuid
+    from fastapi import HTTPException
+    try:
+        post_uuid = uuid.UUID(post_id)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid post_id format. Must be a valid UUID.")
     handler = get_post_handler(request)
-    post = await handler.get_post_by_id(uuid.UUID(post_id))
+    post = await handler.get_post_by_id(post_uuid)
     if not post:
         raise HTTPException(status_code=404, detail="Post not found")
     return post

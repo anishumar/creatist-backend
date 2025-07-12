@@ -306,7 +306,7 @@ class VisionBoardStats(BaseModel):
     pending_assignments: int
     total_tasks: int
     completed_tasks: int
-    overdue_tasks: int
+    overdue_tasks: int 
 
 class Invitation(BaseModel):
     id: uuid.UUID

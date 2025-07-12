@@ -154,6 +154,9 @@ class PostHandler:
             params = []
             query = "SELECT * FROM posts WHERE deleted_at IS NULL"
             if cursor:
+                import datetime
+                if isinstance(cursor, str):
+                    cursor = datetime.datetime.fromisoformat(cursor)
                 query += " AND created_at < $1"
                 params.append(cursor)
             query += " ORDER BY created_at DESC LIMIT $%d" % (len(params) + 1)
@@ -264,6 +267,9 @@ class PostHandler:
             """
             params = []
             if cursor:
+                import datetime
+                if isinstance(cursor, str):
+                    cursor = datetime.datetime.fromisoformat(cursor)
                 query += " AND p.created_at < $1"
                 params.append(cursor)
             query += " ORDER BY COALESCE(l.like_count,0) DESC, COALESCE(v.view_count,0) DESC, p.created_at DESC LIMIT $%d" % (len(params) + 1)

@@ -723,7 +723,7 @@ class VisionBoardHandler:
             )
             from src.models.notification import Notification
             notif_row = await conn.fetchrow("SELECT * FROM notifications WHERE id = $1", notification_id)
-            return Notification(**dict(notif_row))
+            return Notification(**dict(notif_row)) 
 
     # Invitation Operations
     async def create_invitation(self, sender_id: uuid.UUID, invitation: InvitationCreate) -> Invitation:
